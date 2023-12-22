@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> EX01 - One Shot Battleship - COMP110 - 23F</title>
+  <title> EX02 - One Shot Battleship - COMP110 - 23F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1703263286.93622">
+  <link rel="stylesheet" href="/static/styles.css?v=1703263540.7610955">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="exercises-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>EX01 - One Shot Battleship</h1>
+        <h1>EX02 - One Shot Battleship</h1>
         <hr class="title" />
       </div>
     </div>
@@ -62,6 +62,16 @@
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
 <li><a href="#overview">Overview</a></li>
+<li><a href="#permitted-constructs">Permitted Constructs</a></li>
+<li><a href="#background-lesson-formatted-strings-f-strings">Background Lesson: Formatted Strings (f-Strings)</a></li>
+<li><a href="#part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</a></li>
+<li><a href="#part-1.-print-a-grid-xx-points">Part 1. Print a Grid – XX Points</a></li>
+<li><a href="#part-2.-establishing-a-secret-and-prompting-for-a-guess-30-points">Part 2. Establishing a Secret and Prompting for a Guess – 30 Points</a></li>
+<li><a href="#part-3.-giving-a-hint-to-your-user-xx-points">Part 3. Giving A Hint to Your User – XX Points</a></li>
+<li><a href="#part-4.-style-and-documentation-requirements-20-points-manually-graded">Part 4. Style and Documentation Requirements – 20 Points (Manually Graded)</a></li>
+<li><a href="#part-5.-type-safety-and-linting---9-points">Part 5. Type Safety and Linting - 9 Points</a></li>
+<li><a href="#make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</a></li>
+<li><a href="#submit-to-gradescope-for-grading">Submit to Gradescope for Grading</a></li>
 </ul>
 </</ul>
                     </div>
@@ -69,6 +79,226 @@
             </div>
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h2 id="overview">Overview</h2>
+<p>Please complete all lessons before attempting to begin this exercise.</p>
+<p>The next step on our journey to implementing Battleship is to produce a program that gives the player one shot at guessing your program’s secret word. (Of couse, they can play the game multiple times in order to have multiple chances.)</p>
+<p>In this exercise, you will print out a grid of boxes instead of just one line, and prompt the user for a <strong>row</strong> and <strong>column</strong> for their guess. Level up!</p>
+<p>You should follow the steps below for implementing the program one step at a time. To get a sense of where you are going, here is an example of a final game ():</p>
+<pre class="plaintext"><code>    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 2
+    Guess a column: 4
+    🟦🟦🟦🟦
+    🟦🟦🟦⬜
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    Miss!
+
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 1
+    Guess a column: 2
+    🟦⬜🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    Close! Right column, wrong row.
+
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 3
+    Guess a column: 3
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦⬜🟦
+    🟦🟦🟦🟦
+    Close! Right row, wrong column.
+    
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 5
+    The grid is only 4 by 4.
+    Guess a row: 3
+    Guess a column: 6
+    The grid is only 4 by 4.
+    Guess a column: 2
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟥🟦🟦
+    🟦🟦🟦🟦
+    Hit!</code></pre>
+<p>Note: each time you run the game, the random secret row and column are regenerated. You might want to hard code your secret row and column for the testing of your program and then switch them back to random at the end!</p>
+<h2 id="permitted-constructs">Permitted Constructs</h2>
+<p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop. Additionally, string methods (such as <code>.count</code> and <code>.format</code>) are not permitted.</p>
+<h2 id="background-lesson-formatted-strings-f-strings">Background Lesson: Formatted Strings (f-Strings)</h2>
+<p>In this exercise, you will need to make use of another advanced string concept: formatted Strings (f-Strings)</p>
+<p>Before beginning work on this exercise, you might want to reread the following lesson: <a href="/lessons/strings.html">LS11 - Unicode, Emoji, Escape Sequences, and f-Strings</a></p>
+<h2 id="part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</h2>
+<p>In Visual Studio Code, be sure your workspace is open. (Reminder: File &gt; Open Recent &gt; comp110-YYS-workspace is a quick way to reopen it! Where YY is the current year and S is the semeseter: S for Spring, F for Fall.)</p>
+<p>Open the Explorer pane (click the icon with two sheets of paper or to to <em>View</em> &gt; <em>Explorer</em>) and expand the <em>Workspace</em> directory.</p>
+<p>Right click on the <code>exercises</code> directory and select “New File”. Enter the following filename, being careful to match capitalization and punctuation:</p>
+<ul>
+<li><code>ex02_one_shot_battleship.py</code></li>
+</ul>
+<p>Before beginning work on the program, you should add a <em>docstring</em> to the top of your Python <em>module</em> just as you did in EX00 and EX01. Then, you should add a line with the special variable named <code>__author__</code> assigned to be a <strong>string</strong> with your 9-digit student PID. (Disclaimer: Out in the real world the <code>__author__</code> variable is typically your name and e-mail address, but since we will grade your programs we’d like to avoid potential bias in seeing your names as part of the programs as we’re grading.) Fill in <em>your</em> 9-digit UNC PID number, without any spaces or dashes, in the <code>__author__</code> string.</p>
+<h2 id="part-1.-print-a-grid-xx-points">Part 1. Print a Grid – XX Points</h2>
+<p>In battleship, you normally have a grid instead of just one row of ocean. Using the concept of <code>while</code> loops, you’ll be able to print out a grid of the size of your choice!</p>
+<p>First, you’ll need to establish a few variables: an <code>int</code> for the size of your grid, <code>int</code> for secret row, <code>int</code> for secret column, <code>i</code> as a counter, and <code>bool</code> for whether the user has made a correct guess (initialize that to <code>False</code>).</p>
+<p>For debugging purposes, hard code your secret row and secret column to 3 and 2 respectively.</p>
+<p>Since loops are new to your repertoire, in this exercise we will give you a general strategy for accomplishing this task. Your job will be to translate this plan in English into working Python code.</p>
+<ol type="1">
+<li>First, establish a variable to keep track how many times you’ve gone through the loop to print a row.</li>
+<li><em>While</em> the counter variable is less than the size of the grid you specified, do as follows:
+<ol type="1">
+<li>Test to see if the user guess for row is equal to the counter + 1 – This is because :
+<ol type="1">
+<li>If so, create a another counter variable to count how many times you’ve printed a row.
+<ol type="1">
+<li>You’ll also want to create a <code>str</code> to keep track of your emoji boxes.</li>
+<li><em>While</em> your row counter variable is less than the size of the grid, do as follows (creates a row):
+<ol type="1">
+<li>If the user guess for column is equal to the counter + 1, concatenate the user guess box (red or white)</li>
+<li>Else, add a blue box.</li>
+<li>After the test, increase your counter variable by one so that you do not have an infinite loop.</li>
+</ol></li>
+<li>Once the loop completes, print the emoji string. (One row.)</li>
+</ol></li>
+<li>Otherwise, still create the counter variable and the <code>str</code> variable, but this time, use the following <code>while</code> loop logic:
+<ol type="1">
+<li><em>While</em> the counter variable is less than the size of the grid, do the following (prints each row as its created):
+<ol type="1">
+<li>Concatenate a blue box.</li>
+<li>Increment your counter variable by one to avoid an infinite loop.</li>
+</ol></li>
+<li>When you exit the while loop, print the emoji string.</li>
+</ol></li>
+</ol></li>
+<li>Increment your first counter variable by one to avoid an infinite loop.</li>
+</ol></li>
+</ol>
+<p>Once you have completed this part of the program, your output should look as follows (should the secret row be 3 and column be 2.)</p>
+<pre class="plaintext"><code>    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 2
+    Guess a column: 4
+    🟦🟦🟦🟦
+    🟦🟦🟦⬜
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    Miss!
+
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 3
+    Guess a column: 3
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦⬜🟦
+    🟦🟦🟦🟦
+    Miss!
+    
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 3
+    Guess a column: 2
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟥🟦🟦
+    🟦🟦🟦🟦
+    Hit!</code></pre>
+<h2 id="part-2.-establishing-a-secret-and-prompting-for-a-guess-30-points">Part 2. Establishing a Secret and Prompting for a Guess – 30 Points</h2>
+<p>Now that you have your grid printing out, how about we add some hints to help your user. First one, the ability to try again after an invalid input!</p>
+<p>In simple battleship, you would exit if the user gave an invalid input. Now, with the help of <code>while</code> loops, see if you can continue to prompt the player until the provide a guess that within the bounds of the size of the grid you pick. Here’s how your program should perform after this step:</p>
+<pre class="plaintext"><code>    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 5
+    The grid is only 4 by 4. Try again:
+    Guess a row: 3
+    Guess a column: 6
+    The grid is only 4 by 4. Try again:
+    Guess a column: 2
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟥🟦🟦
+    🟦🟦🟦🟦
+    Hit!
+
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 5
+    The grid is only 4 by 4. Try again:
+    Guess a row: 12390
+    The grid is only 4 by 4. Try again:
+    Guess a row: 3
+    Guess a column: 123589
+    The grid is only 4 by 4. Try again:
+    Guess a column: 2
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦⬜🟦
+    🟦🟦🟦🟦
+    Miss!</code></pre>
+<p>Before you continue on, does this step of your program work correctly if you change the value for the size of your grid? What if you make the size 5, and thus the grid 5 by 5? Make sure you’re using the variable for size to compare, and not hard code it!</p>
+<p>Additionally, be sure you are using <code>f-String</code> templates rather than conatenation for this text output (not the grid), as introduced in the background lesson.</p>
+<p><strong>WARNING:</strong> Autograding will very specifically be looking for <em>exactly</em> the format of lines output shown above. You will not see the <code>$</code> at your command-line prompt in VSCode, you can ignore that part. Otherwise, when you run the program on your machine with the same inputs as above on the first two lines, your printed results should look exactly like it.</p>
+<h2 id="part-3.-giving-a-hint-to-your-user-xx-points">Part 3. Giving A Hint to Your User – XX Points</h2>
+<p>What if your user was so close? Correct row, but wrong column? Correct column, but wrong row?</p>
+<p>Add a couple <code>elif</code> statements to your user feedback (“Hit!” and “Miss” logic). Your program should perform like this after this step (if the secret row is 3 and column is 2):</p>
+<pre class="plaintext"><code>    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 2
+    Guess a column: 4
+    🟦🟦🟦🟦
+    🟦🟦🟦⬜
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    Miss!
+
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 1
+    Guess a column: 2
+    🟦⬜🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    Close! Right column, wrong row.
+
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 3
+    Guess a column: 4
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦🟦⬜
+    🟦🟦🟦🟦
+    Close! Right row, wrong column.
+
+    $ python -m exercises.ex01_one_shot_battleship
+    Guess a row: 5
+    The grid is only 4 by 4. Try again:
+    Guess a row: 3
+    Guess a column: 3
+    🟦🟦🟦🟦
+    🟦🟦🟦🟦
+    🟦🟦⬜🟦
+    🟦🟦🟦🟦
+    Close! Right row, wrong column.</code></pre>
+<p>And there you have your one-shot battleship! Feel free to add the randomization back in for your secret row and secret column. Make sure that your keeping into account the size of your grid, which is flexible . . . what should the max value be for secret row and secret column?</p>
+<h2 id="part-4.-style-and-documentation-requirements-20-points-manually-graded">Part 4. Style and Documentation Requirements – 20 Points (Manually Graded)</h2>
+<p>We will manually grade your code and are looking for good choices of meaningful variable names. Your variable names should be descriptive of their purposes. (Loop indexing variables can be short, such as <code>i</code>, or <code>idx</code>.) You should also use the Python <code>snake_case</code> convention where variable names are all lowercase and new words are separated by underscores.</p>
+<p>You should add code comments in your own English words to describe what is happening at important stages of your program.</p>
+<p>Your program should work regardless of the secret’s length. Thus, you should not have any hard-coded numbers (such as <code>3</code> for the secret row). All numbers that appear in output and the boundaries of loops should be based on the size of your grid (of your choice).</p>
+<h2 id="part-5.-type-safety-and-linting---9-points">Part 5. Type Safety and Linting - 9 Points</h2>
+<p>The autograder uses industry standard tools for checking the type safety of your programs (e.g. being sure you’re using variables of the correct data types in valid ways) and linting style rules. If you have point deductions on Type Safety or Linting, read through the feedback the autograder gives and it should direct you to the line number in your program with the issue.</p>
+<h2 id="make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</h2>
+<p>As you make progress on this exercise, making backups is encouraged.</p>
+<ol type="1">
+<li>Open the Source Control panel (Command Palette: “Show SCM” or click the icon with three circles and lines on the activity panel).</li>
+<li>Notice the files listed under Changes. These are files you’ve made modifications to since your last backup.</li>
+<li>Move your mouse’s cursor over the word <em>Changes</em> and notice the + symbol that appears. Click that plus symbol to add all changes to the next backup. You will now see the files listed under “Staged Changes”.
+<ul>
+<li>If you do not want to backup <em>all</em> changed files, you can select them individually. For this course you’re encouraged to back everything up.</li>
+</ul></li>
+<li>In the Message box, give a brief description of what you’ve changed and are backing up. This will help you find a specific backup (called a “commit”) if needed. In this case a message such as, “Progress on Exercise 1” will suffice.</li>
+<li>Press the Check icon to make a <em>Commit</em> (a version) of your work.</li>
+<li>Finally, press the Ellipses icon (…), look for “Pull/Push” submenu, and select “Push to…”, and in the dropdown select your backup repository.</li>
+</ol>
+<h2 id="submit-to-gradescope-for-grading">Submit to Gradescope for Grading</h2>
+<p>All that’s left now is to hand-in your work on Gradescope for grading!</p>
+<p>Login to Gradescope and select the assignment named “EX02 - One-shot Wordle”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
+<p>If you <em>do not</em> see a Terminal at the bottom of your screen, open the Command Palette and search for “View: Toggle Integrated Terminal”.</p>
+<p>Type the following command (all on a single line):</p>
+<p><code>python -m tools.submission exercises/ex02_one_shot_battleship.py</code></p>
+<p>In the file explorer pane, look to find the zip file named “yy.mm.dd-hh.mm-exercises-ex02_one_shot_wordle.py.zip”. The “yy”, “mm”, “dd”, and so on, are timestamps with the current year, month, day, hour, minute. If you right click on this file and select “Reveal in File Explorer” on Windows or “Reveal in Finder” on Mac, the zip file’s location on your computer will open. Upload this file to Gradescope to submit your work for this exercise.</p>
+<p>Autograding will take a few moments to complete. For this exercise there will be 20 “human graded” points. Thus, you should expect a maximum autograding score of 80 possible points on this assignment. If there are issues reported, you are encouraged to try and resolve them and resubmit. If for any reason you aren’t receiving full credit and aren’t sure what to try next, come give us a visit in office hours!</p>
 </div>
 
        
