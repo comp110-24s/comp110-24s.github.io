@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Extra Credit Opportunities - COMP110 - 23F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1703801698.8076637">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Extra Credit Opportunities</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#comp110-curriculum">Comp110 Curriculum</a>
+<ul>
+<li><a href="#unit-0---the-basics">Unit 0 - The basics</a></li>
+<li><a href="#unit-1---conditionals-booleans-and-memory-diagrams">Unit 1 - Conditionals, Booleans, and Memory Diagrams</a></li>
+<li><a href="#unit-2---while-loops-some-useful-tools">Unit 2 - While loops + some useful tools</a></li>
+<li><a href="#unit-3---functions">Unit 3 - Functions</a></li>
+<li><a href="#unit-4-for-loops-lists-dictionaries-and-unit-tests">Unit 4: ‘for’ loops, Lists, Dictionaries, and Unit Tests</a></li>
+<li><a href="#unit-5---algorithms-and-runtime-analysis">Unit 5 - Algorithms and Runtime Analysis</a></li>
+<li><a href="#unit-6---recursion">Unit 6 - Recursion</a></li>
+<li><a href="#unit-7---object-oriented-programming">Unit 7 - Object Oriented Programming</a></li>
+<li><a href="#unit-8---advanced-object-oriented-programming">Unit 8 - Advanced Object Oriented Programming</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="comp110-curriculum">Comp110 Curriculum</h1>
+<p>Here is the basic breakdown of concepts covered in this class. We know Unit 0 seems long and daunting, and that’s because this class can have a steep learning curve! But these concepts are more straightforward and less complicated than those in the later units, and we will spend ample time on them!</p>
+<h2 id="unit-0---the-basics">Unit 0 - The basics</h2>
+<ul>
+<li>The basics of VS Code and running a Python program</li>
+<li>Objects and Data Types
+<ul>
+<li>Basic types (int, float, str, bool)</li>
+</ul></li>
+<li>Commenting and Doc Strings</li>
+<li>Expressions
+<ul>
+<li>Evaluating Expressions</li>
+<li>Order of Operations</li>
+<li>What <em>type</em> expressions evaluate to</li>
+</ul></li>
+<li>Variables and User Input
+<ul>
+<li>Syntax for initializing a variable and assigning it a value</li>
+<li>Syntax for updating a variable’s value</li>
+<li>Using the <code>input()</code> function to prompt for and receive user input</li>
+</ul></li>
+</ul>
+<h2 id="unit-1---conditionals-booleans-and-memory-diagrams">Unit 1 - Conditionals, Booleans, and Memory Diagrams</h2>
+<ul>
+<li>Conditionals
+<ul>
+<li>Syntax of an if block</li>
+<li>Syntax of an if…else block</li>
+</ul></li>
+<li>Booleans
+<ul>
+<li>Evaluating Boolean Expressions</li>
+<li>How <code>not</code>, <code>and</code>, <code>or</code> work</li>
+<li>Order of Operations</li>
+<li>Using boolean expressions in a conditional</li>
+</ul></li>
+<li>Memory Diagrams
+<ul>
+<li>Establishing a stack and an output box</li>
+<li>Diagramming basic variable assignments and updates</li>
+<li>Diagramming Conditionals</li>
+</ul></li>
+</ul>
+<h2 id="unit-2---while-loops-some-useful-tools">Unit 2 - While loops + some useful tools</h2>
+<ul>
+<li>While Loops
+<ul>
+<li>Syntax of a while loop</li>
+<li>Idea of indexing</li>
+<li>While loops in memory diagrams</li>
+</ul></li>
+<li>Counters
+<ul>
+<li>How to create and use a variable as a counter</li>
+</ul></li>
+<li>Relative Reassignment Operators
+<ul>
+<li>Functionality of relative reassignment operators</li>
+</ul></li>
+<li>Unicode, Emoji, Escape Sequences, and f-Strings
+<ul>
+<li>String Escape sequences</li>
+<li>F-strings: how to write them in code and evaluate them when printed</li>
+</ul></li>
+</ul>
+<h2 id="unit-3---functions">Unit 3 - Functions</h2>
+<ul>
+<li>Functions
+<ul>
+<li>Calling functions</li>
+<li>Importing functions</li>
+<li>Returning vs Printing</li>
+</ul></li>
+<li>Function Syntax
+<ul>
+<li>Syntax for defining a function</li>
+<li>Syntax for calling a function</li>
+<li>The similarities and differences of signatures and function calls (including parameters vs. arguments)</li>
+<li>Calling functions within functions</li>
+</ul></li>
+<li>Function Semantics
+<ul>
+<li>Memory Diagram representation of function definitions and calls
+<ul>
+<li>Function frames</li>
+<li>Function call steps</li>
+<li>Heap storage</li>
+<li>Return Address and Values</li>
+</ul></li>
+</ul></li>
+<li>Scope
+<ul>
+<li>Applying scope to memory diagrams in terms of function call frames</li>
+</ul></li>
+<li>Importing Modules
+<ul>
+<li>Knowing basic import syntax: <code>from &lt;package-name&gt; import &lt;module-name&gt;</code> and <code>from &lt;package-name&gt;.&lt;module-name&gt; import &lt;function&gt;</code></li>
+<li>Knowing how to handle <code>if __name__ == "__main__":</code> in a memory diagram</li>
+</ul></li>
+</ul>
+<h2 id="unit-4-for-loops-lists-dictionaries-and-unit-tests">Unit 4: ‘for’ loops, Lists, Dictionaries, and Unit Tests</h2>
+<ul>
+<li>Lists
+<ul>
+<li>Basic list syntax and typing</li>
+<li>Indexing on lists and updating values at an index (subscription notation)</li>
+<li><code>len()</code> function</li>
+<li>methods: <code>.append()</code> and <code>.pop()</code></li>
+</ul></li>
+<li>Lists in Memory
+<ul>
+<li>Memory Diagrams with lists</li>
+<li>Writing functions with lists (both modifying existing lists or creating new lists)</li>
+</ul></li>
+<li>for loops
+<ul>
+<li>Using <code>for ... in ...</code> syntax in memory diagrams and writing functions</li>
+<li>Using <code>for ... in range(...)</code> syntax in memory diagrams and writing functions</li>
+</ul></li>
+<li>Dictionaries
+<ul>
+<li>Basic list syntax and typing</li>
+<li>Accessing, adding, and modifying values at an index (subscription notation)</li>
+<li>function: <code>len()</code></li>
+<li>method: <code>.pop()</code></li>
+<li>using the boolean expression: <code>elem in dictionary</code></li>
+<li>Memory Diagrams with dictionaries</li>
+<li>Using a for loop to iterate through a dictionary’s keys</li>
+</ul></li>
+<li>Unit Tests</li>
+</ul>
+<h2 id="unit-5---algorithms-and-runtime-analysis">Unit 5 - Algorithms and Runtime Analysis</h2>
+<h2 id="unit-6---recursion">Unit 6 - Recursion</h2>
+<h2 id="unit-7---object-oriented-programming">Unit 7 - Object Oriented Programming</h2>
+<ul>
+<li>Syntax for defining a Class and its methods
+<ul>
+<li>Creating a <code>Class</code></li>
+<li>Listing attributes and their types</li>
+<li>Defining a constructor method (<code>__init__</code>)</li>
+<li>Defining a method within the class</li>
+</ul></li>
+<li>Syntax for instantiating a Class and calling methods
+<ul>
+<li>Importing a <code>Class</code> and calling its constructor</li>
+<li>Calling methods on an object of a defined <code>Class</code></li>
+<li>Accessing attributes of an object of a <code>Class</code> (e.g. <code>my_pizza.toppings</code>)</li>
+</ul></li>
+<li>Classes in Memory
+<ul>
+<li>Memory diagram for a Class definition and instantiation (Hint: Try making a step-by-step procedure as outlined <a href="https://campuswire.com/c/GD77C6F5C/feed/457">here</a>.)</li>
+</ul></li>
+</ul>
+<h2 id="unit-8---advanced-object-oriented-programming">Unit 8 - Advanced Object Oriented Programming</h2>
+<ul>
+<li>Magic Methods
+<ul>
+<li>Syntax for defining and calling a magic method</li>
+<li>Writing a <code>__str__</code> magic method</li>
+<li>Diagramming a <code>__str__</code> magic method</li>
+</ul></li>
+<li>Operator Overloads
+<ul>
+<li>Syntax for defining and calling a magic method that overloads operators</li>
+<li>Writing and Diagramming both <code>__add__</code> and <code>__mult__</code> magic methods</li>
+</ul></li>
+</ul>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Alyssa Byrnes</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
