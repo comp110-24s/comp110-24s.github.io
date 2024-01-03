@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1704297229.159226">
+  <link rel="stylesheet" href="/static/styles.css?v=1704298193.3795917">
 </head>
 
 <body>
@@ -83,7 +83,9 @@
 <p>The next step on our journey to implementing Battleship is to produce a program that gives the player one shot at guessing your program’s secret word. (Of couse, they can play the game multiple times in order to have multiple chances.)</p>
 <p>In this exercise, you will print out a grid of boxes instead of just one line, and prompt the user for a <strong>row</strong> and <strong>column</strong> for their guess. Level up!</p>
 <p>You should follow the steps below for implementing the program one step at a time. To get a sense of where you are going, here is an example of a final game ():</p>
-<pre class="plaintext"><code>    $ python -m exercises.ex01_one_shot_battleship
+<pre>
+<div class="terminal">
+    $ python -m exercises.ex01_one_shot_battleship
     Guess a row: 2
     Guess a column: 4
     🟦🟦🟦🟦
@@ -121,7 +123,9 @@
     🟦🟦🟦🟦
     🟦🟥🟦🟦
     🟦🟦🟦🟦
-    Hit!</code></pre>
+    Hit!
+</div>
+</pre>
 <p>Note: each time you run the game, the random secret row and column are regenerated. You might want to hard code your secret row and column for the testing of your program and then switch them back to random at the end!</p>
 <h2 id="permitted-constructs">Permitted Constructs</h2>
 <p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop. Additionally, string methods (such as <code>.count</code> and <code>.format</code>) are not permitted.</p>
@@ -172,7 +176,9 @@
 </ol></li>
 </ol>
 <p>Once you have completed this part of the program, your output should look as follows (should the secret row be 3 and column be 2.)</p>
-<pre class="plaintext"><code>    $ python -m exercises.ex01_one_shot_battleship
+<pre>
+<div class="terminal">
+    $ python -m exercises.ex01_one_shot_battleship
     Guess a row: 2
     Guess a column: 4
     🟦🟦🟦🟦
@@ -197,11 +203,15 @@
     🟦🟦🟦🟦
     🟦🟥🟦🟦
     🟦🟦🟦🟦
-    Hit!</code></pre>
+    Hit!
+</div>
+</pre>
 <h2 id="part-2.-establishing-a-secret-and-prompting-for-a-guess-30-points">Part 2. Establishing a Secret and Prompting for a Guess – 30 Points</h2>
 <p>Now that you have your grid printing out, how about we add some hints to help your user. First one, the ability to try again after an invalid input!</p>
 <p>In simple battleship, you would exit if the user gave an invalid input. Now, with the help of <code>while</code> loops, see if you can continue to prompt the player until the provide a guess that within the bounds of the size of the grid you pick. Here’s how your program should perform after this step:</p>
-<pre class="plaintext"><code>    $ python -m exercises.ex01_one_shot_battleship
+<pre>
+<div class="terminal">
+    $ python -m exercises.ex01_one_shot_battleship
     Guess a row: 5
     The grid is only 4 by 4. Try again:
     Guess a row: 3
@@ -227,14 +237,18 @@
     🟦🟦🟦🟦
     🟦🟦⬜🟦
     🟦🟦🟦🟦
-    Miss!</code></pre>
+    Miss!
+</div>
+</pre>
 <p>Before you continue on, does this step of your program work correctly if you change the value for the size of your grid? What if you make the size 5, and thus the grid 5 by 5? Make sure you’re using the variable for size to compare, and not hard code it!</p>
 <p>Additionally, be sure you are using <code>f-String</code> templates rather than conatenation for this text output (not the grid), as introduced in the background lesson.</p>
 <p><strong>WARNING:</strong> Autograding will very specifically be looking for <em>exactly</em> the format of lines output shown above. You will not see the <code>$</code> at your command-line prompt in VSCode, you can ignore that part. Otherwise, when you run the program on your machine with the same inputs as above on the first two lines, your printed results should look exactly like it.</p>
 <h2 id="part-3.-giving-a-hint-to-your-user-xx-points">Part 3. Giving A Hint to Your User – XX Points</h2>
 <p>What if your user was so close? Correct row, but wrong column? Correct column, but wrong row?</p>
 <p>Add a couple <code>elif</code> statements to your user feedback (“Hit!” and “Miss” logic). Your program should perform like this after this step (if the secret row is 3 and column is 2):</p>
-<pre class="plaintext"><code>    $ python -m exercises.ex01_one_shot_battleship
+<pre>
+<div class="terminal">
+    $ python -m exercises.ex01_one_shot_battleship
     Guess a row: 2
     Guess a column: 4
     🟦🟦🟦🟦
@@ -270,7 +284,9 @@
     🟦🟦🟦🟦
     🟦🟦⬜🟦
     🟦🟦🟦🟦
-    Close! Right row, wrong column.</code></pre>
+    Close! Right row, wrong column.
+</div>
+</pre>
 <p>And there you have your one-shot battleship! Feel free to add the randomization back in for your secret row and secret column. Make sure that your keeping into account the size of your grid, which is flexible . . . what should the max value be for secret row and secret column?</p>
 <h2 id="part-4.-style-and-documentation-requirements-20-points-manually-graded">Part 4. Style and Documentation Requirements – 20 Points (Manually Graded)</h2>
 <p>We will manually grade your code and are looking for good choices of meaningful variable names. Your variable names should be descriptive of their purposes. (Loop indexing variables can be short, such as <code>i</code>, or <code>idx</code>.) You should also use the Python <code>snake_case</code> convention where variable names are all lowercase and new words are separated by underscores.</p>
