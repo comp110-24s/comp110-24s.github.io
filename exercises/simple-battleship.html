@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1704482393.3346937">
+  <link rel="stylesheet" href="/static/styles.css?v=1704483102.8434448">
 </head>
 
 <body>
@@ -63,14 +63,15 @@
                         <ul class="overview-item"><ul>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#background-lesson-emoji">Background Lesson: Emoji</a></li>
-<li><a href="#part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</a></li>
-<li><a href="#part-1.-prompting-for-player-1-input">Part 1. Prompting for Player 1 Input</a></li>
-<li><a href="#part-2.-prompting-for-player-2-input">Part 2. Prompting for Player 2 Input</a></li>
-<li><a href="#part-3.-checking-user-input-for-match">Part 3. Checking User Input for Match</a></li>
-<li><a href="#part-4.-printing-a-string-of-boxes">Part 4. Printing A String of Boxes</a></li>
-<li><a href="#part-5.-exiting-early-for-invalid-inputs">Part 5. Exiting Early for Invalid Inputs</a></li>
-<li><a href="#part-6.-type-safety-and-linting">Part 6. Type Safety and Linting</a></li>
+<li><a href="#part-0.-setting-up-the-python-program---10-points">Part 0. Setting up the Python Program - 10 points</a></li>
+<li><a href="#part-1.-prompting-for-player-1-input---15-points">Part 1. Prompting for Player 1 Input - 15 points</a></li>
+<li><a href="#part-2.-prompting-for-player-2-input---15-points">Part 2. Prompting for Player 2 Input - 15 points</a></li>
+<li><a href="#part-3.-checking-user-input-for-match---20-points">Part 3. Checking User Input for Match - 20 points</a></li>
+<li><a href="#part-4.-printing-a-string-of-boxes---20-points">Part 4. Printing A String of Boxes - 20 points</a></li>
+<li><a href="#part-5.-exiting-early-for-invalid-inputs---10-points">Part 5. Exiting Early for Invalid Inputs - 10 points</a></li>
+<li><a href="#part-6.-type-safety-and-linting---10-points">Part 6. Type Safety and Linting - 10 points</a></li>
 <li><a href="#part-7.-hand-grading">Part 7. Hand Grading</a></li>
+<li><a href="#rubric">Rubric</a></li>
 <li><a href="#submit-to-gradescope-for-grading">Submit to Gradescope for Grading</a></li>
 </ul>
 </</ul>
@@ -103,7 +104,7 @@
 <h2 id="background-lesson-emoji">Background Lesson: Emoji</h2>
 <p>In this exercise you will need to make use of an advanced string concepts: emoji! 🤠</p>
 <p>Before beginning work on this exercise, read the following lesson and complete the related questions on Gradescope: <a href="/lessons/strings.html">Unicode, Emoji, Escape Sequences, and f-Strings</a></p>
-<h2 id="part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</h2>
+<h2 id="part-0.-setting-up-the-python-program---10-points">Part 0. Setting up the Python Program - 10 points</h2>
 <p>In Visual Studio Code, be sure your workspace is open. (Reminder: File &gt; Open Recent &gt; comp110-YYS-workspace is a quick way to reopen it! Where YY is the current year and S is the semeseter: S for Spring, F for Fall.)</p>
 <p>Open the Explorer pane (click the icon with two sheets of paper or to to <em>View</em> &gt; <em>Explorer</em>) and expand the <em>Workspace</em> directory.</p>
 <p>Right click on the <code>exercises</code> directory and select “New File”. Enter the following filename, being careful to match capitalization and punctuation:</p>
@@ -114,7 +115,7 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a>    <span class="co">&quot;&quot;&quot;EX01 - Simple Battleship - A cute step toward Battleship.&quot;&quot;&quot;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    __author__ <span class="op">=</span> <span class="st">&quot;1234567890&quot;</span></span></code></pre></div>
-<h2 id="part-1.-prompting-for-player-1-input">Part 1. Prompting for Player 1 Input</h2>
+<h2 id="part-1.-prompting-for-player-1-input---15-points">Part 1. Prompting for Player 1 Input - 15 points</h2>
 <p>Using the concepts you learned in <a href="https://youtu.be/GPpYSDNUtH8">User Input and Variables</a>, you will want to ask the first user to “Pick a secret boat location between 1 and 4:”, storing their input it as an <code>int</code> variable. <strong>Please choose meaningful, descriptive names for your variables.</strong></p>
 <p>If they give a valid input between 1 and 4, the program should exit and print nothing. However, if their input is too low or too high, it should print an error message. Write your prompts and diagnostic message such that you can reproduce the following in the shell after saving and running your program:</p>
 <pre>
@@ -133,7 +134,7 @@
 </pre>
 <p><em>(Hint: f-strings are useful for creating these outputs!)</em></p>
 <p><strong>WARNING:</strong> Autograding will very specifically be looking for <em>exactly</em> the format of lines output shown above. You will not see the <code>$</code> at your command-line prompt in VSCode, you can ignore that part. Otherwise, when you run the program on your machine with the same inputs as above, your printed results should match exactly.</p>
-<h2 id="part-2.-prompting-for-player-2-input">Part 2. Prompting for Player 2 Input</h2>
+<h2 id="part-2.-prompting-for-player-2-input---15-points">Part 2. Prompting for Player 2 Input - 15 points</h2>
 <p>Now, you will do the same to prompt the second user for input with “Guess a number between 1 and 4:” and store that under a different variable name. (Imagine Player 1 input their boat location and then passed the computer to Player 2.)</p>
 <p>If they give a valid input between 1 and 4, the program should exit and print nothing. However, if their input is too low or too high, it should print an error message. Write your prompts and diagnostic message such that you can reproduce the following in the shell after saving and running your program:</p>
 <pre>
@@ -150,7 +151,7 @@
 </div>
 </pre>
 <p><strong>WARNING:</strong> Autograding will very specifically be looking for <em>exactly</em> the format of lines output shown above. You will not see the <code>$</code> at your command-line prompt in VSCode, you can ignore that part. Otherwise, when you run the program on your machine with the same inputs as above, your printed results should match exactly.</p>
-<h2 id="part-3.-checking-user-input-for-match">Part 3. Checking User Input for Match</h2>
+<h2 id="part-3.-checking-user-input-for-match---20-points">Part 3. Checking User Input for Match - 20 points</h2>
 <p>Now that you have gathered your inputs from Part 1 and Part 2 and stored them as variables, your task is to check if the Player 2’s guess is equivalent to the box where the ship is hidden (hint: <em>is equal to</em>). These checks will involve combining concepts you’ve learned in recent lessons:</p>
 <ul>
 <li><a href="/lessons/expressions.html">Expressions</a>
@@ -177,7 +178,7 @@
     Correct! You hit the ship.
 </div>
 </pre>
-<h2 id="part-4.-printing-a-string-of-boxes">Part 4. Printing A String of Boxes</h2>
+<h2 id="part-4.-printing-a-string-of-boxes---20-points">Part 4. Printing A String of Boxes - 20 points</h2>
 <p>Now, let’s bring a visual aid to the game! You will need to build up a string of emojis using concatenation to show where the user hit or missed a boat. You can use the following <em>named constants</em> in your program to simplify your implementation. We will learn more about named constants soon, but for now know they are simply variables whose values you will not change later in your program and make your programs easier to read:</p>
 <pre><code>    BLUE_BOX: str = &quot;\U0001F7E6&quot;
     RED_BOX: str = &quot;\U0001F7E5&quot;
@@ -206,15 +207,25 @@
     Correct! You hit the ship.
 </div>
 </pre>
-<h2 id="part-5.-exiting-early-for-invalid-inputs">Part 5. Exiting Early for Invalid Inputs</h2>
+<h2 id="part-5.-exiting-early-for-invalid-inputs---10-points">Part 5. Exiting Early for Invalid Inputs - 10 points</h2>
 <p>Now that you’ve added more functionality to your program in Parts 3 and 4, what happens when you go back to Parts 1 and 2? If Player 1 inputs the wrong value, what happens? How about when Player 2 inputs the wrong value? You’ll notice that you no longer get your expected outputs from Parts 1 and 2. Instead, the program keeps running and doesn’t exit immediately.</p>
 <p>It’s good practice to handle bad input from an end-user gracefully in your programs. Our strategy, for now, will be to simply print an error message and then exit the program early. There is a special built-in function called <code>exit()</code> that will send a signal to your system and tell the program to quit at that point, not continuing on further in the program. Before attempting to implement the following behavior in your program, think about where it logically <em>makes sense</em> to try adding these checks for correct input.</p>
 <p>Once you make these changes, you should get the expected outputs from Parts 1 and 2 again, while still getting the correct functionality added in Parts 3 and 4.</p>
-<h2 id="part-6.-type-safety-and-linting">Part 6. Type Safety and Linting</h2>
+<h2 id="part-6.-type-safety-and-linting---10-points">Part 6. Type Safety and Linting - 10 points</h2>
 <p>The autograder uses industry standard tools for checking the type safety of your programs (e.g. being sure you’re using variables of the correct data types in valid ways) and linting style rules. If you have point deductions on Type Safety or Linting, read through the feedback the autograder gives and it should direct you to the line number in your program with the issue.</p>
 <h2 id="part-7.-hand-grading">Part 7. Hand Grading</h2>
 <p>Part of this assignment will be hand graded to make sure you only use concepts within the course.</p>
 <p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct.</p>
+<h2 id="rubric">Rubric</h2>
+<ul>
+<li>Part 0. Setting up the Python Program - 10 points</li>
+<li>Part 1. Prompting for Player 1 Input - 15 points</li>
+<li>Part 2. Prompting for Player 2 Input - 15 points</li>
+<li>Part 3. Checking User Input for Match - 20 points</li>
+<li>Part 4. Printing A String of Boxes - 20 points</li>
+<li>Part 5. Exiting Early for Invalid Inputs - 10 points</li>
+<li>Part 6. Type Safety and Linting - 10 points</li>
+</ul>
 <h2 id="submit-to-gradescope-for-grading">Submit to Gradescope for Grading</h2>
 <p>All that’s left now is to hand-in your work on Gradescope for grading!</p>
 <p>Login to Gradescope and select the assignment named “EX01 - Chardle”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
