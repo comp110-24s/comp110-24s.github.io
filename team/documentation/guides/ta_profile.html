@@ -7,7 +7,7 @@
     <title> Set Up Your TA Profile - COMP110 - 22F</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/static/styles.css?v=1704685306.503538">
+    <link rel="stylesheet" href="/static/styles.css?v=1704686647.4574232">
 </head>
 
 <body id="body" class="absolute-page container">
@@ -84,7 +84,7 @@
 <p>If you have the team repo and can successfuly run either <code>python -m dev</code> or <code>python -m hotdev</code> you are good to go!</p>
 <h2 id="creating-a-profile">Creating a Profile</h2>
 <ol type="1">
-<li>Make sure you’re on the master branch (<code>git checkout master</code>) and run the command <code>git pull origin master</code> to get the latest updates.</li>
+<li>Make sure you’re on the main branch (<code>git checkout main</code>) and run the command <code>git pull origin main</code> to get the latest updates.</li>
 <li>Checkout a new <code>git</code> branch. In your terminal run the following command, replacing ONYEN with your onyen: <code>git checkout -b ONYEN-profile</code></li>
 <li>In the <code>site/static/profile-photos/</code> directory insert the photo of yourself you want on your profile. Resize this image to be exactly than <strong>300x300</strong> and name it <code>ONYEN</code>.png/jpg</li>
 <li>In the <code>site/resources/profiles</code> directory create a new markdown file named <code>ONYEN.md</code> (replacing ONYEN with your onyen). Feel free to just paste the contents of someone else’s profile into yours and fill in the relevant information. You’ll want to make sure the relative path to your profile picture is correct. Note: Make sure the file extension of your photo in the <code>static</code> directory and the extension in this path match – it is case sensitive! Doesn’t matter if you have PNG or png, just be consistent.</li>
@@ -156,11 +156,11 @@
 <ol type="1">
 <li>If you haven’t been committing progress on your profile to the branch you setup for it… commit it! To do this, first add the files you’ve changed to the staging area: <code>git add &lt;../site/static/profile-photos/ONYEN.png&gt; &lt;../site/students/profiles/ONYEN.md&gt; &lt;../site/students/resources/team.md&gt;</code> or you could simply run <code>git add .</code> to add every single change file at once. Then commit your changes: <code>git commit -m "your_name Profile Page."</code></li>
 <li>Push your work to your training branch on the staff repo (<code>git push origin [your-branch-name]</code>). Check your branch with <code>git branch</code>.</li>
-<li>Open GitHub Pull Requests on the <code>team110</code> repo: https://github.com/comp110/team110/pulls</li>
+<li>Open GitHub Pull Requests on the <code>comp110</code> repo: https://github.com/comp110-lytle/comp110/pulls</li>
 <li>You might/should see a yellow notification box: “Your recently pushed branches…”. If so select “Compare &amp; Pull Request”. If not, select “New Pull Request”, and in the Compare branch drop-down select your branch.</li>
 <li>Scroll through the differences and confirm your latest changes were successfully pushed. If you don’t see them, check that you committed everything you expected and pushed to your branch. Select “Create Pull Request”.</li>
 <li>In the description box, briefly describe your branch – “<Name> Profile Page” is just fine.</li>
-<li>On the right-hand sidebar, select Kris or a Web Lead as a reviewer.</li>
+<li>On the right-hand sidebar, select Alyssa or a Web Lead as a reviewer.</li>
 <li>Create pull request!</li>
 </ol>
 <p>From here, a brief pass (and potentially some some revisions) will be taken by the reviewer and then merged in.</p>
@@ -203,15 +203,15 @@
 
     <!-- Load our React components. -->
 
-    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1704685306.503538"></script>
-    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1704685306.503538"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1704685306.503538"></script>
-        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1704685306.503538"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1704685306.503538"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1704685306.503538"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1704685306.503538"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1704685306.503538"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1704685306.503538"></script>
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1704686647.4574232"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1704686647.4574232"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1704686647.4574232"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1704686647.4574232"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1704686647.4574232"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1704686647.4574232"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1704686647.4574232"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1704686647.4574232"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1704686647.4574232"></script>
     <script src="/static/scripts/log-in-handler.js"></script>
 
     
