@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1704766941.2269247">
+  <link rel="stylesheet" href="/static/styles.css?v=1704767234.4093397">
 </head>
 
 <body>
@@ -66,8 +66,8 @@
 <li><a href="#background-lesson-formatted-strings-f-strings">Background Lesson: Formatted Strings (f-Strings)</a></li>
 <li><a href="#part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</a></li>
 <li><a href="#part-1.-establishing-a-secret-and-prompting-for-a-guess-30-points">Part 1. Establishing a Secret and Prompting for a Guess – 30 Points</a></li>
-<li><a href="#part-2.-print-a-grid-xx-points">Part 2. Print a Grid – XX Points</a></li>
-<li><a href="#part-3.-giving-a-hint-to-your-user-xx-points">Part 3. Giving A Hint to Your User – XX Points</a></li>
+<li><a href="#part-2.-print-a-grid-30-points">Part 2. Print a Grid – 30 Points</a></li>
+<li><a href="#part-3.-giving-a-hint-to-your-user-10-points">Part 3. Giving A Hint to Your User – 10 Points</a></li>
 <li><a href="#part-4.-style-and-documentation-requirements-20-points-manually-graded">Part 4. Style and Documentation Requirements – 20 Points (Manually Graded)</a></li>
 <li><a href="#part-5.-type-safety-and-linting---9-points">Part 5. Type Safety and Linting - 9 Points</a></li>
 <li><a href="#make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</a></li>
@@ -174,7 +174,7 @@
 <p>Before you continue on, does this step of your program work correctly if you change the value for the size of your grid? What if you make the size 5, and thus the grid 5 by 5? Make sure you’re using the grid size variable to compare, and not hard coding it!</p>
 <p>Additionally, be sure you are using <code>f-String</code> templates rather than conatenation for this text output (not the grid), as introduced in the background lesson.</p>
 <p><strong>WARNING:</strong> Autograding will very specifically be looking for <em>exactly</em> the format of lines output shown above. You will not see the <code>$</code> at your command-line prompt in VSCode, you can ignore that part. Otherwise, when you run the program on your machine with the same inputs as above on the first two lines, your printed results should look exactly like it.</p>
-<h2 id="part-2.-print-a-grid-xx-points">Part 2. Print a Grid – XX Points</h2>
+<h2 id="part-2.-print-a-grid-30-points">Part 2. Print a Grid – 30 Points</h2>
 <p>In battleship, you normally have a grid of blue boxes instead of just one row of ocean as seen in EX01. Using the concept of <code>while</code> loops, you’ll be able to print out a grid of the size of your choice! Remember, the location of your guess in the grid will contain a red box if you guessed correctly and a white box if not. If you haven’t already, paste in the following constants:</p>
 <pre><code>    BLUE_BOX: str = &quot;\U0001F7E6&quot;
     RED_BOX: str = &quot;\U0001F7E5&quot;
@@ -241,7 +241,7 @@
     Hit!
 </div>
 </pre>
-<h2 id="part-3.-giving-a-hint-to-your-user-xx-points">Part 3. Giving A Hint to Your User – XX Points</h2>
+<h2 id="part-3.-giving-a-hint-to-your-user-10-points">Part 3. Giving A Hint to Your User – 10 Points</h2>
 <p>What if your user was very close? Right row, but wrong column? Right column, but wrong row?</p>
 <p>Add a couple <code>elif</code> statements to your user feedback (“Hit!” and “Miss” logic). Your program should perform like this after this step (if the secret row is 3 and column is 2):</p>
 <pre>
