@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1705374346.6483169">
+  <link rel="stylesheet" href="/static/styles.css?v=1705409560.2706573">
 </head>
 
 <body>
@@ -80,9 +80,9 @@
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h2 id="overview">Overview</h2>
 <p>Please complete all lessons before attempting to begin this exercise.</p>
-<p>The next step in our journey to implementing Battleship is to produce a program that gives the player one shot at guessing your program’s secret word. (Of couse, they can play the game multiple times in order to have multiple chances.)</p>
+<p>The next step in our journey to implementing Battleship is to produce a program that gives the player one shot at guessing your program’s secret boat location. (Of couse, they can play the game multiple times in order to have multiple chances.)</p>
 <p>In this exercise, you will print out a grid of boxes instead of just one line, and prompt the user for a <strong>row</strong> and <strong>column</strong> for their guess. Level up!</p>
-<p>You should follow the steps below for implementing the program one step at a time. To get a sense of where you are going, here is an example of a final game ():</p>
+<p>You should follow the steps below for implementing the program one step at a time. To get a sense of where you are going, here is an example of the final game:</p>
 <pre>
 <div class="terminal">
     $ python -m exercises.ex01_one_shot_battleship
@@ -110,15 +110,13 @@
     🟦🟦🟦🟦
     🟦🟦⬜🟦
     🟦🟦🟦🟦
-    Close! Right row, wrong column.
+    Close! Correct row, wrong column.
     
     $ python -m exercises.ex01_one_shot_battleship
     Guess a row: 5
-    The grid is only 4 by 4.
-    Guess a row: 3
+    The grid is only 4 by 4. Try again: 3
     Guess a column: 6
-    The grid is only 4 by 4.
-    Guess a column: 2
+    The grid is only 4 by 4. Try again: 2
     🟦🟦🟦🟦
     🟦🟦🟦🟦
     🟦🟥🟦🟦
@@ -127,7 +125,7 @@
 </div>
 </pre>
 <h2 id="permitted-constructs">Permitted Constructs</h2>
-<p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop. Additionally, string methods (such as <code>.count</code> and <code>.format</code>) are not permitted.</p>
+<p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop.</p>
 <h2 id="background-lesson-formatted-strings-f-strings">Background Lesson: Formatted Strings (f-Strings)</h2>
 <p>In this exercise, you will need to make use of another advanced string concept: formatted Strings (f-Strings)</p>
 <p>Before beginning work on this exercise, you might want to reread the following lesson: <a href="/lessons/strings.html">LS11 - Unicode, Emoji, Escape Sequences, and f-Strings</a></p>
@@ -138,11 +136,11 @@
 <ul>
 <li><code>ex02_one_shot_battleship.py</code></li>
 </ul>
-<p>Before beginning work on the program, you should add a <em>docstring</em> to the top of your Python <em>module</em> just as you did in EX00 and EX01. Then, you should add a line with the special variable named <code>__author__</code> assigned to be a <strong>string</strong> with your 9-digit student PID. (Disclaimer: Out in the real world the <code>__author__</code> variable is typically your name and e-mail address, but since we will grade your programs we’d like to avoid potential bias in seeing your names as part of the programs as we’re grading.) Fill in <em>your</em> 9-digit UNC PID number, without any spaces or dashes, in the <code>__author__</code> string.</p>
+<p>Before beginning work on the program, you should add a <em>docstring</em> to the top of your Python <em>module</em> just as you did in EX00 and EX01. Then, you should add a line with the special variable named <code>__author__</code> assigned to be a <strong>string</strong> with your 9-digit student PID. Fill in <em>your</em> 9-digit UNC PID number, without any spaces or dashes, in the <code>__author__</code> string.</p>
 <h2 id="part-1.-establishing-a-secret-and-prompting-for-a-guess-30-points">Part 1. Establishing a Secret and Prompting for a Guess – 30 Points</h2>
-<p>First, you’ll need to establish a few variables: an <code>int</code> for the size of your grid, <code>int</code> for secret row, <code>int</code> for secret column. For the purposes of the autograder, hard code your grid size, secret row, and secret column to 4, 3, and 2 respectively.</p>
-<p>Go ahead and prompt the user for a guess for column and row as show below. Compare the guesses to the secret variables, to output “Hit!” or “Miss!”.</p>
-<p>Additionally, in simple battleship, you would exit if the user gave an invalid input. This time around, how about we add the ability to re-input a guess if given an invalid input. With the help of <code>while</code> loops, see if you can continue to prompt the player until they provide a guess that is within the bounds of the size of the grid. Here’s how your program should perform after this step:</p>
+<p>First, you’ll need to establish a few variables: an <code>int</code> for the size of your grid, an <code>int</code> for a secret row, and an <code>int</code> for a secret column. For the purposes of the autograder, hard code your grid size, secret row, and secret column to 4, 3, and 2 respectively.</p>
+<p>Go ahead and prompt the user to guess a row and column as show below. Compare the guesses to the secret variables, to output “Hit!” or “Miss!”.</p>
+<p>Additionally, in simple battleship, you would exit if the user gave an invalid input. This time around, we will add the ability to re-input a guess if given an invalid input. With the help of <code>while</code> loops, see if you can continue to prompt the player until they provide a guess that is within the bounds of the size of the grid. Here’s how your program should perform after this step:</p>
 <pre>
 <div class="terminal">
     $ python -m exercises.ex01_one_shot_battleship
@@ -152,62 +150,59 @@
 
     $ python -m exercises.ex01_one_shot_battleship
     Guess a row: 5
-    The grid is only 4 by 4. Try again:
-    Guess a row: 1
+    The grid is only 4 by 4. Try again: 1
     Guess a column: 6
-    The grid is only 4 by 4. Try again:
-    Guess a column: 2
+    The grid is only 4 by 4. Try again: 2
     Miss!
 
     $ python -m exercises.ex01_one_shot_battleship
     Guess a row: 5
-    The grid is only 4 by 4. Try again:
-    Guess a row: 12390
-    The grid is only 4 by 4. Try again:
-    Guess a row: 3
+    The grid is only 4 by 4. Try again: 12390
+    The grid is only 4 by 4. Try again: 3
     Guess a column: 123589
-    The grid is only 4 by 4. Try again:
-    Guess a column: 2
+    The grid is only 4 by 4. Try again: 2
     Hit!
 </div>
 </pre>
-<p>Before you continue on, does this step of your program work correctly if you change the value for the size of your grid? What if you make the size 5, and thus the grid 5 by 5? Make sure you’re using the grid size variable to compare, and not hard coding it!</p>
-<p>Additionally, be sure you are using <code>f-String</code> templates rather than conatenation for this text output (not the grid), as introduced in the background lesson.</p>
+<p>Before you continue on, does this step work correctly if you change the value for the size of your grid? If you set grid size to 5, does the re-input statement say, “The grid is only 5 by 5. Try again:”? Make sure you are using the grid size variable to enforce the bounds of a valid input, and not hard coding it!</p>
+<p>Additionally, be sure you are using <code>f-String</code> templates rather than conatenation for text output in this section as introduced in the background lesson.</p>
 <p><strong>WARNING:</strong> Autograding will very specifically be looking for <em>exactly</em> the format of lines output shown above. You will not see the <code>$</code> at your command-line prompt in VSCode, you can ignore that part. Otherwise, when you run the program on your machine with the same inputs as above on the first two lines, your printed results should look exactly like it.</p>
 <h2 id="part-2.-print-a-grid-30-points">Part 2. Print a Grid – 30 Points</h2>
-<p>In battleship, you normally have a grid of blue boxes instead of just one row of ocean as seen in EX01. Using the concept of <code>while</code> loops, you’ll be able to print out a grid of the size of your choice! Remember, the location of your guess in the grid will contain a red box if you guessed correctly and a white box if not. If you haven’t already, paste in the following constants:</p>
+<p>In battleship, you normally have a grid of blue boxes instead of just one row of ocean as seen in EX01. Using the concept of <code>while</code> loops, you’ll be able to print out any grid at the size of your choice! Remember, the location of your guess within the grid will contain a red box if you guessed correctly and a white box if not. If you haven’t already, paste in the following constants:</p>
 <pre><code>    BLUE_BOX: str = &quot;\U0001F7E6&quot;
     RED_BOX: str = &quot;\U0001F7E5&quot;
     WHITE_BOX: str = &quot;\U00002B1C&quot;</code></pre>
-<p>Since loops are new to your repertoire, in this exercise we will give you a general strategy for accomplishing this task. Your job will be to translate this plan in English into working Python code.</p>
+<p>Since loops are new to your repertoire, we will give you a general strategy for accomplishing this task. Your job will be to translate this plan in English into working Python code.</p>
 <ol type="1">
-<li>First, establish a counter variable to keep track how many times you’ve iterated through the loop.</li>
-<li><em>While</em> the counter variable is less than the size of the grid you specified, do as follows:
+<li>First, come up with a result box <code>str</code> similar to how you did in EX01, which will either be a red or white box depending on the correctness of the user’s guesses.</li>
+<li>Then, establish an <code>int</code> counter variable to keep track how many times you’ve printed a row.</li>
+<li><em>While</em> the row counter variable is less than the size of the grid, do as follows:
 <ol type="1">
-<li>Test to see if the user guess for row is equal to the counter + 1 (remember, this is because the counter starts at 0).
+<li>Test to see if the user’s row guess is equal to the row counter + 1——(remember, this is because counters start at 0).
 <ol type="1">
-<li>If so, create a another counter variable to count how many times you’ve printed a row.
+<li>If so, create a <code>str</code> to store your emoji string for a singular row.</li>
+<li>Also create a column counter variable to keep track of how many times you have concatenated an emoji box to the row string.
 <ol type="1">
-<li>You’ll also want to create a <code>str</code> to keep track of your emoji boxes.</li>
-<li><em>While</em> your row counter variable is less than the size of the grid, do as follows (creates a row):
+<li><em>While</em> your column counter variable is less than the size of the grid, do as follows:
 <ol type="1">
-<li>If the user guess for column is equal to the counter + 1, concatenate the user guess box (red or white)</li>
-<li>Else, add a blue box.</li>
-<li>After the test, increase your row counter variable by one so that you do not have an infinite loop.</li>
+<li>If the user guess for column is equal to the counter + 1, concatenate the result box (red or white) to the row string.</li>
+<li>Else, concatenate a blue box to the row string.</li>
+<li>After the conditional, increase your row counter variable by one so that you do not have an infinite loop.</li>
 </ol></li>
-<li>Once the loop completes, print the emoji string. (one row is outputted)</li>
+<li>Once the loop completes, print the emoji string (one row is outputted).</li>
 </ol></li>
-<li>Otherwise, still create the row counter variable and the <code>str</code> variable, but this time, use the following <code>while</code> loop logic:
+</ol></li>
+<li>Otherwise:
 <ol type="1">
-<li><em>While</em> the row counter variable is less than the size of the grid, do the following:
+<li>Still create the column counter variable and the <code>str</code> variable for a row of emojis, but this time, use the following <code>while</code> loop logic:</li>
+<li><em>While</em> the column counter variable is less than the size of the grid, do the following:
 <ol type="1">
 <li>Concatenate a blue box.</li>
-<li>Increment your row counter variable by one to avoid an infinite loop.</li>
+<li>Increment your column counter variable by one to avoid an infinite loop.</li>
 </ol></li>
-<li>When you exit the while loop, print the emoji string.</li>
+<li>When you exit the while loop, print the emoji string (one row is outputted).</li>
 </ol></li>
-</ol></li>
-<li>Increment your first counter variable by one to avoid an infinite loop.</li>
+<li>Increment your first row counter variable by one to avoid an infinite loop.</li>
 </ol></li>
 </ol>
 <p>Once you have completed this part of the program, your output should look as follows (should the secret row be 3 and secret column be 2.)</p>

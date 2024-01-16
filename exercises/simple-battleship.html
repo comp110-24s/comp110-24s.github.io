@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1705374346.324075">
+  <link rel="stylesheet" href="/static/styles.css?v=1705409559.9445622">
 </head>
 
 <body>
@@ -81,7 +81,7 @@
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h2 id="introduction">Introduction</h2>
 <p>This semester, we will take inspiration from the strategy game of <a href="https://www.youtube.com/watch?v=4gHJlYLomrs">Battleship</a>!</p>
-<p>This exercise is meant to be the first step to building the full game! You will prompt Player 1 to input a secret number between 1 and 4. Then, you will prompt Player 2 to guess the secret number. Then you will tell Player 2 whether or not they guessed correctly (aka whether it was a <em>hit</em> or a <em>miss</em>) using colored boxes. For both player inputs, you will also notify the user if they input a number out of range.</p>
+<p>This exercise is meant to be the first step to building the full game. You will prompt Player 1 to input a secret number between 1 and 4. Then, you will prompt Player 2 to guess the secret number. Then you will tell Player 2 whether or not they guessed correctly (aka whether it was a <em>hit</em> or a <em>miss</em>) using colored boxes. For both player inputs, you will also notify the user if they input a number out of range.</p>
 <p>You can follow the steps below for implementing the program one step at a time. To get a sense of where you are going, though, consider what we expect the output to be given some example inputs:</p>
 <pre>
 <div class="terminal">
@@ -152,7 +152,7 @@
 </pre>
 <p><strong>WARNING:</strong> Autograding will very specifically be looking for <em>exactly</em> the format of lines output shown above. You will not see the <code>$</code> at your command-line prompt in VSCode, you can ignore that part. Otherwise, when you run the program on your machine with the same inputs as above, your printed results should match exactly.</p>
 <h2 id="part-3.-checking-user-input-for-match---20-points">Part 3. Checking User Input for Match - 20 points</h2>
-<p>Now that you have gathered your inputs from Part 1 and Part 2 and stored them as variables, your task is to check if the Player 2’s guess is equivalent to the box where the ship is hidden (hint: <em>is equal to</em>). These checks will involve combining concepts you’ve learned in recent lessons:</p>
+<p>Now that you have gathered your inputs from Part 1 and Part 2 and stored them as variables, your task is to check if Player 2’s guess <em>is equal to</em> to the box where the ship is hidden. These checks will involve combining concepts you’ve learned in recent lessons:</p>
 <ul>
 <li><a href="/lessons/expressions.html">Expressions</a>
 <ul>
@@ -183,9 +183,9 @@
 <pre><code>    BLUE_BOX: str = &quot;\U0001F7E6&quot;
     RED_BOX: str = &quot;\U0001F7E5&quot;
     WHITE_BOX: str = &quot;\U00002B1C&quot;</code></pre>
-<p>Next, create a <code>str</code> guess result variable and modify your current <code>if</code> and <code>else</code> statements in the following way:</p>
-<p><em>If</em> the Player 2’s guess matches Player 1’s secret number, make the guess result variable red. <em>Else</em>, make the guess result variable white.</p>
-<p>Now, you need to start building your string of emoji boxes. Establish another <code>str</code> variable to store the resulting emoji string of the guess and initialize it to an empty string. Essentially, the default box should be blue, unless its the box position that the user correctly or incorrectly picked (red or white, respectively). In the future, you will use <em>loops</em> to make this process more efficient, but for now, you will need a series of <code>if</code> statements to check each possible option. Here’s an example for the first one:</p>
+<p>Next, create a <code>str</code> result variable and modify your current <code>if</code> and <code>else</code> statements in the following way:</p>
+<p><em>If</em> Player 2’s guess matches Player 1’s secret number, set result variable to a red box. <em>Else</em>, set the result variable to a white box.</p>
+<p>Now, you need to start building your full string of emoji boxes by establishing another <code>str</code> variable to store it in and initializing that to an empty string. Essentially, the default box should be blue, unless its the box position that the user correctly or incorrectly guessed (red or white, respectively). In the future, you will use <em>loops</em> to make this process more efficient, but for now, you will need a series of <code>if</code> statements to check each possible option. Here’s an example for the first one:</p>
 <p><em>If</em> Player 2’s guess equals 1, concatenate the guess box to the resulting emoji string of boxes. <em>Else</em>, contatenate the blue box.</p>
 <p>The logic is similar for all other possible box numbers. After checking for each posible box, print the resulting emoji string of boxes.</p>
 <p>Your goal in this part is to be able to do the following:</p>
@@ -208,8 +208,8 @@
 </div>
 </pre>
 <h2 id="part-5.-exiting-early-for-invalid-inputs---10-points">Part 5. Exiting Early for Invalid Inputs - 10 points</h2>
-<p>Now that you’ve added more functionality to your program in Parts 3 and 4, what happens when you go back to Parts 1 and 2? If Player 1 inputs the wrong value, what happens? How about when Player 2 inputs the wrong value? You’ll notice that you no longer get your expected outputs from Parts 1 and 2. Instead, the program keeps running and doesn’t exit immediately.</p>
-<p>It’s good practice to handle bad input from an end-user gracefully in your programs. Our strategy, for now, will be to simply print an error message and then exit the program early. There is a special built-in function called <code>exit()</code> that will send a signal to your system and tell the program to quit at that point, not continuing on further in the program. Before attempting to implement the following behavior in your program, think about where it logically <em>makes sense</em> to try adding these checks for correct input.</p>
+<p>Now that you’ve added more functionality to your program in Parts 3 and 4, see what happens when you go back to Parts 1 and 2. If Player 1 inputs an invalid value, what happens? How about when Player 2 inputs an invalid value? You’ll notice that you no longer get your expected outputs from Parts 1 and 2. Instead, the program keeps running and doesn’t exit immediately.</p>
+<p>It’s good practice to handle bad input from an end-user gracefully in your programs. Our strategy, for now, will be to simply print an error message and then exit the program early. There is a special built-in function called <code>exit()</code> that will send a signal to your system and tell the program to quit at that point, not continuing on further in the program. Before implementing the function in your program, think about when and where it logically <em>makes sense</em> to quit.</p>
 <p>Once you make these changes, you should get the expected outputs from Parts 1 and 2 again, while still getting the correct functionality added in Parts 3 and 4.</p>
 <h2 id="part-6.-type-safety-and-linting---10-points">Part 6. Type Safety and Linting - 10 points</h2>
 <p>The autograder uses industry standard tools for checking the type safety of your programs (e.g. being sure you’re using variables of the correct data types in valid ways) and linting style rules. If you have point deductions on Type Safety or Linting, read through the feedback the autograder gives and it should direct you to the line number in your program with the issue.</p>

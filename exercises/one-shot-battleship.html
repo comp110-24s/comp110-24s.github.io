@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1705374346.9794266">
+  <link rel="stylesheet" href="/static/styles.css?v=1705409560.612484">
 </head>
 
 <body>
@@ -80,7 +80,7 @@
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h2 id="overview">Overview</h2>
 <p>Please complete all lessons before attempting to begin this exercise.</p>
-<p>The next step on our journey to implementing Battleship is to produce a program that gives the player one shot at guessing your program’s secret word. (Of couse, they can play the game multiple times in order to have multiple chances.)</p>
+<p>The next step in our journey to implementing Battleship is to produce a program that gives the player one shot at guessing your program’s secret word. (Of couse, they can play the game multiple times in order to have multiple chances.)</p>
 <p>In this exercise, you will print out a grid of boxes instead of just one line, and prompt the user for a <strong>row</strong> and <strong>column</strong> for their guess. Level up!</p>
 <p>You should follow the steps below for implementing the program one step at a time. To get a sense of where you are going, here is an example of a final game ():</p>
 <pre>
@@ -126,7 +126,7 @@
     Hit!
 </div>
 </pre>
-<p>Note: each time you run the game, the random secret row and column are regenerated. You might want to hard code your secret row and column for the testing of your program and then switch them back to random at the end!</p>
+<p>Note: You will hard code your secret row and column, however, do go about changing these values when playing with your code. Just make sure to set them to the specified values before you submit to Gradescope.</p>
 <h2 id="permitted-constructs">Permitted Constructs</h2>
 <p>We expect you to implement this exercise using only the concepts covered in COMP110. If you have prior programming experience, restrict your implementation to only the concepts covered. While there are many ways to implement this program with additional concepts beyond those we have covered, you should not attempt to do so until after submitting this exercise for full credit once the autograder is posted. Gaining additional practice with the fundamentals may feel clunky, but will help ensure you have full command over the concepts we expect you to know. Additionally, it is good practice for working in other programming environments which are more constrained and require creativity to overcome restrictions. For this exercise, you will be penalized for using any kind of loop construct other than a <code>while</code> loop. Additionally, string methods (such as <code>.count</code> and <code>.format</code>) are not permitted.</p>
 <h2 id="background-lesson-formatted-strings-f-strings">Background Lesson: Formatted Strings (f-Strings)</h2>
@@ -141,12 +141,13 @@
 </ul>
 <p>Before beginning work on the program, you should add a <em>docstring</em> to the top of your Python <em>module</em> just as you did in EX00 and EX01. Then, you should add a line with the special variable named <code>__author__</code> assigned to be a <strong>string</strong> with your 9-digit student PID. (Disclaimer: Out in the real world the <code>__author__</code> variable is typically your name and e-mail address, but since we will grade your programs we’d like to avoid potential bias in seeing your names as part of the programs as we’re grading.) Fill in <em>your</em> 9-digit UNC PID number, without any spaces or dashes, in the <code>__author__</code> string.</p>
 <h2 id="part-1.-print-a-grid-xx-points">Part 1. Print a Grid – XX Points</h2>
-<p>In battleship, you normally have a grid instead of just one row of ocean. Using the concept of <code>while</code> loops, you’ll be able to print out a grid of the size of your choice!</p>
+<p>In battleship, you normally have a grid instead of just one row of ocean as seen in EX01. Using the concept of <code>while</code> loops, you’ll be able to print out a grid of the size of your choice!</p>
 <p>First, you’ll need to establish a few variables: an <code>int</code> for the size of your grid, <code>int</code> for secret row, <code>int</code> for secret column, <code>i</code> as a counter, and <code>bool</code> for whether the user has made a correct guess (initialize that to <code>False</code>).</p>
-<p>For debugging purposes, hard code your secret row and secret column to 3 and 2 respectively.</p>
+<p>You will also prompt for user input, asking for a row and column guess as below. EDITING HERE</p>
+<p>For the purposes of the autograder, hard code your secret row and secret column to 3 and 2 respectively.</p>
 <p>Since loops are new to your repertoire, in this exercise we will give you a general strategy for accomplishing this task. Your job will be to translate this plan in English into working Python code.</p>
 <ol type="1">
-<li>First, establish a variable to keep track how many times you’ve gone through the loop to print a row.</li>
+<li>First, establish a variable to keep track how many times you’ve iterated through the loop to print a row.</li>
 <li><em>While</em> the counter variable is less than the size of the grid you specified, do as follows:
 <ol type="1">
 <li>Test to see if the user guess for row is equal to the counter + 1 – This is because :
@@ -207,8 +208,8 @@
 </div>
 </pre>
 <h2 id="part-2.-establishing-a-secret-and-prompting-for-a-guess-30-points">Part 2. Establishing a Secret and Prompting for a Guess – 30 Points</h2>
-<p>Now that you have your grid printing out, how about we add some hints to help your user. First one, the ability to try again after an invalid input!</p>
-<p>In simple battleship, you would exit if the user gave an invalid input. Now, with the help of <code>while</code> loops, see if you can continue to prompt the player until the provide a guess that within the bounds of the size of the grid you pick. Here’s how your program should perform after this step:</p>
+<p>Now that you have your grid printing out, how about we add some guidance to help your user. First, the ability to re-input a guess after giving an invalid input!</p>
+<p>In simple battleship, you would exit if the user gave an invalid input. Now, with the help of <code>while</code> loops, see if you can continue to prompt the player until they provide a guess that is within the bounds of the size of the grid. Here’s how your program should perform after this step:</p>
 <pre>
 <div class="terminal">
     $ python -m exercises.ex01_one_shot_battleship
