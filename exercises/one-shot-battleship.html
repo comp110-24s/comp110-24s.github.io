@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1705509662.5094512">
+  <link rel="stylesheet" href="/static/styles.css?v=1705511713.1216547">
 </head>
 
 <body>
@@ -85,7 +85,7 @@
 <p>You should follow the steps below for implementing the program one step at a time. To get a sense of where you are going, here is an example of the final game:</p>
 <pre>
 <div class="terminal">
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 2
     Guess a column: 4
     🟦🟦🟦🟦
@@ -94,7 +94,7 @@
     🟦🟦🟦🟦
     Miss!
 
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 1
     Guess a column: 2
     🟦⬜🟦🟦
@@ -103,7 +103,7 @@
     🟦🟦🟦🟦
     Close! Correct column, wrong row.
 
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 3
     Guess a column: 3
     🟦🟦🟦🟦
@@ -112,7 +112,7 @@
     🟦🟦🟦🟦
     Close! Correct row, wrong column.
     
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 5
     The grid is only 4 by 4. Try again: 3
     Guess a column: 6
@@ -143,19 +143,19 @@
 <p>Additionally, in simple battleship, you would exit if the user gave an invalid input. This time around, we will add the ability to re-input a guess if given an invalid input. With the help of <code>while</code> loops, see if you can continue to prompt the player until they provide a guess that is within the bounds of the size of the grid. Here’s how your program should perform after this step:</p>
 <pre>
 <div class="terminal">
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 3
     Guess a column: 2
     Hit!
 
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 5
     The grid is only 4 by 4. Try again: 1
     Guess a column: 6
     The grid is only 4 by 4. Try again: 2
     Miss!
 
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 5
     The grid is only 4 by 4. Try again: 12390
     The grid is only 4 by 4. Try again: 3
@@ -174,7 +174,7 @@
     WHITE_BOX: str = &quot;\U00002B1C&quot;</code></pre>
 <p>Since loops are new to your repertoire, we will give you a general strategy for accomplishing this task. Your job will be to translate this plan in English into working Python code.</p>
 <ol type="1">
-<li>First, come up with a result box <code>str</code> similar to how you did in EX01, which will either be a red or white box depending on the correctness of the user’s guesses.</li>
+<li>First, come up with a result box <code>str</code> similar to how you did in EX02, which will either be a red or white box depending on the correctness of the user’s guesses.</li>
 <li>Then, establish an <code>int</code> counter variable to keep track how many times you’ve printed a row.</li>
 <li><em>While</em> the row counter variable is less than the size of the grid, do as follows:
 <ol type="1">
@@ -208,7 +208,7 @@
 <p>Once you have completed this part of the program, your output should look as follows (should the secret row be 3 and secret column be 2.)</p>
 <pre>
 <div class="terminal">
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 2
     Guess a column: 4
     🟦🟦🟦🟦
@@ -217,7 +217,7 @@
     🟦🟦🟦🟦
     Miss!
 
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 3
     Guess a column: 3
     🟦🟦🟦🟦
@@ -226,7 +226,7 @@
     🟦🟦🟦🟦
     Miss!
     
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 3
     Guess a column: 2
     🟦🟦🟦🟦
@@ -241,7 +241,7 @@
 <p>Add a couple <code>elif</code> statements to your user feedback (“Hit!” and “Miss” logic). Your program should perform like this after this step (if the secret row is 3 and column is 2):</p>
 <pre>
 <div class="terminal">
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 2
     Guess a column: 4
     🟦🟦🟦🟦
@@ -250,7 +250,7 @@
     🟦🟦🟦🟦
     Miss!
 
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 1
     Guess a column: 2
     🟦⬜🟦🟦
@@ -259,7 +259,7 @@
     🟦🟦🟦🟦
     Close! Correct column, wrong row.
 
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 3
     Guess a column: 4
     🟦🟦🟦🟦
@@ -268,7 +268,7 @@
     🟦🟦🟦🟦
     Close! Correct row, wrong column.
 
-    $ python -m exercises.ex01_one_shot_battleship
+    $ python -m exercises.ex02_one_shot_battleship
     Guess a row: 5
     The grid is only 4 by 4. Try again:
     Guess a row: 3
