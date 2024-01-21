@@ -7,7 +7,7 @@
     <title> Course Site Setup - COMP110 - 22F</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/static/styles.css?v=1705692232.1739244">
+    <link rel="stylesheet" href="/static/styles.css?v=1705862497.9718142">
 </head>
 
 <body id="body" class="absolute-page container">
@@ -83,18 +83,17 @@
 <ul>
 <li><p>Go to <a href="https://github.com/comp110-lytle/comp110" class="uri">https://github.com/comp110-lytle/comp110</a> and clone the repo by pressing the green code button.</p>
 <p><img src="/static/team/repo-instructions/step_1.png" width="500" /></p>
-<p>&lt;!– &gt; If you can’t open this link, you have not been added to the team org on Github. Send your github username to Kris!</p></li>
-<li><p>Open the <code>Team 110.code-workspace</code> file in VSCODE as a Workspace (don’t just open the top-level directory) –&gt;</p>
+<blockquote>
+<p>If you can’t open this link, you have not been added to the team org on Github. Send your github username to Alyssa or a web lead!</p>
+</blockquote></li>
+<li><p>Open the <code>comp110</code> file in VSCODE as a Workspace –&gt;</p>
 <p><img src="/static/team/repo-instructions/step_2.png" width="500" /></p></li>
 </ul>
-<!-- - Make sure you're in the `team110` folder in your terminal and the master branch.
-
-  ![](/static/team/repo-instructions/step_3.png){width=500} -->
 <h2 id="install-packages">Install Packages</h2>
 <p>Note: You may have done this step before, but there are often new dependencies being added, so make sure to run the command again.</p>
 <ul>
 <li>Update pip by running: <code>python -m pip install -U pip</code>.</li>
-<li>Make sure your terminal is in the right directory. If you type <code>pwd</code> in the terminal it should print <code>/Some/Path/.../comp110/code</code>. If it says something like <code>/Some/Path/.../comp110</code>, then try typing <code>cd code</code> to navigate into the <code>code</code> directory.</li>
+<li>Make sure your terminal is in the right directory. If you type <code>pwd</code> in the terminal it should print <code>/Some/Path/.../comp110/site</code>. If it says something like <code>/Some/Path/.../comp110</code>, then try typing <code>cd site</code> to navigate into the <code>site</code> directory.</li>
 <li>Install required PyPI packages in <code>requirements.txt</code> with the following command: <code>python -m pip install -r requirements.txt</code>.</li>
 </ul>
 <h2 id="install-pandoc">Install Pandoc</h2>
@@ -106,7 +105,7 @@
 <li>To view any changes you are making, navigate to the file you have changed and reload the page if you do not see your updates.</li>
 </ul>
 <blockquote>
-<p>Note: When making CSS changes a “hard refresh” will often be needed to view any differences. To do this hold shift while reloading your browser.</p>
+<p>Note: When making CSS changes a “hard refresh” will often be needed to view any differences. To do this hold shift while reloading your browser (Safari does this automatically).</p>
 </blockquote>
 <h2 id="hotdev-script">Hotdev script</h2>
 <ul>
@@ -126,8 +125,8 @@
     </div>
 
 
-    <div class="authors-box bg-light mt-4 py-3 ps-4">
-      <span> Contributor(s):              Ezri White,              Kaki Ryan, Chiazo Agina</span>
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):              Ezri White,              Kaki Ryan,              Chiazo Agina, Vitor Inserra</span>
     </div>       
   </div>
 
@@ -153,15 +152,15 @@
 
     <!-- Load our React components. -->
 
-    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1705692232.1739244"></script>
-    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1705692232.1739244"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1705692232.1739244"></script>
-        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1705692232.1739244"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1705692232.1739244"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1705692232.1739244"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1705692232.1739244"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1705692232.1739244"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1705692232.1739244"></script>
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1705862497.9718142"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1705862497.9718142"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1705862497.9718142"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1705862497.9718142"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1705862497.9718142"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1705862497.9718142"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1705862497.9718142"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1705862497.9718142"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1705862497.9718142"></script>
     <script src="/static/scripts/log-in-handler.js"></script>
 
     
