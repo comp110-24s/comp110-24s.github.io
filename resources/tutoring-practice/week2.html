@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Quiz 01 Practice - COMP110 - 23F</title>
+  <title> Week 2 Practice - COMP110 - 23F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1706564696.7940066">
+  <link rel="stylesheet" href="/static/styles.css?v=1706564689.8548715">
 </head>
 
 <body>
@@ -44,10 +44,10 @@
     </div>
   </nav>
 
-  <div id="lessons-page" class="container">
+  <div id="resources-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>Quiz 01 Practice</h1>
+        <h1>Week 2 Practice</h1>
         <hr class="title" />
       </div>
     </div>
@@ -61,19 +61,11 @@
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
+<li><a href="#concepts-reviewed">Concepts Reviewed</a></li>
 <li><a href="#questions">Questions</a>
 <ul>
-<li><a href="#memory-diagrams">Memory Diagrams</a></li>
-<li><a href="#boolean-operators">Boolean Operators</a></li>
-<li><a href="#conditionals">Conditionals</a></li>
-<li><a href="#while-loops">While Loops</a></li>
-</ul></li>
-<li><a href="#solutions">Solutions</a>
-<ul>
-<li><a href="#memory-diagrams-1">Memory Diagrams</a></li>
-<li><a href="#boolean-operators-1">Boolean Operators</a></li>
-<li><a href="#conditionals-1">Conditionals</a></li>
-<li><a href="#while-loops-1">While Loops</a></li>
+<li><a href="#elif">Elif</a></li>
+<li><a href="#while-loop">While-Loop</a></li>
 </ul></li>
 </ul>
 </</ul>
@@ -81,79 +73,97 @@
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><!--
-Note: this is a copy of the qz01 worksheet from resources/practice/fa21
--->
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. Before working through these practice questions, you should get familiar with the concepts covered in the lessons of the second week (1.22 and Memory Diagrams).</p>
+<p><br></p>
 <h1 id="questions">Questions</h1>
-<p>The quiz itself will be similar in difficulty but longer in length than these practice questions.</p>
-<p>Solutions for each problem can be found at the bottom of this page.</p>
-<h2 id="memory-diagrams">Memory Diagrams</h2>
+<p>These questions might not be in the same format as quizzes. Don’t hesitate to bring them to the Tutoring section for help.</p>
+<h3 id="elif">Elif</h3>
 <ol type="1">
-<li>Produce a memory diagram for the following code snippet, being sure to include its stack and output.<br />
-<img src="/static/practice_worksheets/fa21/qz01-question1.png" /></li>
+<li><p>What is the purpose of using <code>elif</code>? In other words, in what circumstance do we want to use <code>elif</code> over a bunch of nested <code>if-else</code> statements?</p></li>
+<li><p>What is the operation order of <code>elif</code> statements? For example, if you have multiple <code>elif</code> statements and all of them evaluate to <code>True</code>, only the first one will get executed or the last one? Or maybe all of them?</p></li>
+<li><p>What would be the output of the following codes? 3.1</p></li>
 </ol>
-<!-- 2. Produce a memory diagram for the following code snippet, being sure to include its stack and output.  
-![](/static/practice_worksheets/fa21/qz01-question2.png)   -->
-<h2 id="boolean-operators">Boolean Operators</h2>
-<ol start="3" type="1">
-<li>What is the result of the following boolean expressions?<br />
-3.1. <code>((not False) and True) == True</code><br />
-3.2. <code>(not False) or (True and False)</code><br />
-3.3. <code>True and (7 &lt; 3 * 4 / 6)</code><br />
-3.4. <code>(not False) != True</code><br />
-3.5. <code>not(True and False) and (False or not False)</code></li>
-</ol>
-<h2 id="conditionals">Conditionals</h2>
+<pre><code>x = 4
+
+if x &lt; 5:
+    print(&quot;A&quot;)
+elif x &lt; 10:
+    print(&quot;B&quot;)
+elif x &lt; 15:
+    print(&quot;C&quot;)
+else:
+    print(&quot;D&quot;)</code></pre>
+<p>A. <code>ABCD</code> B. <code>ABC</code> C. <code>D</code> D. <code>A</code></p>
+<p>3.2 Reassign the value of <code>x</code>, so that only <code>D</code> will get printed.</p>
+<p>3.3 What will be the output if we change all the <code>elif</code> statements above to the <code>if</code> statement?</p>
 <ol start="4" type="1">
-<li>Every <code>if</code> statement must have a paired <code>else</code> branch. (T/F)</li>
-<li>Lines contained in an <code>else</code> branch in Python do not have to be indented. (T/F)</li>
-<li>You can name a variable <code>else</code> in your program without Python confusing your variable’s name and the <code>else</code> keyword. (T/F)</li>
-<li>Given the following code snippet, what is the printed output with the specified values for <code>x</code> and <code>y</code>?<br />
-<img src="/static/practice_worksheets/fa21/qz01-question7.png" /><br />
-7.1. When x = 3, y = 5?<br />
-7.2. When x = 5, y = 3?<br />
-7.3. When x = -5, y = 1?<br />
-7.4. When x = 13, y = 8?<br />
-7.5. When x = 4, y = 3?</li>
+<li>Rewrite the following codes with <code>elif</code>:</li>
 </ol>
-<h2 id="while-loops">While Loops</h2>
-<ol start="8" type="1">
-<li><p>Given the following code snippet, what is the printed output once it completes?<br />
-<img src="/static/practice_worksheets/fa21/qz01-question8.png" /></p></li>
-<li><p>Given the following code snippet, what is the printed output once it completes?<br />
-<img src="/static/practice_worksheets/fa21/qz01-question9.png" /></p></li>
-</ol>
-<h1 id="solutions">Solutions</h1>
-<h2 id="memory-diagrams-1">Memory Diagrams</h2>
+<pre><code>course: int = 110
+
+if course == 110:
+    print(&quot;Welcome to COMP 110!&quot;)
+else:
+    if course &lt; 110:
+        print(&quot;Enrolled!&quot;)
+    else:
+        print(&quot;Prerequisites not satisfied&quot;)</code></pre>
+<p><br></p>
+<h3 id="while-loop">While-Loop</h3>
 <ol type="1">
-<li><img src="/static/practice_worksheets/fa21/qz01-solution1.png" /></li>
+<li>Given the following codes: match them with the corresponding term:</li>
 </ol>
-<!-- 2. ![](/static/practice_worksheets/fa21/qz01-solution2.png)   -->
-<h2 id="boolean-operators-1">Boolean Operators</h2>
-<ol start="3" type="1">
-<li>3.1. <code>True</code><br />
-3.2. <code>True</code><br />
-3.3. <code>False</code><br />
-3.4. <code>False</code><br />
-3.5. <code>True</code></li>
+<pre><code>i: int = 0
+while i &lt; 10:
+    print(i)
+    i += 1</code></pre>
+<ol type="a">
+<li>Repeat Block</li>
+<li>Condition</li>
+<li>Increment</li>
 </ol>
-<h2 id="conditionals-1">Conditionals</h2>
+<ol start="2" type="1">
+<li><p>(True or False) Codes within the repeat block of the while loop will always get executed at least once.</p></li>
+<li><p>Try to evaluate the following codes:</p></li>
+</ol>
+<pre><code>x: int = 110
+output:str = &quot;&quot;
+
+while x &gt;= 0:
+    if x % 3 == 0:
+        result = result + str(x)
+    else:
+        result = str(x) + result
+    x = x // 2
+print(result)</code></pre>
 <ol start="4" type="1">
-<li>False</li>
-<li>False</li>
-<li>False</li>
-<li>7.1. 16.0<br />
-7.2. 2.0<br />
-7.3. -3.0<br />
-7.4. 3.0<br />
-7.5. 1</li>
+<li>Try to count (if possible) how my iterations of do following loops have: 4.1</li>
 </ol>
-<h2 id="while-loops-1">While Loops</h2>
-<ol start="8" type="1">
-<li>3<br />
-3<br />
-“1303132”</li>
-<li>“036910875421”</li>
+<pre><code>course = &quot;comp110&quot;
+i: int = 0
+while i &lt; len(course):
+    # Codes omitted
+    i += 1</code></pre>
+<p>4.2 ~~~ j: int = 1 while j &lt; 10: # Codes omitted j += 2 ~~~</p>
+<p>4.3 ~~~ z:float = 10.0 while z &gt; 0: # Codes omitted z = z ** (1/2) ~~~</p>
+<ol start="5" type="1">
+<li>See if there is something wrong with the following loops, if so, how can you correct them? 5.1</li>
+</ol>
+<pre><code>i = 0
+while i &lt; 5:
+    print(i)</code></pre>
+<p>5.2 ~~~ j = 10 while j &gt; 0: print(j) j -= 1 ~~~</p>
+<p>5.3 ~~~ number:str = “11111” while i &lt;= len(number): print(number[i]) i += 1 ~~~</p>
+<p>5.4 ~~~ while True: print(“True”) ~~~</p>
+<ol start="6" type="1">
+<li>Design a loop that can achieve the desired requirements: 6.1 Create a loop that can print all even numbers between 1 to 100</li>
+</ol>
+<p>6.2 Given this string <code>ComputerScience</code>, use a loop that can print the characters that have <code>odd</code> indies. (Index 0, 2, 4, 6, 8…)</p>
+<p>6.3 (Continued on 5.2)How about a loop that can print every character except the last one? (Be careful with the IndexOutOfBound!)</p>
+<p>6.4 A loop that will print numbers from 0 all the way to negative infinity</p>
+<ol start="7" type="1">
+<li>Elaborate on your thought, when will the infinite loops get intentionally used in real-life scenarios?</li>
 </ol>
 </div>
 
@@ -162,7 +172,7 @@ Note: this is a copy of the qz01 worksheet from resources/practice/fa21
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Megan Zhang, David Karash</span>
+      <span> Contributor(s): Vincent Li</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>

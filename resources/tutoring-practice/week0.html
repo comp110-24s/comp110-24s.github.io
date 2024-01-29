@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1706130546.592881">
+  <link rel="stylesheet" href="/static/styles.css?v=1706564689.5628805">
 </head>
 
 <body>
@@ -69,6 +69,12 @@
 <li><a href="#variables-and-user-input">Variables and User Input</a></li>
 <li><a href="#conditionals">Conditionals</a></li>
 </ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#objects-and-data-types-1">Objects and Data Types</a></li>
+<li><a href="#expressions-1">Expressions</a></li>
+<li><a href="#variables-and-user-input-1">Variables and User Input</a></li>
+</ul></li>
 </ul>
 </</ul>
                     </div>
@@ -76,10 +82,10 @@
             </div>
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
-<p>These questions are optional supplement which ideally help you get prepared for the quizzes ahead of the time. Before working through these practice questions, you should get familiar with the concepts covered in the lessons of the first week (1.12 - 1.19).</p>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. Before working through these practice questions, you should get familiar with the concepts covered in the lessons of the second week (1.22 and Memory Diagrams).</p>
 <p><br></p>
 <h1 id="questions">Questions</h1>
-<p>These questions might not be in the same format as quizzes. Don’t hesitate to bring them to Tutoring section for help.</p>
+<p>These questions might not be in the same format as quizzes. Don’t hesitate to bring them to the Tutoring section for help.</p>
 <h3 id="objects-and-data-types">Objects and Data Types</h3>
 <ol type="1">
 <li>There is a built-in function in Python to help you learn the type classification of an object. Could you write one line code using that function to check the data type of</li>
@@ -129,10 +135,10 @@
 <p><code>&gt;&gt;&gt; 4.0 / 2.0</code></p>
 <p><code>&gt;&gt;&gt; 2 ** 3</code></p>
 <p><code>&gt;&gt;&gt; 5 % 5</code></p>
-<p><code>&gt;&gt;&gt; 4 // 2</code></p>
-<p><code>&gt;&gt;&gt; 4.0 // 2.0</code></p>
+<p><code>&gt;&gt;&gt; 5 // 2</code></p>
+<p><code>&gt;&gt;&gt; 5.0 // 2.0</code></p>
 <p><code>&gt;&gt;&gt; 2 + 4 / 2 * 2</code></p>
-<p><code>&gt;&gt;&gt; 2 + 4 // 2 * 2</code></p>
+<p><code>&gt;&gt;&gt; 2 + 5 // 2 * 2</code></p>
 <ol start="4" type="1">
 <li>Consider the following 4 lines of codes:</li>
 </ol>
@@ -183,14 +189,65 @@ d. resulting value</p>
 <ol type="1">
 <li>What is the output of the following codes?</li>
 </ol>
-<p><img src="../../static/tutoring-practice/code1.png" /></p>
+<pre><code>x = 10
+y = 5
+if x &gt; 5:
+    if y &gt; 0:
+        print(&quot;A&quot;)
+    else:
+        print(&quot;B&quot;)
+else:
+    print(&quot;C&quot;)</code></pre>
 <ol start="2" type="1">
 <li><p>(Continue on Question 1:) Can you change the value of x or y so that the final output can be A? What about B?</p></li>
 <li><p>What is the output of the following codes?</p></li>
 </ol>
-<p><img src="../../static/tutoring-practice/code2.png" /></p>
+<pre><code>a = True
+b = False
+c = True
+if a and b or c:
+    print(&quot;X&quot;)
+else:
+    print(&quot;Y&quot;)</code></pre>
 <ol start="4" type="1">
 <li>(Continue on Question 3:) Change which one of a, b or c can let the codes in Q3 print another output?</li>
+</ol>
+<h1 id="solutions">Solutions</h1>
+<h2 id="objects-and-data-types-1">Objects and Data Types</h2>
+<ol type="1">
+<li><p>Use the built-in functions: type()</p></li>
+<li><p>Try to evaluate the resulting data type of the following expression (might lead to error): 2.1 int 2.2 str 2.3 Error 2.4 int 2.5 Error</p></li>
+<li><p>No, Python is following the same order of operations as common Maths</p></li>
+<li><p>What is the name of the data type of the following values? 4.1 float 4.1 float</p></li>
+<li><p>Will you be able to evaluate the output of the following codes relating to the string? 5.1 “s” 5.1 “t” 5.3 Method 1: “str”[-1] – Last character has an index of -1 Method 2: “str”[len(“str”)-1]</p></li>
+<li><p>True</p></li>
+<li><p>Are all of the following values considered Booleans in Python? Only the last one is valid.</p></li>
+</ol>
+<h2 id="expressions-1">Expressions</h2>
+<ol type="1">
+<li><p>Yes, there data type are different. Even if we write conditional statement using them, the behind logic is also different.</p></li>
+<li><p>Algebraic precedence rules</p></li>
+<li><p>Be sure that you are familiar with the numerical operators in Python and trying to evaluate the following expressions: 3.1 2.0 float 3.2 2.0 float 3.3 8 int 3.4 0 int 3.5 2 int 3.6 2.0 float 3.7 6 int 3.8 6 int</p></li>
+<li><p>Consider the following 4 lines of codes: <code>1 &gt;&gt;&gt; x = 110</code> <code>2 &gt;&gt;&gt; y = 110</code> <code>3 &gt;&gt;&gt; x == y</code> <code>4 &gt;&gt;&gt; x = y</code> Line 3 is a comparison whereas the line 4 is an assignment.</p></li>
+<li><p>(Continue on Q3): Now, can you write codes which can</p></li>
+</ol>
+<ul>
+<li>1st: assign the value of x to y</li>
+</ul>
+<pre><code>&gt;&gt;&gt; y = x</code></pre>
+<ul>
+<li>2nd: check if y is NOT equal to x</li>
+</ul>
+<pre><code>&gt;&gt;&gt; print(y!= x)</code></pre>
+<ol start="6" type="1">
+<li><p>Try to evaluate the following two expressions: 6.1 False 6.2 False</p></li>
+<li><p>Using subscription notation and concatenation, write an expression that evaluates to “Cs” using the following string: “Computer Scientists”.</p></li>
+</ol>
+<pre><code>print(&quot;Computer Scientists&quot;[0] + &quot;Computer Scientists&quot;[-1])</code></pre>
+<h2 id="variables-and-user-input-1">Variables and User Input</h2>
+<ol type="1">
+<li><p>Is the following lines of code legal? If not, do you know why and how to modify it? <code>1 &gt;&gt;&gt; x: int = input("Give me a number")</code> Illegal <code>2 &gt;&gt;&gt; print(3 + 5 * input("Give me the multiplier"))</code> Illegal <code>3 &gt;&gt;&gt; print("Welcome back" + input("What is your name?"))</code> Legal</p></li>
+<li><p>Try to fill the following blank (They should be type declaration or type casting functions): <code>x: ____ = input("What is your name")</code> str <code>print(3.0 + ____(input("Give me a number")))</code> float <code>x: ____ = "str" == input("COMP 110")</code> str <code>y: ____ = 110 == int(input("110"))</code> int</p></li>
 </ol>
 </div>
 
