@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz 01 Practice - COMP110 - 23F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1706893031.424248">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Quiz 01 Practice</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#memory-diagrams">Memory Diagrams</a></li>
+<li><a href="#while-loops">While Loops</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#while-loops-solutions">While Loops Solutions</a></li>
+<li><a href="#functions-solutions">Functions Solutions</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="questions">Questions</h1>
+<p>The quiz itself will be similar in difficulty to these practice questions. In addition to these questions, you should review all of your lesson responses on Gradescope. The kinds of questions you responded to on Gradescope could also be on the quiz.</p>
+<p>Solutions for each problem can be found at the bottom of this page. (But if you’re unsure, before looking up the solution, try figuring it out on your own or testing it out in Visual Studio!)</p>
+<h2 id="memory-diagrams">Memory Diagrams</h2>
+<p>Make sure to practice the memory diagrams through “While loops” on the <a href="/resources/practice/MemDiagrams.html">practice page</a>. (You will <em>not</em> have to do diagrams for functions and importing for this quiz.)</p>
+<h2 id="while-loops">While Loops</h2>
+<ol type="1">
+<li><p>Produce a memory diagram for the following code snippet, being sure to include its stack and output.</p>
+<pre><code> WORD: str = &quot;happy&quot;
+ l1_idx: int = 0
+ l2_idx: int = 0
+ t1: str = &quot;&quot;
+ t2: str = &quot;&quot;
+ n_appearances: int = 0
+
+ while l1_idx &lt; len(WORD):
+     t1 = WORD[l1_idx]
+     n_appearances = 1
+     l2_idx = 0
+
+     while l2_idx &lt; len(WORD):
+         t2 = WORD[l2_idx]
+
+         if (t1 == t2) and (l1_idx != l2_idx):
+             n_appearances = n_appearances + 1
+         l2_idx = l2_idx + 1
+     print(f&quot;{WORD[l1_idx]} appears {n_appearances} times.&quot;)
+     l1_idx = l1_idx + 1</code></pre></li>
+</ol>
+<p>1.1 What would happen if <code>while l1_idx &lt; len(WORD)</code> in line 8 was replaced with <code>while l1_idx &lt; len(WORD) - 1</code>? Why?</p>
+<p>1.2 What would happen if <code>l2_idx=0</code> was moved to inside the second while loop? In other words, what if lines 11-13 were changed to:</p>
+<pre><code>while l2_idx &lt; len(WORD):
+    l2_idx = 0</code></pre>
+<p>1.3 What would happen if, in line 16, <code>if (t1 == t2) and (l1_idx != l2_idx):</code> was replaced with <code>if (t1 == t2):</code>? Why?</p>
+<p>1.4 What would happen if line 18 (<code>l2_idx = l2_idx + 1</code>) was removed? Why?</p>
+<p>1.5. What would happen if the <code>&lt;</code> symbol in line 8 was replaced with <code>&lt;=</code>? (In other words, what if it was changed to <code>while l1_idx &lt;= len(WORD):</code>)? Why?</p>
+<p><a href="#while-loops-solutions">Solutions</a></p>
+<h2 id="functions">Functions</h2>
+<ol type="1">
+<li>The following questions will be in reference to this code block:</li>
+</ol>
+<pre><code>    def greet(name: str, friendly: bool) -&gt; str:
+        print(f&quot;Hello {name}!&quot;)
+        if friendly:
+            return f&quot;I&#39;m so happy to see you {name}!&quot; 
+        else:
+            return &quot;Bye!&quot;
+    
+    def main():
+        greet(&quot;Lizzie&quot;, True)
+    
+    if __name__ = &quot;__main__&quot;:
+        main()</code></pre>
+<p>1a. On what line(s) is there a <em>return type</em> declaration? 1b. On what line(s) is there a <em>signature</em>? 1c. On what line(s) are there <em>arguments</em>? 1d. On what line(s) are there <em>parameters</em>? 1e. On what line(s) is something <em>returned</em>? 1f. On what line(s) is something <em>printed</em>? <a href="#functions-solutions">Solutions</a></p>
+<ol start="2" type="1">
+<li>The following questions will have you practice signature writing. 2a. Write the <em>signature</em> for a function called <code>name_eval</code> that takes as input someone’s name as a string and returns <code>True</code> if the name has an even amount of letters and <code>False</code> if it has an odd amount of letters. 2b. Write the <em>signature</em> for a function called <code>name_size</code> that takes as input someone’s name as a string and returns the <em>length</em> of their name as an integer. 2c. Write the <em>signature</em> for a function called <code>gcd</code> that takes two floats as input and returns the integer that is their greatest common divisor.</li>
+</ol>
+<p><a href="#functions-solutions">Solutions</a></p>
+<h1 id="solutions">Solutions</h1>
+<h2 id="while-loops-solutions">While Loops Solutions</h2>
+<ol type="1">
+<li><img class="img-fluid" src="/static/practice_worksheets/sp23/q1_sol1.png" alt ="The memory diagram includes a box on the top labeled Output and a box on the bottom labeled Stack, next to an empty area labeled Heap. 
+The Stack contains the variables WORD, l1 underscore idx, l2 underscore idx, t1, t2, and n underscore appearances. The WORD variable contains the value happy in quotes. 
+The variable l1 underscore idx has the value of 5, with previous values of 0, 1, 2, 3, and 4 all crossed out. L2 underscore idx has the final value of 5, with previous values of 0, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, and 4 all crossed out. T1 has the final value of y with previous values of an empty string, h, a, p, p, and y all in quotes and crossed out. T2 has the final value of y (in quotes) with previous values of an empty string, h, a, p, p, y, h, a, p, p, y, h, a, p, p, y, h, a, p, p, y, h, a, p, and p all in quote and crossed out. Finally, the variable n underscore appearances has the final value of 1 with previous values of 0, 1, 1, 1, 2, 1, and 2 all crossed out. 
+The output box contains the sentence h appears 1 times. Below that, on a separate line is the output a appears 1 times. Next, is the line p appears 2 times., p appears 2 times., and y appears 1 times. each on separate lines. 
+"/></li>
+</ol>
+<p>(We do not <em>require</em> that you write out all interim values as long as the initial and final values are correct like in the solution below. However, writing the interim values will help for practice purposes and to avoid mistakes!)</p>
+<p><img class="img-fluid" src="/static/practice_worksheets/sp23/q1_sol2.jpg" alt="The memory diagram has three columns, labeled from left to right Stack, Heap, and Output. Under the stack, there is a frame labeled Globals. 
+The globals frame contains the variables WORD, l1 underscore idx, l2 underscore idx, t1, t2, and n underscore appearances. The WORD variable contains the value happy in quotes. The variable l1 underscore idx has the value of 5 with the previous value of 0 crossed out. The variable l2 underscore idx has the value of 5 with the previous value of 0 crossed out. The variable t1 has the final value of y in quotes, with the previous value an empty string in quotes crossed out. The variable t2 has the final value of y in quotes, with the previous value of an empty string in quotes crossed out. Finally, the variable n underscore appearances has the value 1 with the previous value 0 crossed out.
+The heap column is empty.
+The output column contains the sentence h appears 1 times. Below that, on a separate line is the output a appears 1 times. Next is the line p appears 2 times., p appears 2 times., and y appears 1 times. each on separate lines. 
+"></p>
+<p><strong>Here’s a link to a <a href="https://www.youtube.com/watch?v=NqNuPjnq-UE">video of the solution</a>!</strong></p>
+<p>1.1 “y appears 1 times.” would not print. This is because <code>l1_idx</code> will not enter the while loop for <code>l1_idx = 4</code>. (For more practice, it’d be good to diagram this instance out to see how it would impact the final values of other variables.)</p>
+<p>1.2 An infinite loop would occur because <code>l2_idx</code> would always equal <code>1</code> when returning to the top of the loop, and therefore <code>l2_idx &lt; len(WORD)</code> will always be True.</p>
+<p>1.3 If <code>l1_idx != l2_idx</code> is no longer required, this means that each letter can count itself twice. For example, <code>WORD[0] == WORD[0]</code> is true, so <code>n_appearances</code> for <code>"h"</code> would increase to <code>2</code>.</p>
+<p>1.4 There would be an infinite loop because <code>l2_idx</code> will never increase, and therefore <code>l2_idx &lt; len(WORD)</code> will always be True.</p>
+<p>1.5 There would be an index error because there would be the case where <code>l1_idx = 5</code>, so on line 9 <code>WORD[5]</code> would be searching for the element at index 5 in <code>"happy"</code>, when the indexes only go up to 4.</p>
+<h2 id="functions-solutions">Functions Solutions</h2>
+<ol type="1">
+<li><em>(Coming Soon)</em></li>
+</ol>
+<p>2a. <code>def name_eval(id: str) -&gt; bool:</code></p>
+<p><em>(Note that I chose to call the parameter <code>id</code>, but you could’ve chosen any valid name!)</em></p>
+<p>2b. <code>def name_size(id: str) -&gt; int:</code></p>
+<p><em>(Note that I chose to call the parameter <code>id</code>, but you could’ve chosen any valid name!)</em></p>
+<p>2c. <code>def gcd(number_a: float, number_b: float) -&gt; int:</code></p>
+<p><em>(Note that I chose to call the parameters <code>number_a</code> and <code>number_b</code>, but you could’ve chosen any valid name!)</em></p>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Megan Zhang,        David Karash, Alyssa Lytle</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
