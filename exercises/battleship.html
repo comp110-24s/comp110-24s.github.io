@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1706886402.6953173">
+  <link rel="stylesheet" href="/static/styles.css?v=1706888600.9922707">
 </head>
 
 <body>
@@ -52,8 +52,33 @@
       </div>
     </div>
 
-    <div class="container">
-                <div class="content"><p>In this exercise, you will use the concept of <em>functions</em> to organize much of the functionality we developed in EX02. Moreover, rather than only getting one-attempt at guessing the secret boat location, you will get five! To get a sense of where you are going, here are two examples of the final game:</p>
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#permitted-constructs">Permitted Constructs</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#part-0.-setting-up-the-python-program">Part 0. Setting up the Python Program</a></li>
+<li><a href="#part-1.-input_row-and-input_column---10-points">Part 1. <code>input_row</code> and <code>input_column</code> - 10 points</a></li>
+<li><a href="#part-2.-print_grid---20-points">Part 2. <code>print_grid</code> - 20 points</a></li>
+<li><a href="#part-3.-correct_guess-10-points">Part 3. <code>correct_guess</code> – 10 Points</a></li>
+<li><a href="#part-4.-main-20-points">Part 4. <code>main</code> – 20 Points</a></li>
+<li><a href="#part-5.-style-and-documentation-requirements-20-points-manually-graded">Part 5. Style and Documentation Requirements – 20 Points (Manually Graded)</a></li>
+<li><a href="#part-6.-type-safety-and-linting---9-points">Part 6. Type Safety and Linting - 9 Points</a></li>
+<li><a href="#make-a-backup-checkpoint-commit">Make a Backup Checkpoint “Commit”</a></li>
+<li><a href="#submit-to-gradescope-for-grading">Submit to Gradescope for Grading</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>In this exercise, you will use the concept of <em>functions</em> to organize much of the functionality we developed in EX02. Moreover, rather than only getting one-attempt at guessing the secret boat location, you will get five! To get a sense of where you are going, here are two examples of the final game:</p>
 <pre>
 <div class="terminal">
     $ python -m exercises.ex03_battleship
@@ -418,7 +443,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 <p>In the file explorer pane, look to find the zip file named “yy.mm.dd-hh.mm-exercises-ex01_chardle.py.zip”. The “yy”, “mm”, “dd”, and so on, are timestamps with the current year, month, day, hour, minute. If you right click on this file and select “Reveal in File Explorer” on Windows or “Reveal in Finder” on Mac, the zip file’s location on your computer will open. Upload this file to Gradescope to submit your work for this exercise.</p>
 <p>Autograding will take a few moments to complete. For this exercise there will be 20 “human graded” points. Thus, you should expect a maximum autograding score of 80 possible points on this assignment. If there are issues reported, you are encouraged to try and resolve them and resubmit. If for any reason you aren’t receiving full credit and aren’t sure what to try next, come give us a visit in office hours!</p>
 </div>
-            </div>
+
+       
+
+    </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
       <span> Contributor(s):        Camilla Fratta,        Audrey Salmon, Vrinda Desai</span>
