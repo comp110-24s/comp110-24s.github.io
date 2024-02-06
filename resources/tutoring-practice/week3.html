@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> QZ02 Concepts - COMP110 - 23F</title>
+  <title> Week 2 Practice - COMP110 - 23F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1707190581.6637442">
+  <link rel="stylesheet" href="/static/styles.css?v=1707190583.5069075">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="resources-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>QZ02 Concepts</h1>
+        <h1>Week 2 Practice</h1>
         <hr class="title" />
       </div>
     </div>
@@ -61,49 +61,93 @@
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
-<li><a href="#quiz-2-concepts">Quiz 2 Concepts</a></li>
+<li><a href="#concepts-reviewed">Concepts Reviewed</a></li>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#functions">Functions</a></li>
+</ul></li>
 </ul>
 </</ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="quiz-2-concepts">Quiz 2 Concepts</h1>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. Before working through these practice questions, you should get familiar with the concepts covered in the lessons of the third week.</p>
+<p><br></p>
+<h1 id="questions">Questions</h1>
+<p>These questions might not be in the same format as quizzes. Don’t hesitate to bring them to the Tutoring section for help.</p>
+<h3 id="functions">Functions</h3>
+<ol type="1">
+<li>Answer the 1.1 and 1.2 based on the following codes:</li>
+</ol>
+<pre><code>def foo(x):
+  return x + 1
+
+def bar(x):
+  return x * 2
+
+print(foo(bar(3))) </code></pre>
+<p>1.1 Do you know from the above codes, which function has been called the first? Foo or bar?</p>
+<p>1.2 What will be the final line’s output?</p>
+<ol start="2" type="1">
+<li><p>This is an open-ended question, as we have learned the creation of function, can you think of the benefits of using functions in programming?</p></li>
+<li><p>Regarding the naming convention or naming rule for naming a function in Python, identify the following statements as either true or false.</p></li>
+</ol>
 <ul>
-<li>Quiz 0 + 1 Concepts plus:</li>
-<li>LS15: Importing Modules
-<ul>
-<li>Knowing basic import syntax: <code>from &lt;package-name&gt; import &lt;module-name&gt;</code> and <code>from &lt;package-name&gt;.&lt;module-name&gt; import &lt;function&gt;</code></li>
-<li>Knowing how to handle <code>if __name__ == "__main__":</code> in a memory diagram</li>
-</ul></li>
-<li>LS16: Lists
-<ul>
-<li>Basic list syntax and typing</li>
-<li>Indexing on lists and updating values at an index (subscription notation)</li>
-<li><code>len()</code> function</li>
-<li>methods: <code>.append()</code> and <code>.pop()</code></li>
-</ul></li>
-<li>CL05: Lists in Memory
-<ul>
-<li>Memory Diagrams with lists</li>
-<li>Writing functions with lists (both modifying existing lists or creating new lists)</li>
-</ul></li>
-<li>CL06: for loops
-<ul>
-<li>Using <code>for ... in ...</code> syntax in memory diagrams and writing functions</li>
-<li>Using <code>for ... in range(...)</code> syntax in memory diagrams and writing functions</li>
-</ul></li>
-<li>CL07: Dictionaries
-<ul>
-<li>Basic list syntax and typing</li>
-<li>Accessing, adding, and modifying values at an index (subscription notation)</li>
-<li>function: <code>len()</code></li>
-<li>method: <code>.pop()</code></li>
-<li>using the boolean expression: <code>elem in dictionary</code></li>
-<li>Memory Diagrams with dictionaries</li>
-<li>Using a for loop to iterate through a dictionary’s keys</li>
-</ul></li>
+<li>The name could start with a number, 1, 2, 3, etc</li>
+<li>The name can only contain letters, numbers, and underscores</li>
+<li>The name can contain any characters as long as the first one is a letter or an underscore.</li>
+<li>The name can be a reserved keyword in Python that is capitalized. (such as DEF, IF, FOR)</li>
+<li>It is encouraged to have the first letter of the name capitalized as it is also the convention we follow in daily writing.</li>
 </ul>
+<ol start="4" type="1">
+<li><p>What is the difference between a function definition and a function call?</p></li>
+<li><p>5.1 Write a function called <code>odd_or_even</code>. Given a list of <code>ints</code> and one <code>string</code> of either <code>even</code> or <code>odd</code>, the function will return a substring containing only the even or odd numbers based on the input <code>string</code>.</p></li>
+</ol>
+<p>5.2 Write a function called <code>even_and3</code>. Given a list of <code>int</code>s, the function should return a substring with numbers that are either <code>even</code> or at the <code>index of multiple of 3</code>.</p>
+<p>5.3 Based on the codes you wrote for 5.1 and 5.2, could you identify the following elements with the codes? a. return type declaration b. arguments c. parameters d. returned value e. function signature</p>
+<ol start="6" type="1">
+<li><p>What is the difference between a return statement and a print statement in a function?</p></li>
+<li><p>What is the purpose of the global keyword in a function?</p></li>
+<li><p>What is the scope of a variable in a function? (Hints: Think of global scope and function scope)</p></li>
+<li><p>What is the output of this code?</p></li>
+</ol>
+<pre><code>x = 10
+
+def foo():
+  x = 20
+  print(x)
+
+foo()
+print(x)</code></pre>
+<ol start="10" type="1">
+<li>What is the output of this code?</li>
+</ol>
+<pre><code>x = 10
+
+def foo():
+  global x
+  x = 20
+  print(x)
+
+foo()
+print(x)</code></pre>
+<ol start="11" type="1">
+<li>What is the output of this code?</li>
+</ol>
+<pre><code>x = 10
+
+def foo():
+  x = 20
+  def bar():
+    global x
+    x = 30
+  bar()
+  print(x)
+
+foo()
+print(x)</code></pre>
 </div>
 
        
@@ -111,7 +155,7 @@
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s): Alyssa Byrnes</span>
+      <span> Contributor(s): Vincent Li</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
