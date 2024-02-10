@@ -7,7 +7,7 @@
     <title> Making Memory Diagrams - COMP110 - 22F</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/static/styles.css?v=1707536846.3704236">
+    <link rel="stylesheet" href="/static/styles.css?v=1707538942.714587">
 </head>
 
 <body id="body" class="absolute-page container">
@@ -70,12 +70,18 @@
 <li><a href="#making-memory-diagrams">Making Memory Diagrams</a></li>
 <li><a href="#creating-a-diagram">Creating A Diagram</a>
 <ul>
+<li><a href="#create-a-page-for-your-snippet">Create a Page for Your Snippet</a></li>
 <li><a href="#follow-through">Follow Through</a></li>
 </ul></li>
 <li><a href="#reviewing-a-diagram">Reviewing A Diagram</a></li>
 <li><a href="#adding-a-solution">Adding A Solution</a></li>
 <li><a href="#reviewing-a-solution">Reviewing A Solution</a></li>
-<li><a href="#creating-a-pull-request">Creating A Pull Request</a></li>
+<li><a href="#creating-a-pull-request">Creating A Pull Request</a>
+<ul>
+<li><a href="#branch">Branch!</a></li>
+<li><a href="#commit-and-push">Commit and Push!</a></li>
+<li><a href="#create-a-pull-request">Create a Pull Request!</a></li>
+</ul></li>
 </ul>
 </</ul>
                     </div>
@@ -85,17 +91,22 @@
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="making-memory-diagrams">Making Memory Diagrams</h1>
 <p>Team 110, please refer to the following instructions for creating memory diagrams. Once a memory diagram or practice problem is fully reviewed, it will be posted on the 110 website for student-use. Refer to the #content-design Slack channel to see which topics to focus on every few weeks.</p>
 <h1 id="creating-a-diagram">Creating A Diagram</h1>
-<p>If you are creating a memory diagram, you are free to do anything as long as it fulfills the topics/problem categories we are in need of and is within the scope of this course. Before you create a new memory diagram, check for notes on your previously submitted diagrams.</p>
-<p>Check that your solution adheres to the following criteria: When updating variables, cross out old values rather than erasing/removing them. Include counter variables for any for-loops. Save the raw copy of your solution in case you need to make edits!</p>
-<p>When submitting your diagram for peer-review, complete the following: Place your code, solution, and your image description into one markdown file (.md file). Feel free to use this Markdown Template for your materials. You can enter in-line code into a markdown file, by simply putting backticks (`) around your code snippet. The solution will be inserted as an in-line image. Just below the solution, include your sample image description as plaintext. Review Sample Image Description for an example of how to write a description of a memory diagram. Upload this file into the Memory Diagrams Folder. Name the file with your ONEYEN, then an underscore, then “materials,” another underscore, and finally some sort of counter. For example, vrinda_materials_1.py would be the name of my first code snippet. This arbitrary counter can represent the number of diagrams you’ve progressively added, but mainly differentiates your files. Paste the respective link to your materials under the MATERIALS columns in the spreadsheet. Include your full name under NAME and mark the STATUS as “In Proposal.”</p>
+<p>If you are creating a memory diagram, you are free to do anything as long as it fulfills the <a href="/resources/practice/MemDiagrams.md">topic categories</a> we are in need of and is within the scope of this course. Before you create a new memory diagram, check for notes on your previously submitted diagrams.</p>
+<p>When submitting your diagram for peer-review, complete the following:</p>
+<h2 id="create-a-page-for-your-snippet">Create a Page for Your Snippet</h2>
+<p>Every memory diagram page should have a code snippet, a solution image, and an <a href="/team/documentation/guides/image_descriptions.html">image description</a>. <em>(Save the raw copy of your solution in case you need to make edits!)</em></p>
+<p>Save the file with your solution image in the folder: <code>/site/static/team/diagrams/</code></p>
+<p>Create a new file in the folder “site/team/projects/diagrams/” and give it a name fitting for the example followed by <code>.md</code>. (For example, if my example was a class making baseball cards, I might name it <code>baseball.md</code>.)</p>
+<p>Next, copy paste the text from “templates.md”, which is already in the “diagrams” folder. You’ll see where to add your code, solution image, and image description.</p>
+<p>Back on the <a href="https://docs.google.com/spreadsheets/d/1O5yaFVEdeX7CQDvhyLis0WJG6_i8piesP23BrgvNpC0/edit?usp=sharing">Memory Diagram Table</a>, fill out the information for your diagram and mark the STATUS as “In Proposal.” Under MATERIALS you will put the url to your new page. (For example, the url for the baseball example would be <a href="https://comp110-24s.github.io/team/projects/diagrams/baseball.html" class="uri">https://comp110-24s.github.io/team/projects/diagrams/baseball.html</a>. <em>NOTE THAT IT’LL RENDER AS .HTML, NOT .MD!</em>)</p>
 <h2 id="follow-through">Follow Through</h2>
 <p>After your proposed diagram has been reviewed, complete the following: If the STATUS is “Ready to Post,” great job! No other work is required on your part. If the STATUS is “Edits Needed,” go ahead and check out the NOTES section. Make prescribed changes and reupload all materials as if they are a new diagram following the steps above. This means you will upload two new files to the folder and you will be filling out a new row in the spreadsheet. Wait for your diagram to be reviewed again.</p>
 <h1 id="reviewing-a-diagram">Reviewing A Diagram</h1>
-<p>There are two types of reviews you can do for memory diagrams: adding a solution for an existing diagram or review an existing solution.</p>
+<p>There are two types of reviews you can do for memory diagrams: adding a solution for an existing snippet or review an existing solution.</p>
 <h1 id="adding-a-solution">Adding A Solution</h1>
 <p>Follow these steps for any entry on the table marked “needs solution”.</p>
 <p>View the page by clicking on the url, but also find the page in the site repo under “site/team/projects/diagrams”. (There may be an existing image description commented out!)</p>
-<p>Write a solution to code snippet and add an image description following <a href="/site/team/documentation/guides/image_descriptions.html">the image description guidelines</a>.</p>
+<p>Write a solution to code snippet and add an image description following <a href="/team/documentation/guides/image_descriptions.html">the image description guidelines</a>.</p>
 <p>Save your solution as a .JPG or .PNG file in the site repo inside the folder site/static/team/diagrams/. Add the image to the page along with the image description using the following syntax:</p>
 <pre><code># Solution
 
@@ -104,14 +115,34 @@
 *Image Description:*
 
 &lt;Image description goes here.&gt;</code></pre>
-<p>Finish up by <a href="#creating-a-pull-request">creating a pull request</a>.</p>
+<p>Finish up by <a href="#creating-a-pull-request">creating a pull request</a> and changing the entry status to “Needs Review”.</p>
 <h1 id="reviewing-a-solution">Reviewing A Solution</h1>
-<p>Use this process to review any entry on the table marked “needs review”.</p>
+<p>Use this process to review any entry on the table marked “Needs Review”.</p>
 <p>If you are reviewing a memory diagram snippet with an existing solution, you should still write out your own solution. Compare your solution to the solution provided. Check for correctness as well as the proper format described in Creating a Diagram. <em>This includes checking the following Image Description and making sure that it matches a correct solution!</em></p>
 <p>Provide any corrections in the NOTES section and mark the STATUS as “Edits Needed.” If everything looks good, mark the STATUS as “Ready to Post.”</p>
 <p><em>For speedy communication, please message the diagram-creator to let them know if you have corrections!</em></p>
 <h1 id="creating-a-pull-request">Creating A Pull Request</h1>
-<p>You can push your changes to the site.</p>
+<p>First, make sure you’ve set up the course repository by following the <a href="/team/documentation/guides/course_site_setup.html">course site setup</a> guide.</p>
+<p>You can then add your changes to the site via a <em>pull request</em>!</p>
+<h2 id="branch">Branch!</h2>
+<ol type="1">
+<li>Make sure you’re on the main branch (<code>git checkout main</code>) and run the command <code>git pull origin main</code> to get the latest updates.</li>
+<li>Checkout a new <code>git</code> branch. In your terminal run the following command, replacing ONYEN with your onyen: <code>git checkout -b ONYEN-mem-diagram</code></li>
+</ol>
+<h2 id="commit-and-push">Commit and Push!</h2>
+<ol type="1">
+<li>To commit your changes, first add the files you’ve changed to the staging area: You can use <code>git add .</code> to add every single change file at once. Then commit your changes: <code>git commit -m "a description of what changes you made on the site"</code></li>
+<li>Push your work to your training branch on the staff repo (<code>git push origin [your-branch-name]</code>). Check your branch with <code>git branch</code>.</li>
+</ol>
+<h2 id="create-a-pull-request">Create a Pull Request!</h2>
+<ol type="1">
+<li>Open GitHub Pull Requests on the <code>comp110</code> repo: <a href="https://github.com/comp110-lytle/comp110/pulls" class="uri">https://github.com/comp110-lytle/comp110/pulls</a></li>
+<li>You might see a yellow notification box: “Your recently pushed branches…”. If so select “Compare &amp; Pull Request”. If not, select “New Pull Request”, and in the Compare branch drop-down select your branch.</li>
+<li>Scroll through the differences and confirm your latest changes were successfully pushed. If you don’t see them, check that you committed everything you expected and pushed to your branch. Select “Create Pull Request”.</li>
+<li>In the description box, briefly describe your branch.</li>
+<li>On the right-hand sidebar, select Alyssa or <a href="/team/documentation/leads/website.md">the web lead</a> as a reviewer.</li>
+<li>Create pull request!</li>
+</ol>
 </div>
 
        
@@ -151,15 +182,15 @@
 
     <!-- Load our React components. -->
 
-    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1707536846.3704236"></script>
-    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1707536846.3704236"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1707536846.3704236"></script>
-        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1707536846.3704236"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1707536846.3704236"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1707536846.3704236"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1707536846.3704236"></script>
-    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1707536846.3704236"></script>
-    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1707536846.3704236"></script>
+    <script type="text/babel" src="/static/components//Itinerary/EventSection.tsx?cache=1707538942.714587"></script>
+    <script type="text/babel" src="/static/components//Itinerary/DateSection.tsx?cache=1707538942.714587"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dates.tsx?cache=1707538942.714587"></script>
+        <script type="text/babel" src="/static/components//Itinerary/DropdownButton.tsx?cache=1707538942.714587"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Dropdown.tsx?cache=1707538942.714587"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Search.tsx?cache=1707538942.714587"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButtons.tsx?cache=1707538942.714587"></script>
+    <script type="text/babel" src="/static/components//Itinerary/PillButton.tsx?cache=1707538942.714587"></script>
+    <script type="text/babel" src="/static/components//Itinerary/Itinerary.jsx?cache=1707538942.714587"></script>
     <script src="/static/scripts/log-in-handler.js"></script>
 
     
