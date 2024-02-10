@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1707506717.9376416">
+  <link rel="stylesheet" href="/static/styles.css?v=1707534907.210554">
 </head>
 
 <body>
@@ -65,6 +65,10 @@
 <li><a href="#questions">Questions</a>
 <ul>
 <li><a href="#functions">Functions</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#functions-1">Functions</a></li>
 </ul></li>
 </ul>
 </</ul>
@@ -148,6 +152,71 @@ def foo():
 
 foo()
 print(x)</code></pre>
+<h1 id="solutions">Solutions</h1>
+<h3 id="functions-1">Functions</h3>
+<ol type="1">
+<li>Answer the 1.1 and 1.2 based on the following codes:</li>
+</ol>
+<p>1.1 Do you know from the above codes, which function has been called the first? Foo or bar? - <code>bar</code> will be called the first.</p>
+<p>1.2 What will be the final line’s output? Answer: 7</p>
+<ol start="2" type="1">
+<li>This is an open-ended question, as we have learned the creation of function, can you think of the benefits of using functions in programming?</li>
+</ol>
+<ul>
+<li>Benefits of using functions include code reuse, organization, readability, and maybe ease of debugging.rstudi</li>
+</ul>
+<p>3.1 False 3.2 True 3.3 True 3.4 False 3.5 False</p>
+<ol start="4" type="1">
+<li>What is the difference between a function definition and a function call?</li>
+</ol>
+<ul>
+<li>A function definition specifies the name, parameters, and body of the function, while a function call executes the function with given arguments.</li>
+</ul>
+<ol start="5" type="1">
+<li><p>Open-ended questions, feel free to go VSCode to try it or tutoring.</p></li>
+<li><p>A return statement sends a value back to the caller and exits the function, while a print statement outputs a value to the console without exiting or returning to the caller.</p></li>
+<li><p>The purpose of the global keyword is to declare that a variable inside a function is global, allowing the function to modify the variable outside of its local scope.</p></li>
+<li><p>The scope of a variable in a function is limited to the function itself unless it is declared global.</p></li>
+<li><p>What is the output of this code?</p></li>
+</ol>
+<pre><code>x = 10
+
+def foo():
+  x = 20
+  print(x)
+
+foo()
+print(x)</code></pre>
+<p>20 10</p>
+<ol start="10" type="1">
+<li>What is the output of this code?</li>
+</ol>
+<pre><code>x = 10
+
+def foo():
+  global x
+  x = 20
+  print(x)
+
+foo()
+print(x)</code></pre>
+<p>20 20</p>
+<ol start="11" type="1">
+<li>What is the output of this code?</li>
+</ol>
+<pre><code>x = 10
+
+def foo():
+  x = 20
+  def bar():
+    global x
+    x = 30
+  bar()
+  print(x)
+
+foo()
+print(x)</code></pre>
+<p>20 30</p>
 </div>
 
        

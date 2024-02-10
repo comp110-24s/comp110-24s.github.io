@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1707506721.070717">
+  <link rel="stylesheet" href="/static/styles.css?v=1707534910.336283">
 </head>
 
 <body>
@@ -85,15 +85,33 @@
     print(f(record))
     print(g(record))</code></pre>
 <h1 id="solution">Solution</h1>
-<ul>
-<li>Note that for this solution, we did not represent the <code>range()</code> function on the heap! We instead just represented <code>y</code> as a variable on the stack that gets updated. If you chose to include a “range” object to the heap, we wouldn’t take points off, but we are really just looking for the value of <code>y</code>!</li>
-</ul>
-<p><img class="img-fluid" src="/static/assets/f23/lists00-sol.png" alt=""  /></p>
-<p><em>Image Descriptions:</em> Under Globals: * Variable f points to a function labeled Fn [1-4] on the Heap. * Variable g points to a function labeled Fn [1-6] on the Heap. * Variable record points to a list object on the Heap with the type list[str].</p>
-<p>The f function frame has: * Return Address (RA) pointing to line 13. * Variables x and y, with x pointing to the same list object on the Heap as the global variable record and y with a value of 1 and a crossed-out value of 0. * Return Value (RV) with a value of “yx”.</p>
-<p>The g function frame has: * Return Address (RA) pointing to line 14. * Variables x pointing to the same list object as the global variable record and new_list pointing to a second list object on the Heap with the type list[str]. * Variable z with a crossed-out reference to a string “xx” and updated to point to a string “yx”. * Return Value (RV) points to the second list[str] object on the heap.</p>
-<p>The Heap section shows two list objects and two string objects: * The first list on the heap has two values. The first value is “xx” with a crossed-out value of “x”. The second value is “yx” with a crossed-out value of “y”. * The second list on the heap has two values. The first value is “xx” and the second value is “yx”.</p>
-<p>The Output section at the top first prints “yx”, then the list [“xx”,”yx”].</p>
+<p><em>Coming Soon</em></p>
+<!-- * Note that for this solution, we did not represent the `range()` function on the heap! We instead just represented `y` as a variable on the stack that gets updated. If you chose to include a "range" object to the heap, we wouldn't take points off, but we are really just looking for the value of `y`!
+
+<img class="img-fluid" src="/static/assets/f23/lists00-sol.png" alt=""  />
+
+*Image Descriptions:*
+Under Globals:
+* Variable f points to a function labeled Fn [1-4] on the Heap.
+* Variable g points to a function labeled Fn [1-6] on the Heap.
+* Variable record points to a list object on the Heap with the type list[str].
+
+The f function frame has:
+* Return Address (RA) pointing to line 13.
+* Variables x and y, with x pointing to the same list object on the Heap as the global variable record and y with a value of 1 and a crossed-out value of 0.
+* Return Value (RV) with a value of "yx".
+
+The g function frame has:
+* Return Address (RA) pointing to line 14.
+* Variables x pointing to the same list object as the global variable record and new_list pointing to a second list object on the Heap with the type list[str].
+* Variable z with a crossed-out reference to a string "xx" and updated to point to a string "yx".
+* Return Value (RV) points to the second list[str] object on the heap.
+
+The Heap section shows two list objects and two string objects:
+* The first list on the heap has two values. The first value is “xx” with a crossed-out value of “x”. The second value is “yx” with a crossed-out value of “y”.
+* The second list on the heap has two values. The first value is “xx” and the second value is “yx”.
+
+The Output section at the top first prints “yx”, then the list [“xx”,”yx”]. -->
 </div>
 
        
