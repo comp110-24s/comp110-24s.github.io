@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Practice Memory Diagram - COMP110 - 23F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1707713874.0947099">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="lessons-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Practice Memory Diagram</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#snippet">Snippet</a></li>
+<li><a href="#solution">Solution</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="snippet">Snippet</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">class</span> Job:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    title: <span class="bu">str</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>    hourly_pay: <span class="bu">int</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a>    weekly_hours: <span class="bu">int</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, t: <span class="bu">str</span>, h: <span class="bu">int</span>, w: <span class="bu">int</span>):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a>        <span class="va">self</span>.title <span class="op">=</span> t</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="va">self</span>.hourly_pay <span class="op">=</span> h</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>        <span class="va">self</span>.weekly_hours <span class="op">=</span> w</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>    <span class="kw">def</span> give_raise(<span class="va">self</span>, raise_amt: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>        <span class="va">self</span>.hourly_pay <span class="op">+=</span> raise_amt</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a>        <span class="bu">print</span>(<span class="ss">f&quot;You now make $</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>hourly_pay<span class="sc">}</span><span class="ss"> an hour.&quot;</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>    </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a>    <span class="kw">def</span> calculate_pay(<span class="va">self</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        wages: <span class="bu">int</span> <span class="op">=</span> <span class="va">self</span>.hourly_pay <span class="op">*</span> <span class="va">self</span>.weekly_hours</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a>        <span class="cf">return</span> wages</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a>my_job: Job <span class="op">=</span> Job(<span class="st">&quot;barista&quot;</span>, <span class="dv">9</span>, <span class="dv">10</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>my_job.give_raise(<span class="dv">2</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a>earnings: <span class="bu">int</span> <span class="op">=</span> my_job.calculate_pay()</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a><span class="bu">print</span>(<span class="ss">f&quot;You made $</span><span class="sc">{</span>earnings<span class="sc">}</span><span class="ss"> this week.&quot;</span>)</span></code></pre></div>
+<h1 id="solution">Solution</h1>
+<figure>
+<img src="navyak_solution_8.png" alt="" /><figcaption>navyak_solution_8</figcaption>
+</figure>
+<p><em>Image Description</em> The Memory Diagram includes 3 columns titled Stack, Heap, and Output, from left to right. The Stack includes 4 frames in the following order from top to bottom: Globals, Job #<strong>init</strong>, Job #give_raise, and Job #calculate_pay. The Globals frame has 3 variables including Job, my_job, and earnings. - Job points to a class definition on the Heap (lines 4-25) - my_job points to an object of the Job type on the Heap. The attributes are as follows: - title is “barista”. - hourly_pay is 11 (previous value is 9 which is now crossed out). - weekly_hours is 10. - earnings is 110. The Job #<strong>init</strong> frame has 6 variables, including the RA, RV, self, title, hourly_pay, and weekly_hours. - The RA is defined at 22 - The RV points to the same object on the Heap as my_job in the Globals frame. - self points to the same object on the Heap as my_job in the Globals frame. - title is “barista”. - hourly_pay is 9. - weekly_hours is 10. The Job #give_raise frame has 4 variables including the RA, RV, self, and raise_amt. - The RA is defined at 23. - The RV is None. - self points to the same object on the Heap as my_job in the Globals frame. - raise_amt is 2 The Job #calculate_pay frame has 3 variables including the RA, RV, and self. - The RA is defined at 24. - The RV is None. - self points to the same object on the Heap as my_job in the Globals frame. Output includes the two phrases “You now make $11 an hour.” and “You made $110 this week.”</p>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Navya Katraju</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
