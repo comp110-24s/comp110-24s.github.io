@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Practice Memory Diagram - COMP110 - 23F</title>
+  <title> Lists - COMP110 - 23F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1707921314.8790166">
+  <link rel="stylesheet" href="/static/styles.css?v=1707921275.2095535">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="lessons-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>Practice Memory Diagram</h1>
+        <h1>Lists</h1>
         <hr class="title" />
       </div>
     </div>
@@ -61,32 +61,57 @@
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
-<li><a href="#snippet">Snippet</a></li>
-<li><a href="#solution">Solution</a>
-<ul>
-<li><a href="#image-description">Image Description</a></li>
-</ul></li>
+<li><a href="#initialize-a-list">Initialize a List</a></li>
+<li><a href="#populating-a-list">Populating a List</a></li>
+<li><a href="#creating-an-already-populated-list">Creating An Already Populated List</a></li>
+<li><a href="#indexing">Indexing</a></li>
+<li><a href="#modifying-by-index">Modifying by Index</a></li>
+<li><a href="#length">Length</a></li>
+<li><a href="#removing-an-item">Removing an Item</a></li>
+<li><a href="#lists-in-functions">Lists in Functions</a></li>
 </ul>
 </</ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="snippet">Snippet</h1>
-<pre><code>    def list_length(my_input: list[str]) -&gt; int:
-        if len(my_input) == 0:
-            return 0
-        else:
-            my_input.pop(0)
-            return 1 + list_length(my_input)
-        
-    a: list[str] = [&quot;Tar&quot;, &quot;Heels&quot;, &quot;!&quot;]
-    list_length(a)</code></pre>
-<h1 id="solution">Solution</h1>
-<p><a href="https://youtu.be/OxXJzYIHwfg">Solution Video</a></p>
-<p><img class="img-fluid" src="/static/practice-mem-diagrams/list-len-rec.png" alt="Image Description Here"  /></p>
-<h2 id="image-description">Image Description</h2>
-<p><em>(Coming Soon)</em></p>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="initialize-a-list">Initialize a List</h1>
+<p>Initialize an empty grocery list:</p>
+<p><code>grocery_list: list[str] = list()</code></p>
+<p>Then print the list:</p>
+<p><code>print(grocery_list)</code></p>
+<h1 id="populating-a-list">Populating a List</h1>
+<p>Now, below <code>grocery_list: list[str] = list()</code>, but <em>above</em> <code>print(grocery_list)</code>, add the following lines:</p>
+<p><code>grocery_list.append("bananas")</code> <code>grocery_list.append("milk")</code> <code>grocery_list.append("bread")</code></p>
+<h1 id="creating-an-already-populated-list">Creating An Already Populated List</h1>
+<p><code>grocery_list: list[str] = ["bananas", "milk", "bread"]</code></p>
+<h1 id="indexing">Indexing</h1>
+<p>Now <strong>change</strong> <code>print(grocery_list)</code> to <code>print(grocery_list[1])</code>.</p>
+<h1 id="modifying-by-index">Modifying by Index</h1>
+<p>Now, on line 7, add the line:</p>
+<p><code>grocery_list[1] = "cereal"</code></p>
+<h1 id="length">Length</h1>
+<p>Now <strong>change</strong> <code>print(grocery_list[1])</code> to <code>print(len(grocery_list))</code>.</p>
+<h1 id="removing-an-item">Removing an Item</h1>
+<p>Finally, remove something from your list by adding the following line <em>above</em> <code>print(len(grocery_list))</code>:</p>
+<p><code>grocery_list.pop(2)</code></p>
+<h1 id="lists-in-functions">Lists in Functions</h1>
+<p>Functions can take lists as input ~~~ def display(input: list[str]): ""“Print a list”"" print(input) ~~~</p>
+<pre><code>    def mimic(input: list[str]) -&gt; list[str]:
+        &quot;&quot;&quot;Print a list&quot;&quot;&quot;
+        return input</code></pre>
+<p>Functions can modify lists. ~~~ def remove_first(input: list[str]): input.pop(0)</p>
+<pre><code>remove_first(grocery_list)
+print(grocery_list)</code></pre>
+<pre><code>
+Functions can make lists</code></pre>
+<pre><code>def create(item1: str, item2: str) -&gt; list[str]:
+    &quot;&quot;&quot;Create list of length 2.&quot;&quot;&quot;
+    new_list: list[str] = [item1, item2]
+    return new_list
+
+created_list: list[str] = create(&quot;apricots&quot;, &quot;oranges&quot;)</code></pre>
+<p>~~~</p>
 </div>
 
        
@@ -94,7 +119,7 @@
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s): Alyssa Lytle</span>
+      <span> Contributor(s): Alyssa Byrnes</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
