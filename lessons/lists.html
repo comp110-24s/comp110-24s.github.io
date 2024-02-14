@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1707922411.811783">
+  <link rel="stylesheet" href="/static/styles.css?v=1707922618.0885196">
 </head>
 
 <body>
@@ -96,22 +96,27 @@
 <p>Finally, remove something from your list by adding the following line <em>above</em> <code>print(len(grocery_list))</code>:</p>
 <p><code>grocery_list.pop(2)</code></p>
 <h1 id="lists-in-functions">Lists in Functions</h1>
-<p>Functions can take lists as input ~~~ def display(input: list[str]): ""“Print a list”"" print(input) ~~~</p>
+<p>Functions can take lists as input</p>
+<pre><code>    def display(input: list[str]):
+        &quot;&quot;&quot;Print a list&quot;&quot;&quot;
+        print(input)</code></pre>
+<p>Functions can return lists</p>
 <pre><code>    def mimic(input: list[str]) -&gt; list[str]:
         &quot;&quot;&quot;Print a list&quot;&quot;&quot;
         return input</code></pre>
-<p>Functions can modify lists. ~~~ def remove_first(input: list[str]): input.pop(0)</p>
-<pre><code>remove_first(grocery_list)
-print(grocery_list)</code></pre>
-<pre><code>
-Functions can make lists</code></pre>
-<pre><code>def create(item1: str, item2: str) -&gt; list[str]:
-    &quot;&quot;&quot;Create list of length 2.&quot;&quot;&quot;
-    new_list: list[str] = [item1, item2]
-    return new_list
+<p>Functions can make lists</p>
+<pre><code>    def create(item1: str, item2: str) -&gt; list[str]:
+        &quot;&quot;&quot;Create list of length 2.&quot;&quot;&quot;
+        new_list: list[str] = [item1, item2]
+        return new_list
+    
+    created_list: list[str] = create(&quot;apricots&quot;, &quot;oranges&quot;)</code></pre>
+<p>Functions can modify lists.</p>
+<pre><code>    def remove_first(input: list[str]):
+        input.pop(0)
 
-created_list: list[str] = create(&quot;apricots&quot;, &quot;oranges&quot;)</code></pre>
-<p>~~~</p>
+    remove_first(grocery_list)
+    print(grocery_list)</code></pre>
 </div>
 
        
