@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1708039200.6177185">
+  <link rel="stylesheet" href="/static/styles.css?v=1708039274.9999588">
 </head>
 
 <body>
@@ -108,12 +108,16 @@
 <h2 id="all-30-points">1. <code>all</code> – 30 Points</h2>
 <p>This is the first function you will write in <code>ex04_utils.py</code>. The other two functions will also be defined in this file.</p>
 <p>Given a <code>list</code> of <code>ints</code> and an <code>int</code>, <code>all</code> should return a bool indicating whether or not all the ints in the list are the same as the given <code>int</code>. Example usage:</p>
-<pre class="plaintext"><code>&gt;&gt;&gt; all([1, 2, 3], 1)
+<pre>
+<div class="terminal">
+>>> all([1, 2, 3], 1)
 False
-&gt;&gt;&gt; all([1, 1, 1], 2)
+>>> all([1, 1, 1], 2)
 False
-&gt;&gt;&gt; all([1, 1, 1], 1)
-True</code></pre>
+>>> all([1, 1, 1], 1)
+True
+</div>
+</pre>
 <p>Continue by defining a skeleton function with the following signature:</p>
 <ol type="1">
 <li>Name: <code>all</code></li>
@@ -124,12 +128,16 @@ True</code></pre>
 <p>Next, you will write a function named <code>max</code>.</p>
 <p>The <code>max</code> function is given a <code>list</code> of <code>ints</code>, <code>max</code> should return the largest in the List.</p>
 <p>If the <code>list</code> is empty, <code>max</code> should result in a <code>ValueError</code>. We’ll show you how! Examples:</p>
-<pre class="plaintext"><code>&gt;&gt;&gt; max([1, 3, 2])
+<pre>
+<div class="terminal">
+>>> max([1, 3, 2])
 3
-&gt;&gt;&gt; max([100, 99, 98])
+>>> max([100, 99, 98])
 100
-&gt;&gt;&gt; max([])
-ValueError: max() arg is an empty List</code></pre>
+>>> max([])
+ValueError: max() arg is an empty List
+</div>
+</pre>
 <p>Define a skeleton function with the following signature:</p>
 <ol type="1">
 <li>Name: <code>max</code></li>
@@ -137,15 +145,19 @@ ValueError: max() arg is an empty List</code></pre>
 <li>Returns: An <code>int</code>, the largest number in the list. If the list is empty, raises a ValueError.</li>
 </ol>
 <p>The body of your skeleton function can begin as such, which demonstrates how to <code>raise</code> an error:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">def</span> <span class="bu">max</span>(<span class="bu">input</span>: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>    <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">input</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;max() arg is an empty List&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">def</span> <span class="bu">max</span>(<span class="bu">input</span>: <span class="bu">list</span>[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>    <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">input</span>) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;max() arg is an empty List&quot;</span>)</span></code></pre></div>
 <h2 id="is_equal-20-points">3. <code>is_equal</code> – 20 Points</h2>
 <p>Given two <code>list</code>s of <code>int</code> values, return <code>True</code> if <em>every</em> element at <em>every</em> index is equal in both <code>list</code>s.</p>
-<pre class="plaintext"><code>&gt;&gt;&gt; is_equal([1, 0, 1], [1, 0, 1])
+<pre>
+<div class="terminal">
+>>> is_equal([1, 0, 1], [1, 0, 1])
 True
-&gt;&gt;&gt; is_equal([1, 1, 0], [1, 0, 1])
-False</code></pre>
+>>> is_equal([1, 1, 0], [1, 0, 1])
+False
+</div>
+</pre>
 <p>Your implementation should not assume the lengths of each List are equal.</p>
 <p>This concept is called <em>deep equality</em>. Two separate <code>list</code> objects on the <em>heap</em> may be distinct objects, such that if you changed one the other would remain the same. However, two distinct objects can be <em>deeply equal</em> to one another if what they are made of is equal to each other in essence.</p>
 <p>Define a function with the following signature:</p>
