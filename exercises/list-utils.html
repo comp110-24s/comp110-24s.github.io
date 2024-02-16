@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> EX04 - `list` Utility Functions - COMP110 - 23F</title>
+  <title> EX04 - list Utility Functions - COMP110 - 23F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1708041771.4509816">
+  <link rel="stylesheet" href="/static/styles.css?v=1708048878.8656082">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="exercises-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>EX04 - `list` Utility Functions</h1>
+        <h1>EX04 - list Utility Functions</h1>
         <hr class="title" />
       </div>
     </div>
@@ -61,21 +61,28 @@
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
-<li><a href="#establish-the-python-module">0. Establish the Python Module</a></li>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#allowed-constructs">Allowed Constructs</a></li>
+<li><a href="#setup">0. Setup</a></li>
 <li><a href="#all-30-points">1. <code>all</code> – 30 Points</a></li>
 <li><a href="#max-30-points">2. <code>max</code> – 30 Points</a></li>
 <li><a href="#is_equal-20-points">3. <code>is_equal</code> – 20 Points</a></li>
+<li><a href="#extend">4. <code>extend</code></a></li>
 <li><a href="#make-a-backup-checkpoint-commit">4. Make a Backup Checkpoint “Commit”</a></li>
 <li><a href="#submit-to-gradescope-for-grading">5. Submit to Gradescope for Grading</a></li>
+</ul></li>
 </ul>
 </</ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>Art students intentionally reproduce great works of art to develop their own skills and techniques. The purpose isn’t to become an imitator, but to deepen an understanding of important work and styles that came before you.</p>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="introduction">Introduction</h1>
+<p>Art students intentionally reproduce great works of art to develop their own skills and techniques. The purpose isn’t to become an imitator, but to deepen an understanding of important work and styles that came before you.</p>
 <p>Reverse engineering algorithms and abstractions in computer science is of the same spirit! In this exercise you will implement algorithms to practice computational thinking. You will gain familiarity with the names and behaviors of commonly useful functions.</p>
 <p>Since the work you do is reproducing tried and true abstractions of the past, in the future you can and should use your language’s preferred functions and idioms instead. In this exercise we will show you how to achieve the same functionality using idiomatic Python in the future.</p>
+<h2 id="allowed-constructs">Allowed Constructs</h2>
 <p>Your function implementations may only make use of the built-in <code>len</code> function, and a <code>list</code> object’s methods <code>append</code> and <code>pop</code>.</p>
 <p>Specifically off-limits in this exercise are the following constructs. You are not expected to know what any of these are, so this only applies to people with outside Python experience. Making use of any of the following will result in no credit for the function you use them in:</p>
 <ul>
@@ -97,9 +104,9 @@
 <p>General Notes:</p>
 <ul>
 <li>You are not required to implement a <code>main</code> function for this exercise. However, it may be helpful to have one to make test function calls with lists you construct.</li>
-<li>The grader will evaluate your code by <strong>importing your functions</strong> and calling them with our own chosen list inputs. You do not need to worry about generating lists for each of your functions to work with. These will be passed in as parameters.</li>
+<li>The grader will evaluate your code by <strong>importing your functions</strong> and calling them with our own chosen list inputs. You do not need to create your own lists and call the functions. (However, feel free to for practice!)</li>
 </ul>
-<h2 id="establish-the-python-module">0. Establish the Python Module</h2>
+<h2 id="setup">0. Setup</h2>
 <p>In Visual Studio Code, be sure your workspace is open.</p>
 <p>Open the Explorer pane (the icon with two sheets of paper or menu View &gt; Explorer) and expand the Workspace directory.</p>
 <p>Right click on the <code>exercises</code> directory and select “New File”. Enter the following filename, being careful to match punctuation:</p>
@@ -110,6 +117,7 @@
 <p>Given a <code>list</code> of <code>ints</code> and an <code>int</code>, <code>all</code> should return a bool indicating whether or not all the ints in the list are the same as the given <code>int</code>. Example usage:</p>
 <pre>
 <div class="terminal">
+>>> from exercises.ex04_utils import all
 >>> all([1, 2, 3], 1)
 False
 >>> all([1, 1, 1], 2)
@@ -130,6 +138,7 @@ True
 <p>If the <code>list</code> is empty, <code>max</code> should result in a <code>ValueError</code>. We’ll show you how! Examples:</p>
 <pre>
 <div class="terminal">
+>>> from exercises.ex04_utils import max
 >>> max([1, 3, 2])
 3
 >>> max([100, 99, 98])
@@ -152,7 +161,29 @@ ValueError: max() arg is an empty List
 <p>Given two <code>list</code>s of <code>int</code> values, return <code>True</code> if <em>every</em> element at <em>every</em> index is equal in both <code>list</code>s.</p>
 <pre>
 <div class="terminal">
+>>> from exercises.ex04_utils import is_equal
 >>> is_equal([1, 0, 1], [1, 0, 1])
+True
+>>> is_equal([1, 1, 0], [1, 0, 1])
+False
+</div>
+</pre>
+<p>Your implementation should not assume the lengths of each List are equal.</p>
+<p>This concept is called <em>deep equality</em>. Two separate <code>list</code> objects on the <em>heap</em> may be distinct objects, such that if you changed one the other would remain the same. However, two distinct objects can be <em>deeply equal</em> to one another if what they are made of is equal to each other in essence.</p>
+<p>Define a function with the following signature:</p>
+<ol type="1">
+<li>Name: <code>is_equal</code></li>
+<li>Parameters: Two lists of integers.</li>
+<li>Returns: <code>True</code> if lists are equal, <code>False</code> otherwise.</li>
+</ol>
+<p>Implement the <code>is_equal</code> function as described above.</p>
+<h2 id="extend">4. <code>extend</code></h2>
+<p>Given two <code>list</code>s of <code>int</code> values, <em>mutate</em> the first <code>list</code> of <code>int</code> values by appending the second <code>list</code>s values to the end of it. (Think of this is something similar to concatentation in <code>string</code>s!)</p>
+<pre>
+<div class="terminal">
+>>> from exercises.ex04_utils import is_equal
+>>> a: list[]
+>>> extend([1, 0, 1], [2, 3])
 True
 >>> is_equal([1, 1, 0], [1, 0, 1])
 False
@@ -194,7 +225,7 @@ False
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Kris Jordan, Marlee Walls</span>
+      <span> Contributor(s):        Kris Jordan,        Marlee Walls, Alyssa Lytle</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
