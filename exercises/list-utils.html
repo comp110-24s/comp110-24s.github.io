@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1708048878.8656082">
+  <link rel="stylesheet" href="/static/styles.css?v=1708049852.8949215">
 </head>
 
 <body>
@@ -65,12 +65,12 @@
 <ul>
 <li><a href="#allowed-constructs">Allowed Constructs</a></li>
 <li><a href="#setup">0. Setup</a></li>
-<li><a href="#all-30-points">1. <code>all</code> – 30 Points</a></li>
-<li><a href="#max-30-points">2. <code>max</code> – 30 Points</a></li>
+<li><a href="#all-20-points">1. <code>all</code> – 20 Points</a></li>
+<li><a href="#max-20-points">2. <code>max</code> – 20 Points</a></li>
 <li><a href="#is_equal-20-points">3. <code>is_equal</code> – 20 Points</a></li>
-<li><a href="#extend">4. <code>extend</code></a></li>
-<li><a href="#make-a-backup-checkpoint-commit">4. Make a Backup Checkpoint “Commit”</a></li>
-<li><a href="#submit-to-gradescope-for-grading">5. Submit to Gradescope for Grading</a></li>
+<li><a href="#extend-20-points">4. <code>extend</code> – 20 Points</a></li>
+<li><a href="#make-a-backup-checkpoint-commit">5. Make a Backup Checkpoint “Commit”</a></li>
+<li><a href="#submit-to-gradescope-for-grading">6. Submit to Gradescope for Grading</a></li>
 </ul></li>
 </ul>
 </</ul>
@@ -96,9 +96,10 @@
 </ul>
 <p>Assignment Outline</p>
 <ul>
-<li><code>all</code> – 30 Points Autograded</li>
-<li><code>max</code> – 30 Points Autograded</li>
+<li><code>all</code> – 20 Points Autograded</li>
+<li><code>max</code> – 20 Points Autograded</li>
 <li><code>is_equal</code> – 20 Points Autograded</li>
+<li><code>extend</code> – 20 Points Autograded</li>
 <li>Style, Linting, Typing – 20 Points Autograded</li>
 </ul>
 <p>General Notes:</p>
@@ -112,7 +113,7 @@
 <p>Right click on the <code>exercises</code> directory and select “New File”. Enter the following filename, being careful to match punctuation:</p>
 <p><code>ex04_utils.py</code></p>
 <p>Before beginning work on the program, you should add a docstring to the top of your Python module just as you have previously. Then, you should add a line with the special variable named <strong>author</strong> assigned to be a string with your 9-digit student PID.</p>
-<h2 id="all-30-points">1. <code>all</code> – 30 Points</h2>
+<h2 id="all-20-points">1. <code>all</code> – 20 Points</h2>
 <p>This is the first function you will write in <code>ex04_utils.py</code>. The other two functions will also be defined in this file.</p>
 <p>Given a <code>list</code> of <code>ints</code> and an <code>int</code>, <code>all</code> should return a bool indicating whether or not all the ints in the list are the same as the given <code>int</code>. Example usage:</p>
 <pre>
@@ -132,7 +133,7 @@ True
 <li>Arguments: A list of integers and an int.</li>
 <li>Returns: A <code>bool</code>, <code>True</code> if all numbers match the indicated number, <code>False</code> otherwise or if the list is empty. This algorithm should work for a list of any length. Hint: remember you can return from inside of a loop to short-circuit its behavior and return immediately.</li>
 </ol>
-<h2 id="max-30-points">2. <code>max</code> – 30 Points</h2>
+<h2 id="max-20-points">2. <code>max</code> – 20 Points</h2>
 <p>Next, you will write a function named <code>max</code>.</p>
 <p>The <code>max</code> function is given a <code>list</code> of <code>ints</code>, <code>max</code> should return the largest in the List.</p>
 <p>If the <code>list</code> is empty, <code>max</code> should result in a <code>ValueError</code>. We’ll show you how! Examples:</p>
@@ -177,28 +178,31 @@ False
 <li>Returns: <code>True</code> if lists are equal, <code>False</code> otherwise.</li>
 </ol>
 <p>Implement the <code>is_equal</code> function as described above.</p>
-<h2 id="extend">4. <code>extend</code></h2>
-<p>Given two <code>list</code>s of <code>int</code> values, <em>mutate</em> the first <code>list</code> of <code>int</code> values by appending the second <code>list</code>s values to the end of it. (Think of this is something similar to concatentation in <code>string</code>s!)</p>
+<h2 id="extend-20-points">4. <code>extend</code> – 20 Points</h2>
+<p>Given two <code>list</code>s of <code>int</code> values, <em>mutate</em> the first <code>list</code> of <code>int</code> values by appending the second <code>list</code>’s values to the end of it. (Think of this is something similar to concatentation in <code>string</code>s!)</p>
+<p>Note that this function is not <em>returning</em> anything! It is only <em>mutating</em> one of the inputs.</p>
 <pre>
 <div class="terminal">
->>> from exercises.ex04_utils import is_equal
->>> a: list[]
->>> extend([1, 0, 1], [2, 3])
-True
->>> is_equal([1, 1, 0], [1, 0, 1])
-False
+>>> from exercises.ex04_utils import extend
+>>> a: list[int] = [1, 3, 5]
+>>> b: list[int] = [2, 4, 6]
+>>> extend(a, b)
+>>> a
+[1, 3, 5, 2, 4, 6]
+>>> c: list[int] = [7, 8]
+>>> extend(c, b)
+>>> c
+[7, 8, 2, 4, 6]
 </div>
 </pre>
-<p>Your implementation should not assume the lengths of each List are equal.</p>
-<p>This concept is called <em>deep equality</em>. Two separate <code>list</code> objects on the <em>heap</em> may be distinct objects, such that if you changed one the other would remain the same. However, two distinct objects can be <em>deeply equal</em> to one another if what they are made of is equal to each other in essence.</p>
 <p>Define a function with the following signature:</p>
 <ol type="1">
-<li>Name: <code>is_equal</code></li>
+<li>Name: <code>extend</code></li>
 <li>Parameters: Two lists of integers.</li>
-<li>Returns: <code>True</code> if lists are equal, <code>False</code> otherwise.</li>
+<li>Returns: Nothing.</li>
 </ol>
-<p>Implement the <code>is_equal</code> function as described above.</p>
-<h2 id="make-a-backup-checkpoint-commit">4. Make a Backup Checkpoint “Commit”</h2>
+<p>Implement the <code>extend</code> function as described above.</p>
+<h2 id="make-a-backup-checkpoint-commit">5. Make a Backup Checkpoint “Commit”</h2>
 <p>As you make progress on this exercise, making backups is encouraged.</p>
 <ol type="1">
 <li>Open the Source Control panel (Command Palette: “Show SCM” or click the icon with three circles and lines on the activity panel).</li>
@@ -211,8 +215,8 @@ False
 <li>Press the Check icon to make a <em>Commit</em> (a version) of your work.</li>
 <li>Finally, press the Ellipses icon (…), look for “Pull/Push” submenu, and select “Push to…”, and in the dropdown select your backup repository.</li>
 </ol>
-<h2 id="submit-to-gradescope-for-grading">5. Submit to Gradescope for Grading</h2>
-<p>Login to Gradescope and select the assignment named “EX04 - Lists.”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
+<h2 id="submit-to-gradescope-for-grading">6. Submit to Gradescope for Grading</h2>
+<p>Login to Gradescope and select the assignment named “EX04 - Lists Utils”. You’ll see an area to upload a zip file. To produce a zip file for autograding, return back to Visual Studio Code.</p>
 <p>If you <em>do not</em> see a Terminal at the bottom of your screen, open the Command Palette and search for “View: Toggle Integrated Terminal”.</p>
 <p>Type the following command (all on a single line):</p>
 <p><code>python -m tools.submission exercises/ex04_utils.py</code></p>
