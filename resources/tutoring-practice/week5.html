@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Week 2 Practice - COMP110 - 23F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1708467173.5899632">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="resources-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Week 2 Practice</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#concepts-reviewed">Concepts Reviewed</a></li>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#list-memory">List Memory</a></li>
+<li><a href="#import">Import</a></li>
+<li><a href="#for-loop">For Loop</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#list-memory-1">List Memory</a></li>
+<li><a href="#import-1">Import</a></li>
+<li><a href="#for-loop-1">For Loop</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. Before working through these practice questions, you should get familiar with the concepts covered in the lessons of the Fifth Week.</p>
+<p><br></p>
+<h1 id="questions">Questions</h1>
+<p>These questions might not be in the same format as quizzes. Don’t hesitate to bring them to the Tutoring section for help.</p>
+<h3 id="list-memory">List Memory</h3>
+<ol type="1">
+<li><p>In Python, when you create a variable of type <code>list</code>, where does it get stored? (Hint: Stack or Heap?)</p></li>
+<li><p>In the Memory Diagram, how do we represent something that is stored in the Heap? (Instead of drawing an Arrow, how do we represent the reference to Heap?)</p></li>
+<li><p>When we see the code like <code>x: list[int] = [1, 2, 3]</code>, how do you handle that in Memory Diagram? Will you write anything in Stack?</p></li>
+<li><p>Is <code>list</code> in Python fixed length or infinite? (For elaboration: Do you think the <code>list</code> in Python is infinitely long? What will happen eventually?)</p></li>
+</ol>
+<p><br></p>
+<h3 id="import">Import</h3>
+<ol type="1">
+<li><p>What is the purpose of having <code>import</code> statements in Python? When will we use it?</p></li>
+<li><p>If we import a file say <code>fileA.py</code> to <code>fileB.py</code> do you think the functions from <code>fileA.py</code> will get executed after being imported?</p></li>
+<li><p>(Continue on Question 2) You might have noticed that we have a line of code: <code>if __name__ == "__main__"</code>. After knowing the answer to previous questions, do you know the purpose we have this line of code?</p></li>
+<li><p>What is the syntax of writing an <code>import</code> statement to import a function <code>helperA</code> from a module called <code>ex01</code> inside the package called <code>comp110</code>?</p></li>
+</ol>
+<p><br></p>
+<h3 id="for-loop">For Loop</h3>
+<ol type="1">
+<li>Use the <code>range()</code> function to create a <code>for-in</code> loop which behaves the same as the following loop:</li>
+</ol>
+<pre><code>i: int = 0
+while (i &lt; len(list1)):
+    print(list1[i])
+    i+=1</code></pre>
+<ol start="2" type="1">
+<li><p>Can you think of the reasons why we will prefer the <code>for-in</code> loop over the <code>while</code> loop?</p></li>
+<li><p>Fill in the following blank:</p></li>
+</ol>
+<pre><code>str1: str = &quot;I love COMP110&quot;
+for _________:
+    print(char)</code></pre>
+<ol start="4" type="1">
+<li><p>Can we nested a loop? If so, could you state one purpose of doing so?</p></li>
+<li><p>(Elaborate on For-In Loop) Unlike the normal while loop with index, the <code>for-in</code> loop might be a little inconvenient to use if we also need to take the <code>index</code> into account. Is there a function (beyond 110’s scope) that will record the index while also using the <code>for-in</code> loops’ syntax?</p></li>
+<li><p>What would be the output of the following <code>for-in</code> loop?</p></li>
+</ol>
+<pre><code>for i in range(5):
+    result = i * 2
+print(result)</code></pre>
+<ol start="7" type="1">
+<li>Is the following way of writing <code>for-in</code> loop encouraged? Why not or why yes?</li>
+</ol>
+<pre><code>numbers = [1, 2, 3, 4, 5]
+for number in numbers:
+    if number % 2 == 0:
+        numbers.remove(number)
+print(numbers)</code></pre>
+<ol start="8" type="1">
+<li>Any problem with the following codes? If not, what is the output?</li>
+</ol>
+<pre><code>course: list[str] = [&quot;110&quot;, &quot;210&quot;, &quot;211&quot;, &quot;301&quot;]
+for num in course:
+    print(num + 100)</code></pre>
+<h1 id="solutions">Solutions</h1>
+<h3 id="list-memory-1">List Memory</h3>
+<ol type="1">
+<li><p>The list gets stored in the heap. The variable in the stack holds a reference to the list in the heap.</p></li>
+<li><p>The reference address associated with the list in the heap.</p></li>
+<li><p>We first write the name (which is <code>x</code>) inside the stack, then we write the address associated with the <code>list [1, 2, 3]</code> from the Heap.</p></li>
+<li><p>Unlike the lists from some other languages, Python’s lists are not fixed in length. However, they are not considered infinite as they will be limited by the available memory.</p></li>
+</ol>
+<p><br></p>
+<h3 id="import-1">Import</h3>
+<ol type="1">
+<li><p>Import statement promote code reusability by importing and using functionality that is defined elsewhere.</p></li>
+<li><p>(This is an elaborated question) When a file (e.g., fileA.py) is imported into another file (fileB.py), Python executes the top-level code in fileA.py once during the import. However, functions or classes defined in fileA.py are not automatically executed upon import; they must be called explicitly in fileB.py.</p></li>
+<li><p>This line of code will check if the file is run as the main file or gets imported. Prevent the file from executing unnecessarily.</p></li>
+<li></li>
+</ol>
+<pre><code>from comp110.ex01 import helperA</code></pre>
+<p><br></p>
+<h3 id="for-loop-1">For Loop</h3>
+<ol type="1">
+<li></li>
+</ol>
+<pre><code>for i in range(len(list1)):
+    print(list1[i])</code></pre>
+<ol start="2" type="1">
+<li><p>Readability, Simplicity, or Less Error(Such as no risk of having infinite loop)</p></li>
+<li><p>Fill in the following blank:</p></li>
+</ol>
+<pre><code>for char in str1:</code></pre>
+<ol start="4" type="1">
+<li><p>Yes. Nested loops are useful for working with multi-dimensional data structures, say a matrix.</p></li>
+<li><p>(Elaborate on For-In Loop) There is a function called <code>enumerate()</code> fill free to Google it.</p></li>
+<li><p>It will only print 8</p></li>
+<li><p>This is not encouraged since if we remove elements from a list while iterating it. Since the index get updated during the iteration lead to the risk that some elements get skipped.</p></li>
+<li><p>The course is a list of string instead of int. Applying <code>for-in</code> loop will return each string from it which cannot be applied with <code>addition</code> between a string and numbers.</p></li>
+</ol>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Vincent Li</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
