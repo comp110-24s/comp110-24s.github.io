@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1708904786.632698">
+  <link rel="stylesheet" href="/static/styles.css?v=1708905160.5111065">
 </head>
 
 <body>
@@ -70,8 +70,9 @@
 </ul></li>
 <li><a href="#solutions">Solutions</a>
 <ul>
-<li><a href="#while-loops-and-functions-solution">While loops and functions Solution</a></li>
 <li><a href="#conceptual-questions-solutions">Conceptual Questions Solutions</a></li>
+<li><a href="#while-loops-and-functions-solution">While loops and functions Solution</a></li>
+<li><a href="#function-writing-solutions">Function Writing Solutions</a></li>
 </ul></li>
 </ul>
 </</ul>
@@ -125,14 +126,21 @@
 <li>Value Exists: <a href="/static/practice_worksheets/sp23/qz02-pp2.pdf">instructions</a></li>
 <li>Short Words: <a href="/static/practice_worksheets/sp23/qz02-pp3.pdf">instructions</a></li>
 </ol>
-<!-- 
+<p><a href="#function-writing-solutions">Solution</a> <!-- 
 ### Autograder instructions:
 Join the Gradescope class for practice problems with the code: 4V7PB5
 (Do this by going to your [Gradescope](https://www.gradescope.com/) homepage and clicking on "Enroll in Course")
-**Do not compress these files before submitting. Simply submit the `.py` files.** -->
+**Do not compress these files before submitting. Simply submit the `.py` files.** --></p>
 <h2 id="memory-diagrams">Memory Diagrams</h2>
 <p>For more practice, make sure to check out the <a href="/resources/practice/MemDiagrams.html">practice memory diagrams</a>.</p>
 <h1 id="solutions">Solutions</h1>
+<h2 id="conceptual-questions-solutions">Conceptual Questions Solutions</h2>
+<ol type="1">
+<li>False</li>
+<li>True</li>
+<li>False</li>
+<li>False</li>
+</ol>
 <h2 id="while-loops-and-functions-solution">While loops and functions Solution</h2>
 <ol type="1">
 <li><img class="img-fluid" src="/static/practice_worksheets/sp23/q2_sol.jpg" alt="The memory diagram includes a box on the top labeled Output and a box on the bottom labeled Stack, next to an area labeled Heap.
@@ -144,244 +152,44 @@ The output box contains a line that says (in quotes) 2 is even. Then, on the nex
 <p>1.1 Even though <code>main</code> is defined before <code>f</code> and <code>g</code>, it isn’t <strong>called</strong> until after <code>f</code> and <code>g</code> are defined.</p>
 <p>1.2 No because <code>x = 4</code>, so <code>x % 2 == 1</code> is False, and therefore the code block inside is never run.</p>
 <p>1.3 There would be an error because <code>x</code> is a local variable inside both <code>f</code> and <code>g</code>. In other words, <code>x</code> is <em>NOT</em> a global variable. Therefore, the program does not recognize that <code>x</code> exists in this context.</p>
-<h2 id="conceptual-questions-solutions">Conceptual Questions Solutions</h2>
+<h2 id="function-writing-solutions">Function Writing Solutions</h2>
+<p>Note: Your solution does not need to be identical to these, these are just examples of one of many possible solutions.</p>
 <ol type="1">
-<li>False</li>
-<li>True</li>
-<li>False</li>
-<li>False</li>
+<li></li>
 </ol>
-<!-- ## Memory Diagrams
-
-1. Produce a memory diagram for the following code snippet, being sure to include its stack, heap, and output.  
-```
-    def main() -> None:
-        """Entry point of program."""
-        strings: list[str] = ["hey", "o", "eh", "e"]
-        word: str = make_word(strings)
-        print(word)
-
-
-    def make_word(root: list[str]) -> str:
-        """A nonsensical function that makes a 'word'."""
-        word: str = ""
-        i: int = 0
-        while i < len(root):
-            if i % 2 == 0:
-                word += root[i]
-            else:
-                if len(word) < 5:
-                    word += root[i]
-                else:
-                    return word
-            i += 1
-        return word
-
-
-    if __name__ == "__main__":
-        main()
-```
-
-2. Produce a memory diagram for the following code snippet, being sure to include its stack, heap, and output.  
-```
-    """References Practice."""
-
-
-    def create() -> list[int]:
-        """An obnoxious way to make a list."""
-        list_1: list[int] = []
-        i: int = 0
-        while i < 3:
-            list_1.append(i)
-            i += 1
-        return list_1
-
-
-    def increase (a_list: list[int], x: int) -> None:
-        """Lets pump it up!"""
-        i: int = 0
-        while i < len(a_list):
-            a_list[i] += x
-            i += 1
-        return None
-
-
-    def main() -> None:
-        """Entrypoint of the program."""
-        list_1: list[int] = create()
-        list_2: list[int] = list_1
-        list_1 = create()
-        increase(list_1, 2)
-
-        print(list_1)
-        print(list_2)
-
-
-    if __name__ == "__main__":
-        main()
-```
-
-<!-- 3. Produce a memory diagram for the following code snippet, being sure to include its stack, heap, and output.  
-```
-    def g(word: str) -> str:
-        global happy
-        if len(word) >- 4:
-            word = happy
-        else:
-            happy = "yay"
-        return word
-
-    happy: str = ":)"
-    print(g("yay"))
-    print(g("happy"))
-    print(happy)
-``` -->
-<!-- 20. Produce a memory diagram for the following code snippet, being sure to include its stack and output.  
-![](/static/practice_worksheets/fa21/qz03-question12.png) -->
-<!-- ## Code Tracing
-15. Given the following code snippet, answer the questions below.  
-```
-    """List Practice."""
-
-    a: int = 3
-    b: int = 0
-    c: float
-
-
-    def main() -> None:
-        """Entry point of program."""
-        global a
-        global b
-        print(fun(a, b))
-
-
-    def fun(a: int, b: int) -> list[int]:
-        """A sample function."""
-        global c
-        nums: list[int] = []
-        if b == 0:
-            while len(nums) < 4:
-                c = a + b / 2
-                if c % 2 == 0:
-                    a += 1
-                    b += 1
-                else:
-                    nums.append(a)
-                    a += 3
-        return nums
-
-
-    if __name__ == "__main__":
-        main()
-```
-
-15.1. What is the printed output once the code snippet completes?  
-15.2. What are the values of the global variables `a`, `b`, and `c` once the code snippet completes? -->
-<!-- 3. Given the following code snippet, answer the questions below.  
-```
-    def change_and_check(x: int, nums: list[int]) -> int:
-        """Let's see what happens!"""
-        if x < 0:
-            return 0
-        
-        i: int = 0
-        while i < len(nums):
-            nums[i] += x
-            i += 1
-
-        i = 0
-        while i < len(nums):
-            if nums[i] == x:
-                return 0
-            i += 1
-
-        return x - 1
-
-
-    def main() -> None:
-        """The entrypoint of this program."""
-        num_1: int = 0
-        list_1: list[int] = [1, 2, num_1]
-        list_1.append(change_and_check(2, list_1))
-        list_1.append(change_and_check(3, list_1))
-
-
-    main()
-```
-
-4.1. What is the value of `list_1` once the code snippet completes?  
-4.2. What is the value of `i` on line 10 during the _last_ call to `change_and_check`?  
-4.3. How many total frames are created on the stack throughout the run of this program (including the globals frame)? -->
-<!-- # Solutions
-
-
-
-## Memory Diagrams
-
-1.
-<img class="img-fluid" src="/static/practice-mem-diagrams/md-qz02.png" alt="The memory diagram includes a column labeled Stack, a column labeled Heap, and a column labeled Output. The stack has 3 frames in the following order from top to bottom: globals, main, and make underscore word. 
-In the Globals frame there are 2 items. First is the label `main` pointing to a function on the heap from lines 1-5. The label make underscore word points to a function on the heap from lines 8-21. 
-The main frame has 4 items, RA, RV, strings, and word. The return address is 25 and the return value is None. The variable `strings` pointing to a list in the Heap. The list is labeled list bracket str close bracket and has 4 rows and 2 columns. The first column has the indices 0, 1, 2, and 3 and the second column has the values 'hey', 'o', 'eh', and 'e'. Finally, the `main` stack frame has the variable `word` with the value of quote H E Y O E H end quote. 
-The make underscore word frame has 5 items, RA, RV, root, word, and i. Make underscore word has a return address of 4 and a return value of quote H E Y O E H end quote. It has the variable `root` pointing to the same list in the heap as the variable strings. There is another variable `word` with the value of quote H E Y O E H end quote and a variable i with the value of 3. Finally, in the output column is the string H E Y O E H.">
-
-2.
-<img class="img-fluid" src="/static/practice_worksheets/fa21/qz02-solution12n.png" alt="The memory diagram has three columns labeled stack, heap and output. The stack has 5 frames labeled from top to bottom, in the following order: globals, main, create, create, and increase. 
-The globals frame has three labels: create, increase, and main. Create is pointing to a function on the heap from lines 4-11, increase points to a function on the heap from lines 14-20, and main points to a function on the heap from lines 23-31. 
-The main frame has 4 items, including the RA, RV, and two variables list underscore 1 and list underscore 2. The return address is 31 and the return value is None. list underscore 2 points to a list on the heap labeled list open bracket int close bracket with 3 rows and two columns. At index 0 is the value 0, at index 1 is the value 1 and at index 2 is the value 2. list underscore 1 points to a list on the heap. The list is labeled list open bracket int close bracket and has two columns and three rows below that. The first row has the index 0 on the left and the previous value of 0 crossed out and a final value of 2. Index 1 has the previous value of 1 crossed out and a final value of 3. Index 2 has the previous value of 2 crossed out and the final value of 4.
-The first create frame has four items, RA, RV, list underscore 1, and i. The return address is 25 and the return value points to the same list in the heap that the variable list underscore 2 in the previous main frame pointed to. In the create frame, the variable list underscore 1 points to that same list in the heap. The variable i has the previous values of 0, 1, and 2 crossed out and the final value of 3. 
-The second create frame also has four items, RA, RV, list underscore 1 and i. The return address is 27 and the return value is the same list in the heap that the variable list underscore 1 in main pointed to. Within the create frame, list underscore 1 points to that same list in the heap. The variable i has the previous values of 0, 1, and 2 crossed out and the final value of 3.
-The final frame of increase has 5 items, RA, RV, a underscore list, x, and i. The return address is 28 and the return value is None. a_underscore list points to the same list pointed to by list underscore 1 in main and list underscore 1 in the second create frame. The variable x has the value of 2 and the variable i has the previous values of 0, 1, and 2 crossed out and the final value of 3.">
-
- 3.
-<img class="img-fluid" src="/static/practice-mem-diagrams/qz02-pp-3.png" alt="">
-
-3.1. `[6, 7, 5, 3, 0]`  
-3.2. 4  
-3.3. 4
-
-## Function Writing
-
-Note:  Your solution does not need to be identical to these, these are just examples of one of many possible solutions.
-
-1.
-```
-    def odd_and_even(list1: list[int]) -> list[int]:
-        """Find the odd elements with even indexes."""
+<pre><code>    def odd_and_even(list1: list[int]) -&gt; list[int]:
+        &quot;&quot;&quot;Find the odd elements with even indexes.&quot;&quot;&quot;
         i: int = 0
         list2: list[int] = []
 
-        while i < len(list1):
+        while i &lt; len(list1):
             if list1[i] % 2 == 1 and i % 2 == 0:
                 list2.append(list1[i])
             i += 1
 
-        return list2
-```
-
-
-2.
-```
-    def value_exists(inp_dict: dict[str,int], val: int) -> bool:
-        """Return true if val is in inp_dict"""
+        return list2</code></pre>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<pre><code>    def value_exists(inp_dict: dict[str,int], val: int) -&gt; bool:
+        &quot;&quot;&quot;Return true if val is in inp_dict&quot;&quot;&quot;
         exists: bool = False
         for elem in inp_dict:
             if inp_dict[elem] == val:
                 exists = True
-        return exists
-```
-
-3.
-```
-    def short_words(inp_list: list[str]) -> list[str]:
-        """Filter out the shorter words"""
+        return exists</code></pre>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<pre><code>    def short_words(inp_list: list[str]) -&gt; list[str]:
+        &quot;&quot;&quot;Filter out the shorter words&quot;&quot;&quot;
         ret_list = []
         for x in inp_list:
-            if len(x) < 5:
+            if len(x) &lt; 5:
                 ret_list.append(x)
             else:
-                print(f"{x} is too long!")
-        return ret_list
-```-->
+                print(f&quot;{x} is too long!&quot;)
+        return ret_list</code></pre>
 </div>
 
        
