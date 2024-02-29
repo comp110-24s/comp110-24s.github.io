@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Week 2 Practice - COMP110 - 23F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1709223588.6133218">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="resources-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Week 2 Practice</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#concepts-reviewed">Concepts Reviewed</a></li>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#for-in-loop">For-In Loop</a></li>
+<li><a href="#list-memory-diagram">List Memory Diagram</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#for-in-loop-1">For-In Loop</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. (Some of them are also designed for elaboration purposes as you can see from the tag. Don’t worry them if you just want to get prepared for the quizzes) Before working through this week’s practice questions, be sure to get familiar with the <code>for-in</code> loop syntax</p>
+<p><br></p>
+<h1 id="questions">Questions</h1>
+<h3 id="for-in-loop">For-In Loop</h3>
+<ol type="1">
+<li>Which of the following loops can be put on the blank and can iterate over each character in the string s = “Python” and print them? (Choose all that apply)</li>
+</ol>
+<pre><code>for _______________:
+    print(s[i])</code></pre>
+<ol type="A">
+<li>for i in range(0, s):</li>
+<li>for i in range(0, len(s)):</li>
+<li>for i in s:</li>
+<li>for i in range(s):</li>
+</ol>
+<ol start="2" type="1">
+<li>(Continue on Q1) What will be the correct option if we change the body of the loop to:</li>
+</ol>
+<pre><code>print(i)</code></pre>
+<ol start="3" type="1">
+<li>Given a list <code>lst = [10, 20, 30, 40, 50]</code>, what will the following code snippet print?</li>
+</ol>
+<pre><code>for i in range(0, len(lst)):
+    print(i)</code></pre>
+<ol type="A">
+<li>It will print numbers from 0 to 4.</li>
+<li>It will print each element in <code>lst</code>.</li>
+<li>It will result in a <code>TypeError</code>.</li>
+<li>It will print numbers from 1 to 5.</li>
+</ol>
+<ol start="4" type="1">
+<li>(Continue on Q3) Given a list <code>lst = [10, 20, 30, 40, 50]</code>, what will the following code snippet print?</li>
+</ol>
+<pre><code>for i in lst:
+    print(lst[i])</code></pre>
+<ol type="A">
+<li>It will print numbers from 0 to 4.</li>
+<li>It will print each element in <code>lst</code>.</li>
+<li>It will result in a <code>TypeError</code>.</li>
+<li>It will print numbers from 1 to 5.</li>
+</ol>
+<ol start="5" type="1">
+<li>What is the difference between for item in list: and for i in range(len(list)): when iterating over a list named list?</li>
+</ol>
+<ol type="A">
+<li>The first iterates over each index of the list, while the second iterates over each item.</li>
+<li>The first iterates over each item of the list, while the second iterates over each index.</li>
+<li>There is no difference; both iterate over the list items.</li>
+<li>The first can only be used with lists, while the second can be used with any iterable.</li>
+</ol>
+<ol start="6" type="1">
+<li>(For elaboration) Which of the following is the correct way to double each element in a list nums = [1, 2, 3, 4, 5] using a for loop? A).</li>
+</ol>
+<pre><code>for n in nums:
+    n = n * 2</code></pre>
+<p>B). ~~~ for i in range(len(nums)): nums[i] = nums[i] * 2 ~~~</p>
+<p>C). for i in nums: nums[i] = i * 2</p>
+<p>D). Both Option A and Option B are correct</p>
+<ol start="7" type="1">
+<li>(For elaboration - <code>range()</code> function) Which of the following for loops will print all the even numbers from 2 to 10, inclusive?</li>
+</ol>
+<ol type="A">
+<li>for i in range(2, 11, 2): print(i)</li>
+<li>for i in range(2, 10): if i % 2 == 0: print(i)</li>
+<li>for i in range(1, 6): print(i * 2)</li>
+<li>Both A and C are correct.</li>
+</ol>
+<ol start="8" type="1">
+<li>Compare the following two codes and tell their difference (if any)</li>
+</ol>
+<pre><code>for x in range(10):
+    print(x, end=&quot; &quot;)</code></pre>
+<pre><code>for x in range(0, 10):
+    print(x, end=&quot; &quot;)</code></pre>
+<ol type="A">
+<li><p>The first loop prints 0 to 9, the second loop prints 0 to 10</p></li>
+<li><p>The first loop prints 1 to 10, the second loop prints 0 to 9</p></li>
+<li><p>The first loop prints 0 to 9, the second loop prints 1 to 10</p></li>
+<li><p>There is no difference, both loops print 0 to 9</p></li>
+</ol>
+<ol start="9" type="1">
+<li><p>Given that <code>nums = [0, 1, 2, 3, 4, 5]</code>. Write a for-in loop that doubles each element in the list. (<code>nums</code>should be <code>[0, 2, 4, 6, 8, 10]</code> after the loop)</p></li>
+<li><p>Write a for-in loop that can print out the number from 2 to 10.</p></li>
+<li><p>(For elaboration) If you are confident with <code>range()</code>function, can you write a for-in loop that can print out the <code>even</code> number from 2 to 10</p></li>
+</ol>
+<p><br></p>
+<h3 id="list-memory-diagram">List Memory Diagram</h3>
+<ul>
+<li>Work through the <code>Example 0</code> to <code>Example 3</code> (110 site &gt; resources &gt; Practice Memory Diagrams &gt; Topic: Lists) Feel Free to bring those exercises to tutoring for help and discussion</li>
+</ul>
+<h1 id="solutions">Solutions</h1>
+<h3 id="for-in-loop-1">For-In Loop</h3>
+<ol type="1">
+<li><p>B, C</p></li>
+<li><p>C</p></li>
+<li><p>A</p></li>
+<li><p>C</p></li>
+<li></li>
+</ol>
+<ol start="2" type="A">
+<li>The first iterates over each item of the list, while the second iterates over each index.</li>
+</ol>
+<ol start="6" type="1">
+<li><p>B</p></li>
+<li><p>D</p></li>
+<li><p>D</p></li>
+<li><p>One possible answer can be: (Notice that here <code>for i in nums</code> and double <code>i</code> will not work)</p></li>
+</ol>
+<pre><code>for i in range(len(nums)):
+    nums[i] = nums[i] * 2</code></pre>
+<ol start="10" type="1">
+<li>One possible answer can be:</li>
+</ol>
+<pre><code>for i in range(2, 11):
+    print(i)</code></pre>
+<ol start="11" type="1">
+<li>One possible answer can be:</li>
+</ol>
+<pre><code>for i in range(2, 11, 2):
+    print(i)</code></pre>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Vincent Li</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
