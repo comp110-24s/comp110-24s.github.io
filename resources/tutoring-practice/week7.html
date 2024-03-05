@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Week 7 Practice - COMP110 - 23F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1709672703.661251">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="resources-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Week 7 Practice</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#concepts-reviewed">Concepts Reviewed</a></li>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#dictionary">Dictionary</a></li>
+<li><a href="#unit-test">Unit Test</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#dictionary-1">Dictionary</a></li>
+<li><a href="#unit-test-1">Unit Test</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. (Some of them are also designed for elaboration purposes as you can see from the tag. Don’t worry them if you just want to get prepared for the quizzes)</p>
+<p><br></p>
+<h1 id="questions">Questions</h1>
+<h3 id="dictionary">Dictionary</h3>
+<ol type="1">
+<li><p>Briefly describe what is a dictionary in Python. (Describe its key components.)</p></li>
+<li><p>Just like we create the empty list using <code>list()</code> or <code>[]</code>. How to create an empty dictionary?</p></li>
+<li><p>Say a dictionary<code>d = {"apple": 2, "banana": 3}</code>. Write me a one-line code that can print out the value associated with the key <code>banana</code>.</p></li>
+<li><p>(Continue on Question 3) How about writing a one-line code that can add the new key-value pair: <code>"orange": 4</code> into the dictionary <code>d</code>.</p></li>
+<li><p>Identify if it is legal to have each of the following dictionary key-value types. 5.1 <code>dict[str, int]</code> 5.2 <code>dict[dict[str, int], int]</code> 5.3 <code>dict[str, dict[str, int]]</code> 5.4 <code>dict[list[str], int]</code> 5.5 <code>dict[str, list[int]]</code></p></li>
+<li><p>Which of the following method(s) can successfully add a new key-value pair <code>"COMP": 110</code> into the dictionary <code>example</code>? (Choose all that apply) A. example.append({“COMP”:110}) B. example[“COMP”] = 110 C. example.append({“COMP”, 110}) D. example.add({“COMP”:110})</p></li>
+<li><p>(T/F)Is it Illegal to initiate the following dictionary: dict1: dict[str, int] = {“COMP”: 110, “COMP”: 210, “COMP”: 283}</p></li>
+<li><p>So far we have learned two types of loops: <code>while-loop</code> and <code>for-in loop</code>, can we use both of them to iterate the dictionary? Why or why not?</p></li>
+<li><p>(Continue on Q8) If both loops are applicable, pick one of them and iterate through the following dictionary <code>score</code>. Or, pick the one that is applicable to iterate through:</p></li>
+</ol>
+<pre><code>score: dict[str, int] = {&quot;DUKE&quot;: 0, &quot;UNC&quot;:100, &quot;NYU&quot;:50}</code></pre>
+<ol start="10" type="1">
+<li><p>(For elaboration) You are iterating over a dictionary in a for loop to check and possibly remove items based on a condition. Halfway through, you decide to remove an item from the dictionary. Why will that cause an error?</p></li>
+<li><p>Consider the dictionary <code>grades = {'Vincent': 90, 'Mike': 85}.</code> You used grades[‘Charlie’] to access the grade of a student called <code>Charlie</code>. What specific error does this produce?</p></li>
+</ol>
+<p><br></p>
+<h3 id="unit-test">Unit Test</h3>
+<ol type="1">
+<li><p>Explain what unit testing is and why it is important in software development.</p></li>
+<li><p>What module in Python is used for unit testing, and how do you import it into your test script?</p></li>
+<li><p>What assert method would you use to check if two values are equal in a unit test? Can you also write the syntax of that assert statement?</p></li>
+<li><p>What is the naming convention when you create a unit test file? What about each individual test inside that file?</p></li>
+</ol>
+<h1 id="solutions">Solutions</h1>
+<h3 id="dictionary-1">Dictionary</h3>
+<ol type="1">
+<li><p>Expected Answer: A dictionary is a collection of <code>key-value pairs</code>. Each key is unique and is used to store and access its corresponding value.</p></li>
+<li><p><code>dict()</code> or <code>{}</code></p></li>
+<li><p>print(d[“banana”])</p></li>
+<li><p>d[“orange”] = 4</p></li>
+<li><p>As long as the key is immutable, it will be a legal data type 5.1 Legal 5.2 Illegal 5.3 Legal 5.4 Illegal 5.5 Legal</p></li>
+<li><p>B</p></li>
+<li><p>True</p></li>
+<li><p>Although both types of the loop are applicable to iterate through the dictionary, it is preferable to use the for-in loop as it is definitely more straightforward.</p></li>
+<li></li>
+</ol>
+<pre><code>for school in score:
+    print(f&quot;{school} scored {score[school]} points&quot;)</code></pre>
+<p>or ~~~ keys = list(score.keys()) //May beyond our scope of COMP110 i = 0 while i &lt; len(keys): key = keys[i] print(f“{key} scored {score[key]} points”) i += 1 ~~~</p>
+<ol start="10" type="1">
+<li><p>Think of last week’s question that we are trying to mutate the value using a for-in loop, it will cause a Runtime Error since the iteration target’s size gets changed. It is encouraged to generate a copy and keep the original variable immutable during the iteration.</p></li>
+<li><p>KeyError, meaning that this key is not within the dictionary.</p></li>
+</ol>
+<h3 id="unit-test-1">Unit Test</h3>
+<ol type="1">
+<li><p>Unit testing involves testing individual components or functions in isolation from the rest of the application. Lay the foundation for the following integrated test. Catch the bugs or errors earlier.</p></li>
+<li><p>Python uses the <code>unittest</code> module for unit testing. <code>import unittest</code></p></li>
+<li><p><code>assertEqual()</code> &amp; <code>self.assertEqual(expected_value, actual_value)</code></p></li>
+<li><p>Naming Convention: Reflects the module it tests with a <code>test_ prefix</code>, such as <code>test_module.py</code> for a module named <code>module.py</code></p></li>
+</ol>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Vincent Li</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
