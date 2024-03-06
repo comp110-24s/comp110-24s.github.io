@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> CQ03 - Lists + Functions - COMP110 - 23F</title>
+  <title> In-Class Coding Activity - COMP110 - 23F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1709734641.373576">
+  <link rel="stylesheet" href="/static/styles.css?v=1709734619.581322">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="lessons-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>CQ03 - Lists + Functions</h1>
+        <h1>In-Class Coding Activity</h1>
         <hr class="title" />
       </div>
     </div>
@@ -61,12 +61,12 @@
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
-<li><a href="#introduction">Introduction</a>
+<li><a href="#in-class-coding-activity">In Class Coding Activity</a>
 <ul>
 <li><a href="#part-0.-setup">Part 0. Setup</a></li>
-<li><a href="#part-1.-manual_append">Part 1. manual_append()</a></li>
-<li><a href="#part-2.-double">Part 2. double()</a></li>
-<li><a href="#submission">Submission</a></li>
+<li><a href="#part-1.-add_by_kind">Part 1. <code>add_by_kind()</code></a></li>
+<li><a href="#part-2.-add_by_date">Part 2. <code>add_by_date()</code></a></li>
+<li><a href="#part-3.-lookup_by_kind_and_date">Part 3. <code>lookup_by_kind_and_date()</code></a></li>
 </ul></li>
 </ul>
 </</ul>
@@ -74,66 +74,70 @@
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="introduction">Introduction</h1>
-<p>In our previous lesson, we discussed the many capabilities of functions with lists.</p>
-<p>They can:</p>
-<ul>
-<li>Take lists as arguments</li>
-<li>Return (or create and return) lists</li>
-<li>Modify (or mutate) lists</li>
-</ul>
-<p>This last capability, <em>mutating</em> lists, is actually quite surprising! We aren’t able to do this with our previous data types, like strings.</p>
-<p>For example, observe the following function:</p>
-<pre><code>    def emphasize(word: str):
-        word += &quot;!&quot;</code></pre>
-<p>When we call this function on a string, we aren’t actually <em>mutating</em> the argument.</p>
-<p>However, let’s do something similar for a list!</p>
-<pre><code>    def emphasize(word: list[str]):
-        word.append(&quot;!&quot;)</code></pre>
-<p>This will actually mutate the list used as an argument in the function call!</p>
-<p>For this challenge question, you are going to practice writing a function that <em>mutates</em> its input!</p>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="in-class-coding-activity">In Class Coding Activity</h1>
+<p>This is an example mini-exercise that we will go through together in class to get a little more practice with function writing! <em>(You do not have to write these functions on your own!)</em></p>
 <h2 id="part-0.-setup">Part 0. Setup</h2>
-<p>Start by opening your workspace in Visual Studio. Right click on the “lessons” folder and select “add file”. Your file will be named <code>mutate.py</code>.</p>
-<p>Set up your document by adding the docstring: <code>"""Mutating functions."""</code> and initializing the <code>__author__</code> variable with your PID.</p>
-<h2 id="part-1.-manual_append">Part 1. manual_append()</h2>
-<p>Write a function definition with the following expectations:</p>
+<p>Start by opening your workspace in Visual Studio. Right click on the “lessons” folder and select “add file”. Your file will be named <code>garden_helpers.py</code>.</p>
+<p>Set up your document by adding the docstring: <code>"""Some functions for my garden plan!"""</code> and initializing the <code>__author__</code> variable with your PID.</p>
+<h2 id="part-1.-add_by_kind">Part 1. <code>add_by_kind()</code></h2>
+<p>We are going to write a function that adds a plant to a garden dictionary that is sorted by the kind of plant. For example, given the dictionary <code>{"flower": ["marigold", "zinnia"], "vegetable": ["carrots"]}</code>, say we want to add another <code>"flower"</code>, like a daisy. This function should allow us to do that by <em>mutating</em> the input dictionary.</p>
 <ul>
-<li>The function name is <code>manual_append</code> has a <code>list[int]</code> and an <code>int</code> as parameters.</li>
-<li>The function should return <em>nothing</em>.</li>
-<li>The function should <em>mutate</em> its input <em>appending</em> the <code>int</code> parameter to the end of the <code>list[int]</code> parameter.</li>
-<li>Explicitly type variables, parameters, and return types.</li>
+<li>Function name: <code>add_by_kind</code></li>
+<li>Parameters: <code>dict[str, list[str]]</code>, <code>str</code>, <code>str</code></li>
+<li>Return Type: <code>None</code></li>
 </ul>
-Example usage:
+<p>Example usage:</p>
 <pre>
-<div class="terminal">>>> a: list[int] = [1,2,3]
->>> from lessons.mutate import manual_append
->>> manual_append(a, 2)
->>> print(a)
-[1,2,3,2]
+<div class="terminal">python
+>>> from lessons.garden_helpers import add_by_kind
+>>> by_kind: dict[str, list[str]] = {"flower": ["marigold", "zinnia"], "vegetable": ["carrots"]}
+>>> add_by_kind(by_kind, "flower", "daisy")
+>>> by_kind
+{'flower': ['marigold', 'zinnia', 'daisy'], 'vegetable': ['carrots']}
+>>> add_by_kind(by_kind, "fruit", "elderberry")
+>>> by_kind
+{'flower': ['marigold', 'zinnia', 'daisy'], 'vegetable': ['carrots'], 'fruit': ['elderberry']}
 </div>
 </pre>
-<h2 id="part-2.-double">Part 2. double()</h2>
-<p>Write a function definition with the following expectations:</p>
+<h2 id="part-2.-add_by_date">Part 2. <code>add_by_date()</code></h2>
+<p>We are going to write a function that adds a plant to a garden dictionary that is sorted by the date in which the seeds should be sown. For example, given the dictionary `<code>, say we want to add another</code>“flower”`, like a daisy. This function should allow us to do that by <em>mutating</em> the input dictionary.</p>
 <ul>
-<li>The function name is <code>double</code> and has a <code>list[int]</code> as a parameter.</li>
-<li>The function should return <em>nothing</em>.</li>
-<li>The function should <em>mutate</em> its input by multiplying every element in the <code>list[int]</code> parameter by 2</li>
-<li>Explicitly type variables, parameters, and return types.</li>
+<li>Function name: <code>add_by_kind</code></li>
+<li>Parameters: <code>dict[str, list[str]]</code>, <code>str</code>, <code>str</code></li>
+<li>Return Type: <code>None</code></li>
 </ul>
-Example usage:
+<p>Example usage:</p>
 <pre>
-<div class="terminal">>>> a: list[int] = [1,2,3]
->>> from lessons.mutate import double
->>> double(a)
->>> print(a)
-[2,4,6]
+<div class="terminal">python
+>>> from lessons.garden_helpers import add_by_date
+>>> by_date: dict[str, list[str]] = {"April": ["marigold"], "June": ["carrots"]}
+>>> add_by_date(by_date, "April", "daisy")
+>>> by_date
+{'April': ['marigold', 'daisy'], 'June': ['carrots']}
+>>> add_by_date(by_date, "May", "elderberry")
+>>> by_date
+{'April': ['marigold', 'daisy'], 'June': ['carrots'], 'May': ['elderberry']}
 </div>
 </pre>
-<p>Hint: You will need to use a <code>while</code> loop to iterate over every element in the list.</p>
-<h2 id="submission">Submission</h2>
-<p>Create a .zip file by running the following command in your terminal:</p>
-<p><code>python -m tools.submission lessons/mutate.py</code></p>
-<p>Then, drag and drop that .zip file into Gradescope!</p>
+<h2 id="part-3.-lookup_by_kind_and_date">Part 3. <code>lookup_by_kind_and_date()</code></h2>
+<p>Finally, we are going to write a function that searches through both dictionaries and returns a list of what plants of a certain kind to plant at a certain date.</p>
+<ul>
+<li>Function name: <code>lookup_by_kind_and_date</code></li>
+<li>Parameters: <code>dict[str, list[str]]</code>, <code>dict[str, list[str]]</code>, <code>str</code>, <code>str</code></li>
+<li>Return Type: <code>str</code></li>
+</ul>
+<p>Example usage:</p>
+<pre>
+<div class="terminal">python
+>>> from lessons.garden_helpers import add_by_date
+>>> by_kind: dict[str, list[str]] = {"flower": ["marigold", "zinnia"], "vegetable": ["carrots"]}
+>>> by_date: dict[str, list[str]] = {"April": ["marigold"], "June": ["carrots"]}
+>>> lookup_by_kind_and_date(by_kind, by_date, "flower", "April")
+"flowers to plant in April: ['marigold']"
+>>> lookup_by_kind_and_date(by_kind, by_date, "flower", "June")
+'No flowers to plant in June.'
+</div>
+</pre>
 </div>
 
        
