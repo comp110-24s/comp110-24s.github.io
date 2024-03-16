@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> EX05 - Runtime Analysis - COMP110 - 23F</title>
+  <title> EX07 - Runtime Analysis - COMP110 - 23F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1710433988.9828942">
+  <link rel="stylesheet" href="/static/styles.css?v=1710607876.604752">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="exercises-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>EX05 - Runtime Analysis</h1>
+        <h1>EX07 - Runtime Analysis</h1>
         <hr class="title" />
       </div>
     </div>
@@ -61,13 +61,26 @@
                 <div id="overview-links">
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#background-lesson-emoji">Background Lesson: Emoji</a></li>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#learning-objectives">Learning Objectives</a></li>
+</ul></li>
 <li><a href="#pull-the-skeleton-code">0. Pull the skeleton code</a>
 <ul>
 <li><a href="#troubleshooting">Troubleshooting</a></li>
 </ul></li>
-<li><a href="#part-1.-linear-search">Part 1. Linear Search</a></li>
+<li><a href="#part-1.-implementing-sort-algorithms">Part 1. Implementing Sort Algorithms</a>
+<ul>
+<li><a href="#a.-selection-sort">1a. Selection Sort</a></li>
+<li><a href="#b.-insertion-sort">1b. Insertion Sort</a></li>
+</ul></li>
+<li><a href="#part-2.-generating-worst-case-inputs">Part 2. Generating Worst-Case Inputs</a></li>
+<li><a href="#part-3.-analyzing-runtime-memory-usage">Part 3. Analyzing Runtime + Memory Usage</a>
+<ul>
+<li><a href="#a.-analyzing-runtime">3A. Analyzing Runtime</a></li>
+<li><a href="#b.-analyzing-memory-usage">3B. Analyzing Memory Usage</a></li>
+</ul></li>
+<li><a href="#submission">Submission</a></li>
 </ul>
 </</ul>
                     </div>
@@ -75,23 +88,14 @@
             </div>
         </div>
         <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h2 id="introduction">Introduction</h2>
-<pre>
-<div class="terminal">
-   
-</div>
-</pre>
-<pre>
-<div class="terminal">
-    $ python -m exercises.ex01_simple_battleship 
-    Pick a secret boat location between 1 and 4: 2
-    Guess a number between 1 and 4: 2
-    🟦🟥🟦🟦
-    Correct! You hit the ship.
-</div>
-</pre>
-<h2 id="background-lesson-emoji">Background Lesson: Emoji</h2>
-<p>In this exercise you will need to make use of an advanced string concepts: emoji! 🤠</p>
-<p>Before beginning work on this exercise, read the following lesson and complete the related questions on Gradescope: <a href="/lessons/strings.html">Unicode, Emoji, Escape Sequences, and f-Strings</a></p>
+<p>In this assignment, you’re going to be modifying an existing code base to add implementation of some basic sorting algorithms. Then you will analyze and <em>visualize</em> their runtime!</p>
+<p>Note that there are <em>two</em> types of submission for this assignment! (You will see this on Gradescope as well!)</p>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<ul>
+<li>Learn to modify an existing code base</li>
+<li>Learn to implement an existing algorithm</li>
+<li>Visualize worst case runtimes and gain a better understanding of “Big-O” notation</li>
+</ul>
 <h2 id="pull-the-skeleton-code">0. Pull the skeleton code</h2>
 <p>You will find the starter files needed by “pulling” from the course workspace repository. Before beginning, be sure to:</p>
 <ol start="0" type="1">
@@ -99,7 +103,7 @@
 <li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
 <li>Click the Ellipses in the Source Control pane and select “Pull” from the drop-down menu. This will begin the pulling process from the course repository. It should silently succeed.</li>
 <li>Return to the File Explorer pane and open the <code>exercises</code> directory. You should see it now contains another directory named <code>ex08</code>. If you expand that directory, you should see the starter files for the code you’ll be writing.</li>
-<li>If you do not see the <code>ex08</code> directory, try once more but selecting <code>"Pull From"</code> and select <code>origin</code> in step 2.</li>
+<li>If you do not see the <code>ex07</code> directory, try once more but selecting <code>"Pull From"</code> and select <code>origin</code> in step 2.</li>
 </ol>
 <h3 id="troubleshooting">Troubleshooting</h3>
 <p>If you’re having trouble pulling, try:</p>
@@ -107,7 +111,55 @@
 <li>In your Visual Studio command center, select <code>Pull From...</code> -&gt; <code>Upstream</code> -&gt; <code>Upstream/Head</code></li>
 </ul>
 <p>If you’re still having issues, come to office hours!</p>
-<h2 id="part-1.-linear-search">Part 1. Linear Search</h2>
+<h2 id="part-1.-implementing-sort-algorithms">Part 1. Implementing Sort Algorithms</h2>
+<h3 id="a.-selection-sort">1a. Selection Sort</h3>
+<p>The first algorithm you’re going to be implementing is Selection Sort!</p>
+<p>The <em>skeleton</em> for this function already exists in <code>sort_functions.py</code>. <em>This is the only file in the EX07 directory you should worry about at this point! We will get to the rest later!</em> You will add functionality to it by completing the body of the code!</p>
+<p><em>TODO: add more instruction and usage example</em></p>
+<h3 id="b.-insertion-sort">1b. Insertion Sort</h3>
+<p>The first algorithm you’re going to be implementing is Selection Sort!</p>
+<p>The <em>skeleton</em> for this function already exists in <code>sort_functions.py</code>. You will add functionality to it by completing the body of the code!</p>
+<p><em>TODO: add more instruction and usage example</em></p>
+<h2 id="part-2.-generating-worst-case-inputs">Part 2. Generating Worst-Case Inputs</h2>
+<p>For both selection and insertion sort, we want to analyze how <em>fast</em> they are in terms of runtime. More specifically, we want to measure their Big-O runtime. This is the amount of time it would take to run this algorithm given the <em>worst possible input</em>.</p>
+<p>(TODO: add explanation of why decreasing is worst possible input.)</p>
+<p>In <code>runtime_analysis_functions.py</code> you will see the skeleton for a function called <code>random_descending_list</code>. (There are other functions in there, too, but we will talk about those in a bit!) You are going to give <code>runtime_analysis_functions.py</code> some functionality! The goal is to <strong>create</strong> and <strong>return</strong> a list of length <code>n</code> of random numbers in decreasing order. You will see a global constant established of MAX_VAL. Let that be the <em>first</em> element of your list, and then append randomly decreasing numbers.</p>
+<p>(TODO: Add usage examples.)</p>
+<p>(Hint: You will want to import and use the <code>randint</code> function from the <code>random</code> library.)</p>
+<h2 id="part-3.-analyzing-runtime-memory-usage">Part 3. Analyzing Runtime + Memory Usage</h2>
+<p>Now that you’ve written your sort algorithms and have a way of generating a worst-case input, we are going to test the <em>runtime</em> and <em>memory usage</em> of these inputs.</p>
+<h3 id="a.-analyzing-runtime">3A. Analyzing Runtime</h3>
+<p>For this part, you are going to <em>use</em> the <code>evaluate_runtime</code> function defined in <code>runtime_analysis_functions.py</code>. This function has already been written for you, so you just need to implement it. It takes a function as input and computes its runtime for inputs of increasing size.</p>
+<p>Create a new file in your <code>EX07</code> directory called <code>evaluate_algorithms.py</code>.</p>
+<p>Start by adding an <code>__author__</code> variable and the following constants:</p>
+<pre><code>    START_SIZE: int = 0
+    END_SIZE: int = 1000</code></pre>
+<p>You can call this function and visualize the result with the following code. Replace ONYEN in line 3 with your ONYEN: (You will need to import <code>evalute_runtime</code> from <code>runtime_analysis_functions.py</code> first!)</p>
+<pre><code>    times = evaluate_runtime(&quot;selection_sort&quot;, START_SIZE, END_SIZE)
+    plt.plot(times)
+    plt.title(&quot;Runtime Analysis of Selection Sort - ONYEN&quot;)
+    plt.show()</code></pre>
+<p>It should generate an image that looks something like this:</p>
+<p>(TODO: Add pic.)</p>
+<p>Save this image and upload it to Gradescope under the assignment EX07 - Part A.</p>
+<p>Now, repeat these steps, but for insertion sort!</p>
+<pre><code>    times = evaluate_runtime(&quot;insertion_sort&quot;, START_SIZE, END_SIZE)
+    plt.plot(times)
+    plt.title(&quot;Runtime Analysis of Insertion Sort - ONYEN&quot;)
+    plt.show()</code></pre>
+<h3 id="b.-analyzing-memory-usage">3B. Analyzing Memory Usage</h3>
+<p>Now, we are going to analyze the memory usage of the algorithms! You will import and call the <code>evaluate_memory_usage</code> function from <code>runtime_analysis_functions.py</code>. This function uses a python library called <code>tracemalloc</code> to measure how many blocks of memory your function call is using. Similar to <code>evaluate_runtime</code>, it measures memory usage for an increasing number of input sizes so we can visualize how memory usage changes as input size changes.</p>
+<pre><code>usage = evaluate_memory_usage(&quot;selection_sort&quot;, [l], START_SIZE, END_SIZE)
+plt.plot(usage)
+plt.title(&quot;Memory Usage Analysis of Selection Sort - ONYEN&quot;)
+plt.show()
+
+usage = evaluate_memory_usage(&quot;insertion_sort&quot;, [l], START_SIZE, END_SIZE)
+plt.plot(usage)
+plt.title(&quot;Memory Usage Analysis of Insertion Sort - ONYEN&quot;)
+plt.show()</code></pre>
+<h2 id="submission">Submission</h2>
+<p>TODO</p>
 </div>
 
        
