@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1710607876.604752">
+  <link rel="stylesheet" href="/static/styles.css?v=1710608221.1879678">
 </head>
 
 <body>
@@ -149,15 +149,15 @@
     plt.show()</code></pre>
 <h3 id="b.-analyzing-memory-usage">3B. Analyzing Memory Usage</h3>
 <p>Now, we are going to analyze the memory usage of the algorithms! You will import and call the <code>evaluate_memory_usage</code> function from <code>runtime_analysis_functions.py</code>. This function uses a python library called <code>tracemalloc</code> to measure how many blocks of memory your function call is using. Similar to <code>evaluate_runtime</code>, it measures memory usage for an increasing number of input sizes so we can visualize how memory usage changes as input size changes.</p>
-<pre><code>usage = evaluate_memory_usage(&quot;selection_sort&quot;, [l], START_SIZE, END_SIZE)
-plt.plot(usage)
-plt.title(&quot;Memory Usage Analysis of Selection Sort - ONYEN&quot;)
-plt.show()
+<pre><code>    usage = evaluate_memory_usage(&quot;selection_sort&quot;, [l], START_SIZE, END_SIZE)
+    plt.plot(usage)
+    plt.title(&quot;Memory Usage Analysis of Selection Sort - ONYEN&quot;)
+    plt.show()
 
-usage = evaluate_memory_usage(&quot;insertion_sort&quot;, [l], START_SIZE, END_SIZE)
-plt.plot(usage)
-plt.title(&quot;Memory Usage Analysis of Insertion Sort - ONYEN&quot;)
-plt.show()</code></pre>
+    usage = evaluate_memory_usage(&quot;insertion_sort&quot;, [l], START_SIZE, END_SIZE)
+    plt.plot(usage)
+    plt.title(&quot;Memory Usage Analysis of Insertion Sort - ONYEN&quot;)
+    plt.show()</code></pre>
 <h2 id="submission">Submission</h2>
 <p>TODO</p>
 </div>
