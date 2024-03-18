@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1710644822.658669">
+  <link rel="stylesheet" href="/static/styles.css?v=1710774959.1127071">
 </head>
 
 <body>
@@ -102,7 +102,7 @@
 <li>Be sure you are in your course workspace. Open the file explorer and you should see your work for the course. If you do not, open your course workspace through File &gt; Open Recent.</li>
 <li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
 <li>Click the Ellipses in the Source Control pane and select “Pull” from the drop-down menu. This will begin the pulling process from the course repository. It should silently succeed.</li>
-<li>Return to the File Explorer pane and open the <code>exercises</code> directory. You should see it now contains another directory named <code>ex08</code>. If you expand that directory, you should see the starter files for the code you’ll be writing.</li>
+<li>Return to the File Explorer pane and open the <code>exercises</code> directory. You should see it now contains another directory named <code>ex07</code>. If you expand that directory, you should see the starter files for the code you’ll be writing.</li>
 <li>If you do not see the <code>ex07</code> directory, try once more but selecting <code>"Pull From"</code> and select <code>origin</code> in step 2.</li>
 </ol>
 <h3 id="troubleshooting">Troubleshooting</h3>
@@ -123,9 +123,21 @@
 <h2 id="part-2.-generating-worst-case-inputs">Part 2. Generating Worst-Case Inputs</h2>
 <p>For both selection and insertion sort, we want to analyze how <em>fast</em> they are in terms of runtime. More specifically, we want to measure their Big-O runtime. This is the amount of time it would take to run this algorithm given the <em>worst possible input</em>.</p>
 <p>(TODO: add explanation of why decreasing is worst possible input.)</p>
-<p>In <code>runtime_analysis_functions.py</code> you will see the skeleton for a function called <code>random_descending_list</code>. (There are other functions in there, too, but we will talk about those in a bit!) You are going to give <code>runtime_analysis_functions.py</code> some functionality! The goal is to <strong>create</strong> and <strong>return</strong> a list of length <code>n</code> of random numbers in decreasing order. You will see a global constant established of MAX_VAL. Let that be the <em>first</em> element of your list, and then append randomly decreasing numbers.</p>
-<p>(TODO: Add usage examples.)</p>
+<p>In <code>runtime_analysis_functions.py</code> you will see the skeleton for a function called <code>random_descending_list</code>. (There are other functions in there, too, but we will talk about those in a bit!) You are going to give <code>random_descending_list</code> some functionality! The goal is to <strong>create</strong> and <strong>return</strong> a list of length <code>n</code> of random numbers in decreasing order. You will see a global constant established of MAX_VAL. Let that be the <em>first</em> element of your list, and then append randomly decreasing numbers.</p>
 <p>(Hint: You will want to import and use the <code>randint</code> function from the <code>random</code> library.)</p>
+<p>You can implement the “randomness” how you choose. The main goal is that the output is different each time and strictly decreasing!</p>
+<p>Here’s an example of usage. (Note that your results will be different since this is a <em>randomized</em> function.)</p>
+<pre>
+<div class="terminal">    $ python
+    >>> from exercises.ex07.runtime_analysis_functions import random_descending_list
+    >>> random_descending_list(10)
+    [100000, 99987, 99957, 99919, 99905, 99892, 99809, 99742, 99684, 99662]
+    >>> random_descending_list(10)
+    [100000, 99920, 99876, 99848, 99814, 99747, 99701, 99691, 99596, 99502]
+    >>> random_descending_list(3)
+    [100000, 99988, 99906]
+</div>
+</pre>
 <h2 id="part-3.-analyzing-runtime-memory-usage">Part 3. Analyzing Runtime + Memory Usage</h2>
 <p>Now that you’ve written your sort algorithms and have a way of generating a worst-case input, we are going to test the <em>runtime</em> and <em>memory usage</em> of these inputs.</p>
 <h3 id="a.-analyzing-runtime">3A. Analyzing Runtime</h3>
@@ -134,13 +146,13 @@
 <p>Start by adding an <code>__author__</code> variable and the following constants:</p>
 <pre><code>    START_SIZE: int = 0
     END_SIZE: int = 1000</code></pre>
-<p>You can call this function and visualize the result with the following code. Replace ONYEN in line 3 with your ONYEN: (You will need to import <code>evalute_runtime</code> from <code>runtime_analysis_functions.py</code> first!)</p>
+<p>You can call this function and visualize the result with the following code. <em>Replace ONYEN in line 3 with your ONYEN!</em> (You will need to import <code>evalute_runtime</code> from <code>runtime_analysis_functions.py</code> first!)</p>
 <pre><code>    times = evaluate_runtime(&quot;selection_sort&quot;, START_SIZE, END_SIZE)
     plt.plot(times)
     plt.title(&quot;Runtime Analysis of Selection Sort - ONYEN&quot;)
     plt.show()</code></pre>
 <p>It should generate an image that looks something like this:</p>
-<p>(TODO: Add pic.)</p>
+<p><img class="img-fluid" src="/static/assets/ex-runtime/sel_sort_runtime.png" /></p>
 <p>Save this image and upload it to Gradescope under the assignment EX07 - Part A.</p>
 <p>Now, repeat these steps, but for insertion sort!</p>
 <pre><code>    times = evaluate_runtime(&quot;insertion_sort&quot;, START_SIZE, END_SIZE)
