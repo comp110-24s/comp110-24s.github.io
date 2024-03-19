@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1710774959.1127071">
+  <link rel="stylesheet" href="/static/styles.css?v=1710856845.7680976">
 </head>
 
 <body>
@@ -97,7 +97,7 @@
 <li>Visualize worst case runtimes and gain a better understanding of “Big-O” notation</li>
 </ul>
 <h2 id="pull-the-skeleton-code">0. Pull the skeleton code</h2>
-<p>You will find the starter files needed by “pulling” from the course workspace repository. Before beginning, be sure to:</p>
+<p>You will find the starter files needed by “pulling” from the course workspace repository. Follow these steps:</p>
 <ol start="0" type="1">
 <li>Be sure you are in your course workspace. Open the file explorer and you should see your work for the course. If you do not, open your course workspace through File &gt; Open Recent.</li>
 <li>Open the <em>Source Control View</em> by clicking the 3-node (circles) graph (connected by lines) icon in your sidebar or opening the command palatte and searching for <em>Source Control</em>.</li>
@@ -115,29 +115,68 @@
 <h3 id="a.-selection-sort">1a. Selection Sort</h3>
 <p>The first algorithm you’re going to be implementing is Selection Sort!</p>
 <p>The <em>skeleton</em> for this function already exists in <code>sort_functions.py</code>. <em>This is the only file in the EX07 directory you should worry about at this point! We will get to the rest later!</em> You will add functionality to it by completing the body of the code!</p>
-<p><em>TODO: add more instruction and usage example</em></p>
+<p>Based on our class discussion, selection sort is an algorithm that repeatedly finds the minimum element in an unsorted portion of our list and swapping it with the element at the beginning of the unsorted portion (if it is smaller). Selection sort an in-place sorting aglorithm which it means it will modify and return the list that is passed in as a parameter. It also means you will not create additional instances of lists in your implementation. Your implementation can be broken down into a few steps:</p>
+<ol type="1">
+<li>Create a counter variable to track the indices of the list.</li>
+<li>Set up an overaching loop to iterate through the list.</li>
+<li>Find the index of the minimum element only from the portion of your list that is greater than the counter value (the unsorted portion). 3.1 You cannot use Python’s built-in <code>min()</code> function. You will need another loop, a secondary counter set to the value of the first counter, and a variable to store the index of the minimum element.</li>
+<li>The current element is the value in the list at the index of the counter value.</li>
+<li>Compare the minumum element to the current element, if the minumum element is smaller, swap them. 5.1 Swapping means taking the value at two different indices and replacing the first index with element at the second while also replacing the second index with the element that was at the first. You will need a temporary <code>int</code> variable to accomplish this.</li>
+<li>Increment your counter (if necessary), the indices in the list that are less than the counter value are the sorted portion.</li>
+</ol>
+<pre>
+<div class="terminal">
+>>> from exercises.ex07.sort_functions.py import selection_sort
+>>> list1: list[int] = [2, 4, 3, 6]
+>>> selection_sort(list1)
+>>> print(list1)
+[2, 3, 4, 6]
+>>> list2: list[int] = [-7, -8, -9, -10]
+>>> selection_sort(list2)
+>>> print(list2)
+[-10, -9, -8, -7]
+</div>
+</pre>
 <h3 id="b.-insertion-sort">1b. Insertion Sort</h3>
 <p>The first algorithm you’re going to be implementing is Selection Sort!</p>
 <p>The <em>skeleton</em> for this function already exists in <code>sort_functions.py</code>. You will add functionality to it by completing the body of the code!</p>
-<p><em>TODO: add more instruction and usage example</em></p>
-<h2 id="part-2.-generating-worst-case-inputs">Part 2. Generating Worst-Case Inputs</h2>
-<p>For both selection and insertion sort, we want to analyze how <em>fast</em> they are in terms of runtime. More specifically, we want to measure their Big-O runtime. This is the amount of time it would take to run this algorithm given the <em>worst possible input</em>.</p>
-<p>(TODO: add explanation of why decreasing is worst possible input.)</p>
-<p>In <code>runtime_analysis_functions.py</code> you will see the skeleton for a function called <code>random_descending_list</code>. (There are other functions in there, too, but we will talk about those in a bit!) You are going to give <code>random_descending_list</code> some functionality! The goal is to <strong>create</strong> and <strong>return</strong> a list of length <code>n</code> of random numbers in decreasing order. You will see a global constant established of MAX_VAL. Let that be the <em>first</em> element of your list, and then append randomly decreasing numbers.</p>
-<p>(Hint: You will want to import and use the <code>randint</code> function from the <code>random</code> library.)</p>
-<p>You can implement the “randomness” how you choose. The main goal is that the output is different each time and strictly decreasing!</p>
-<p>Here’s an example of usage. (Note that your results will be different since this is a <em>randomized</em> function.)</p>
+<p>Rather than finding the minimum element in the unsorted portion of the list, you will iterate through the unsorted portion and place elements where they belong in the sorted portion. Just like selection sort, insertion sort is also an in-place sorting aglorithm. Keep in mind the zeroeth element in the list is already sorted. Your implementation can be broken down into a few steps:</p>
+<ol type="1">
+<li>Create a index variable to track the sorted indicies in the list.</li>
+<li>Set up an overaching loop to iterate through the list except the final element. Create another index variable to track the unsorted indices in the list, it is 1 greater than the value of the sorted index.</li>
+<li>The current element is the value in the list at the index of the unsorted index value.</li>
+<li>Now, moving “backwards” (by descending indices), you will compare the current element to all elements in the sorted part of the list and make swaps as you go. 4.1 Set up a loop that checks if your unsorted index is greater than zero and the current element is greater than the one directly before it. 4.2 Just as you did in selection sort, swap the two elements. 4.3 Decrement the unsorted index variable.</li>
+<li>Increment the sorted index variable.</li>
+</ol>
 <pre>
-<div class="terminal">    $ python
-    >>> from exercises.ex07.runtime_analysis_functions import random_descending_list
-    >>> random_descending_list(10)
-    [100000, 99987, 99957, 99919, 99905, 99892, 99809, 99742, 99684, 99662]
-    >>> random_descending_list(10)
-    [100000, 99920, 99876, 99848, 99814, 99747, 99701, 99691, 99596, 99502]
-    >>> random_descending_list(3)
-    [100000, 99988, 99906]
+<div class="terminal">
+>>> from exercises.ex07.sort_functions.py import insertion_sort
+>>> list1: list[int] = [2, 4, 3, 6]
+>>> insertion_sort(list1)
+>>> print(list1)
+[2, 3, 4, 6]
+>>> list2: list[int] = [-7, -8, -9, -10]
+>>> insertion_sort(list2)
+>>> print(list2)
+[-10, -9, -8, -7]
 </div>
 </pre>
+<h2 id="part-2.-generating-worst-case-inputs">Part 2. Generating Worst-Case Inputs</h2>
+<p>For both selection and insertion sort, we want to analyze how <em>fast</em> they are in terms of runtime. More specifically, we want to measure their Big-O runtime. This is the amount of time it would take to run this algorithm given the <em>worst possible input</em>.</p>
+<p>For example, a list in decreasing order would be the worst possible input (i.e. [6, 5, 4, 3, 2]). For insertion sort, we would need to compare every number in the list to all of the numbers in the sorted portion and also make as many swaps (discounting the zeroeth number). Consider how many comparisons and swaps would be needed for an already sorted list (a list in increasing order). That’s right, there would be as many comparisons as numbers in the list (discounting the zeroeth number) and no swaps!</p>
+<p>In <code>runtime_analysis_functions.py</code> you will see the skeleton for a function called <code>random_descending_list</code>. (There are other functions in there, too, but we will talk about those in a bit!) You are going to give <code>runtime_analysis_functions.py</code> some functionality! The goal is to <strong>create</strong> and <strong>return</strong> a list of length <code>n</code> of random numbers in decreasing order. You will see a global constant established of MAX_VAL. Let that be the <em>first</em> element of your list, and then append randomly decreasing numbers.</p>
+<pre>
+<div class="terminal">
+>>> from exercises.ex07.runtime_analysis_functions.py import random_list, random_list_with_exclusion, random_descending_list
+>>> random_list(5)
+[40590, 44443, 81514, 42736, 47259]
+>>> random_list_with_exclusion(3, 59038)
+[82597, 95670, 8469]
+>>> random_descending_list(4)
+[4535, -74690, -157006, -183592]
+</div>
+</pre>
+<p>(Hint: You will want to import and use the <code>randint</code> function from the <code>random</code> library.)</p>
 <h2 id="part-3.-analyzing-runtime-memory-usage">Part 3. Analyzing Runtime + Memory Usage</h2>
 <p>Now that you’ve written your sort algorithms and have a way of generating a worst-case input, we are going to test the <em>runtime</em> and <em>memory usage</em> of these inputs.</p>
 <h3 id="a.-analyzing-runtime">3A. Analyzing Runtime</h3>
@@ -146,13 +185,15 @@
 <p>Start by adding an <code>__author__</code> variable and the following constants:</p>
 <pre><code>    START_SIZE: int = 0
     END_SIZE: int = 1000</code></pre>
-<p>You can call this function and visualize the result with the following code. <em>Replace ONYEN in line 3 with your ONYEN!</em> (You will need to import <code>evalute_runtime</code> from <code>runtime_analysis_functions.py</code> first!)</p>
+<p>You can call this function and visualize the result with the following code. Replace ONYEN in line 3 with your ONYEN: (You will need to import <code>evalute_runtime</code> from <code>runtime_analysis_functions.py</code> first!)</p>
 <pre><code>    times = evaluate_runtime(&quot;selection_sort&quot;, START_SIZE, END_SIZE)
     plt.plot(times)
     plt.title(&quot;Runtime Analysis of Selection Sort - ONYEN&quot;)
     plt.show()</code></pre>
 <p>It should generate an image that looks something like this:</p>
-<p><img class="img-fluid" src="/static/assets/ex-runtime/sel_sort_runtime.png" /></p>
+<figure>
+<img src="../static/assets/ex-runtime/sel_sort_runtime.png" alt="" /><figcaption>example-pic</figcaption>
+</figure>
 <p>Save this image and upload it to Gradescope under the assignment EX07 - Part A.</p>
 <p>Now, repeat these steps, but for insertion sort!</p>
 <pre><code>    times = evaluate_runtime(&quot;insertion_sort&quot;, START_SIZE, END_SIZE)
