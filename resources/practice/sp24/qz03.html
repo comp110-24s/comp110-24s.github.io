@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1711379412.0655947">
+  <link rel="stylesheet" href="/static/styles.css?v=1711389427.3588657">
 </head>
 
 <body>
@@ -82,6 +82,7 @@
 <li><a href="#runtime-analysis-1">Runtime Analysis</a></li>
 </ul></li>
 <li><a href="#unit-tests-short-response-solutions">Unit Tests Short Response Solutions</a></li>
+<li><a href="#function-writing-solutions">Function Writing Solutions</a></li>
 </ul></li>
 </ul>
 </</ul>
@@ -132,7 +133,7 @@
 <pre><code>    def test_find_even_use_case() -&gt; None:
             &quot;&quot;&quot; Put code here. &quot;&quot;&quot;</code></pre>
 <ol start="2" type="1">
-<li>This function <em>removes</em>the first word in a <code>list</code> of <code>str</code> with an <em>even</em>length.</li>
+<li>This function <em>removes</em> the first word in a <code>list</code> of <code>str</code> with an <em>even</em> length.</li>
 </ol>
 <pre><code>    def remove_first_even(words: list[str]) -&gt; None:
         idx: int = 0
@@ -145,14 +146,15 @@
 <p>Fill in this unit test with a <em>use case</em>.</p>
 <pre><code>    def test_remove_first_even_use_case() -&gt; None:
             &quot;&quot;&quot; Put code here. &quot;&quot;&quot;</code></pre>
+<p><a href="#unit-tests-short-response-solutions">Solutions</a></p>
 <h2 id="function-writing">Function Writing</h2>
 <ol type="1">
-<li>Value Exists:</li>
+<li><code>value_exists</code>:</li>
 </ol>
 <ul>
 <li>The function name is value_exists and is called with a <code>dict[str,int]</code> and an <code>int</code> as an argument.</li>
 <li>The function should return a <code>bool</code>.</li>
-<li>The function should return <code>True</code> if the <code>int</code> exists as a value in the dictionary, and `False} otherwise.</li>
+<li>The function should return <code>True</code> if the <code>int</code> exists as a value in the dictionary, and <code>False</code> otherwise.</li>
 <li>The function should not mutate (modify) the input dict.</li>
 <li>Explicitly type variables, parameters, and return types.</li>
 <li>The following REPL examples demonstrate expected functionality of your <code>value\_exists</code> function:</li>
@@ -168,7 +170,7 @@ False
 </div>
 </pre>
 <ol start="2" type="1">
-<li>Value Exists:</li>
+<li><code>plus_or_minus_n</code>:</li>
 </ol>
 <ul>
 <li>The function name is <code>plus_or_minus_n</code> and is called with <code>inp: dict[str,int]</code> and <code>n: int</code> as an argument.</li>
@@ -186,6 +188,7 @@ False
 {"a": 6, "b": 8, "c": 3, "d": -3}
 </div>
 </pre>
+<p><a href="#function-writing-solutions">Solutions</a></p>
 <h2 id="memory-diagrams">Memory Diagrams</h2>
 <p>Focus on the Dictionary memory diagrams on the <a href="/resources/practice/MemDiagrams.html">practice memory diagram page</a>.</p>
 <h1 id="quiz-review-solutions">Quiz Review Solutions</h1>
@@ -230,6 +233,43 @@ False
         test_input: list[str] = [&quot;Hello&quot;, &quot;Hi&quot;, &quot;Howdy&quot;, &quot;Hiya&quot;]
         remove_first_even(test_input)
         assert test_input == [&quot;Hello&quot;, &quot;Howdy&quot;, &quot;Hiya&quot;]</code></pre>
+<h2 id="function-writing-solutions">Function Writing Solutions</h2>
+<ol type="1">
+<li><code>value_exists</code>:</li>
+</ol>
+<pre><code>    def value_exists(d: dict[str, int], num: int) -&gt; bool:
+        for key in d:
+            if d[key] == num:
+                return True
+        return False</code></pre>
+<pre><code>    def value_exists(d: dict[str, int], num: int) -&gt; bool:
+        exists: bool = False
+        for key in d:
+            if d[key] == num:
+                exists = True
+        return exists</code></pre>
+<ol start="2" type="1">
+<li><code>plus_or_minus_n</code>:</li>
+</ol>
+<ul>
+<li>The function name is <code>plus_or_minus_n</code> and is called with <code>inp: dict[str,int]</code> and <code>n: int</code> as an argument.</li>
+<li>The function should return <code>None</code>. It instead <em>mutates</em> the input dictionary <code>inp</code>.</li>
+<li>The function should check if each <em>value</em> in <code>inp</code> is even or odd. If it is even, add <code>n</code> to that value. If it is odd, subtract <code>n</code>.</li>
+<li>Explicitly type variables, parameters, and return types.</li>
+<li>The following REPL examples demonstrate expected functionality of your function:</li>
+</ul>
+<pre><code>    def plus_or_minus_n(inp: dict[str, int], n: int) -&gt; None:
+        for key in inp:
+            if inp[key] % 2 == 0:
+                inp[key] = inp[key] + n
+            else: # element is odd
+                inp[key] = inp[key] - n</code></pre>
+<pre><code>    def plus_or_minus_n(inp: dict[str, int], n: int) -&gt; None:
+        for key in inp:
+            if inp[key] % 2 == 0:
+                inp[key] += n
+            else: # element is odd
+                inp[key] -= n</code></pre>
 </div>
 
        
