@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Turtle Scene Project - COMP110 - 23F</title>
+  <title> Recursive Turtle Scene - COMP110 - 23F</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1711856926.982091">
+  <link rel="stylesheet" href="/static/styles.css?v=1711856931.16516">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="projects-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>Turtle Scene Project</h1>
+        <h1>Recursive Turtle Scene</h1>
         <hr class="title" />
       </div>
     </div>
@@ -68,7 +68,7 @@
 <li><a href="#drawing-functions-40-points-total">0. Drawing functions (40 points total)</a></li>
 <li><a href="#main-10-points-total">1. Main (10 points total):</a></li>
 <li><a href="#draw-something-twice-10-points-total">2. Draw something twice (10 points total):</a></li>
-<li><a href="#loop-usage-10-points-total">3. loop usage (10 points total):</a></li>
+<li><a href="#recursion-usage-10-points-total">3. recursion usage (10 points total):</a></li>
 <li><a href="#fill-color-5-points-total">4. Fill color (5 points total):</a></li>
 <li><a href="#marker-color-5-points-total">5. Marker color (5 points total):</a></li>
 <li><a href="#types-linting-documentation-10-points-total">6. Types, Linting, Documentation (10 points total):</a></li>
@@ -98,6 +98,7 @@
 <li>You will gain experience breaking a complex task you want to achieve into smaller, parameterized functions. This technique is called problem decomposition.</li>
 <li>You will gain experience passing objects to functions and becoming more comfortable with the idea of functions.</li>
 <li>You will gain experience reading official documentation in order to achieve your vision without knowing exactly what tools you have available at the onset.</li>
+<li>You will practice implementing recursion in a function.</li>
 </ol>
 <h2 id="requirements">Requirements</h2>
 <p>This is an open-ended project and we encourage both exploration and pushing yourself. The rubric applied to your project is as follows:</p>
@@ -107,8 +108,8 @@
 <p>Have a <code>main</code> <em>function</em> whose purpose is to construct any <code>Turtle</code> objects and make use of the component procedures described in the previous requirement to place the components of your scene. It does not need to take any parameters. After your functions are all defined, including <code>main</code>, you should use the <code>if __name__ == "__main__":</code> idiom at the bottom of your file.</p>
 <h3 id="draw-something-twice-10-points-total">2. Draw something twice (10 points total):</h3>
 <p>Call at least one of your four required component procedures twice to place that component twice in your scene in different locations.</p>
-<h3 id="loop-usage-10-points-total">3. loop usage (10 points total):</h3>
-<p>Use a loop to avoid repetitive code in some part of your scene.</p>
+<h3 id="recursion-usage-10-points-total">3. recursion usage (10 points total):</h3>
+<p>Use recursion to avoid repetitive code and/or to create an interesting structure in some part of your scene. You can simply use it to replace a loop in your code, or you could leverage the nature of recursion to draw something recursive in structure! For the latter, think of things made up of smaller versions of themselves (e.g. tree branches are made of smaller branches, target signs are just circles inside bigger circles, etc.)</p>
 <h3 id="fill-color-5-points-total">4. Fill color (5 points total):</h3>
 <p>Fill at least one shape in your scene with a color other than white.</p>
 <h3 id="marker-color-5-points-total">5. Marker color (5 points total):</h3>
@@ -125,9 +126,9 @@
 <li>Impress us by trying out something you find interesting! Describe what you are attempting here in the file’s <code>docstring</code> so we know what to look for. Remember, a <code>docstring</code> can span more than one line, it just ends with the <code>"""</code>. Some ideas you could try for here:</li>
 </ol>
 <ul>
-<li>Read through the <code>Turtle</code> documentation page to find a function to use that we did not make use of in the turtle tutorial and make use of it in your project: <a href="https://docs.python.org/3.11/library/turtle.html#turtle-methods" class="uri">https://docs.python.org/3.11/library/turtle.html#turtle-methods</a></li>
+<li>Read through the <code>Turtle</code> documentation page to find a function to use that we did not make use of in the turtle tutorial and make use of it in your project: <a href="https://docs.python.org/3/library/turtle.html#turtle-methods" class="uri">https://docs.python.org/3/library/turtle.html#turtle-methods</a></li>
 <li>Use loops and procedures in clever ways to draw an interesting pattern or complex component</li>
-<li>Make clever use of randomness in your scene by using a function imported from the <code>random</code> module: https://docs.python.org/3.8/library/random.html</li>
+<li>Make clever use of randomness in your scene by using a function imported from the <code>random</code> module: https://docs.python.org/3/library/random.html</li>
 <li>Go above and beyond with a scene more complex than could be achieved with only four components added to it.</li>
 </ul>
 <p>It is worth noting it is very <em>ok</em>, and perhaps expected, for your scene to look like a drawing you might have been proud of in kindergarten. Such is the nature of doing art on a medium you’re new to. The end visual result is less interesting than the process by which you got there. Your grade will not be impacted by the ultimate beauty of your creation. With that said, drawing 5 lines on the screen with as little effort as possible and calling it “art” may very well be <em>art</em>, but will likely not result in full credit. You should be able to look at your program and appreciate that you put significant effort into it.</p>
@@ -192,14 +193,15 @@ def main() -> None:
 <p>Here are a few suggestions for cleaning up your code in anticipation of <em>static type checking</em>:</p>
 <ol type="1">
 <li>Be sure you declare every parameter’s type</li>
-<li>Be sure you declare every return type (since most of this project is <em>procedural</em>, it’s likely they’re <code>None</code>)</li>
+<li>Be sure you declare every return type (since most of this project is <em>procedural</em>, it’s likely they’re <code>None</code>) <!-- 
+Read the [Style, Linting and Autograder](/students/resources/style-guide.html) guide in anticipation of _linting_ (style checking). 
+
+On your first submission, you are likely to see a number of lint and type checking issues arise. Don't be dismayed! Remember, each is telling you the line number to find the issue on and describes what the issue is. Many of these rules the linter will teach you through some trial and error and by the end of the course you will be in the practice of writing code in a good, Pythonic style. If you do not understand the suggestions, refer to the [Style, Linting, and Autograder guide](/students/resources/style-guide.html#how-to-read-the-autograder). --></li>
 </ol>
-<p>Read the <a href="/students/resources/style-guide.html">Style, Linting and Autograder</a> guide in anticipation of <em>linting</em> (style checking).</p>
-<p>On your first submission, you are likely to see a number of lint and type checking issues arise. Don’t be dismayed! Remember, each is telling you the line number to find the issue on and describes what the issue is. Many of these rules the linter will teach you through some trial and error and by the end of the course you will be in the practice of writing code in a good, Pythonic style. If you do not understand the suggestions, refer to the <a href="/students/resources/style-guide.html#how-to-read-the-autograder">Style, Linting, and Autograder guide</a>.</p>
 <p>To build your submission, run <code>python -m tools.submission exercises/turtle_project.py</code> to build your submission zip for upload to Gradescope. Don’t forget to backup your work by creating a commit and pushing it to GitHub. For a reminder of this process, see the previous exercises.</p>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <h3 id="how-can-i-get-my-scene-to-render-faster">How can I get my scene to render faster?</h3>
-<p>Start by increasing your <code>Turtle</code> object’s speed to the maximum speed. For example, if you have a <code>Turtle</code> variable named <code>bob</code>, you could increase its speed with <code>bob.speed(MAX_SPEED)</code> where <code>MAX_SPEED</code> is a constant set to <code>0</code> per the <a href="https://docs.python.org/3.8/library/turtle.html#turtle.speed">official documentation</a>.</p>
+<p>Start by increasing your <code>Turtle</code> object’s speed to the maximum speed. For example, if you have a <code>Turtle</code> variable named <code>bob</code>, you could increase its speed with <code>bob.speed(MAX_SPEED)</code> where <code>MAX_SPEED</code> is a constant set to <code>0</code> per the <a href="https://docs.python.org/3/library/turtle.html#turtle.speed">official documentation</a>.</p>
 <p>Once you have the hang of writing procedures and a feel for how interacting with Turtle objects work, you can further supercharge your Turtle with some “hacks”. By default the <code>Turtle</code> renderer will update the scene as your method calls occur. However, for complex scenes it’s often desireable to have the scene drawn instantaneously. To do so we will disable the tracer from updating until your scene is completed. You will need to import the functions <code>tracer</code> and <code>update</code> from the <code>turtle</code> package, alongside <code>done</code> and <code>colormode</code>. Then, you can update your <code>main</code> function to turn off tracing and update after your scene instructions complete:</p>
 <pre>
 <code class="python">   def main() -> None:
@@ -217,7 +219,7 @@ def main() -> None:
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s):        Kris Jordan, Ezri White</span>
+      <span> Contributor(s):        Kris Jordan,        Ezri White, Alyssa Lytle</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
