@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Week 11 Practice - COMP110 - 23F</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1712057934.63216">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="resources-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Week 11 Practice</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#concepts-reviewed">Concepts Reviewed</a></li>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#recursion">Recursion</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#conceptual-1">Conceptual:</a></li>
+<li><a href="#multiple-choices-1">Multiple Choices:</a></li>
+<li><a href="#function-writing-1">Function Writing</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. (Some of them are also designed for elaboration purposes as you can see from the tag. Don’t worry them if you just want to get prepared for the quizzes) <br></p>
+<h1 id="questions">Questions</h1>
+<h3 id="recursion">Recursion</h3>
+<h5 id="conceptual">Conceptual:</h5>
+<ol type="1">
+<li><p>There are two essential components of a recursive function, what are they (Hint: Phrase that ends with <code>case</code>)?</p></li>
+<li><p>(Continue on Q1) Explain the importance of each of these two cases.</p></li>
+<li><p>Is there a maximum recursion depth in Python by default? If so, do you know the reason for this limitation?</p></li>
+<li><p>Can we write every loop using recursion? Why or why not?</p></li>
+<li><p>(Continue on Q4) Think of the benefits of <code>loop</code> vs. <code>recursion</code> when do we prefer one over the other?</p></li>
+<li><p>Think of the memory usage. Why might recursion lead to higher memory consumption compared to using <code>loops</code> for the same problem?</p></li>
+</ol>
+<p><br></p>
+<h5 id="multiple-choices">Multiple Choices:</h5>
+<ol type="1">
+<li>What is recursion?</li>
+</ol>
+<ol type="A">
+<li>A loop construct in Python.</li>
+<li>A programming technique where a function calls itself to solve a problem.</li>
+<li>A data structure used for storing hierarchical data.</li>
+<li>A type of sorting algorithm.</li>
+</ol>
+<ol start="2" type="1">
+<li>Which of the following components is essential for a recursive function?</li>
+</ol>
+<ol type="A">
+<li>Loop condition</li>
+<li>Base case</li>
+<li>Iteration</li>
+<li>Break statement</li>
+</ol>
+<ol start="3" type="1">
+<li>What happens if a recursive function lacks a base case?</li>
+</ol>
+<ol type="A">
+<li>It runs indefinitely and leads to runtime error.</li>
+<li>It throws an error before the code is executed.</li>
+<li>It executes the recursive case repeatedly.</li>
+<li>It returns None.</li>
+</ol>
+<ol start="4" type="1">
+<li></li>
+</ol>
+<pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)</code></pre>
+<p>What is this recursive function trying to do? A) Computes the sum of integers from 1 to n. B) Computes the product of integers from 1 to n. C) Computes the power of n. D) Computes the Fibonacci sequence.</p>
+<ol start="5" type="1">
+<li>What is the base case for a recursive function that calculates the factorial of a positive integer n?</li>
+</ol>
+<ol type="A">
+<li>n == 0</li>
+<li>n == 1</li>
+<li>n &lt;= 1</li>
+<li>n &gt; 1</li>
+</ol>
+<ol start="6" type="1">
+<li></li>
+</ol>
+<pre><code>def sum_of_digits(n):
+    if n &lt; 10:
+        return n
+    else:
+        last_digit = n % 10
+        remaining_number = n // 10
+        return last_digit + sum_of_digits(remaining_number)</code></pre>
+<p>What would be printed if we call <code>sum_of_digits(12345)</code></p>
+<ol start="7" type="1">
+<li></li>
+</ol>
+<pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n)</code></pre>
+<p>Is there any bug in the above code? A) The base case is missing. B) The recursive call is incorrect. C) The function should return n instead of n * factorial(n). D) There is no bug; the function is correct.</p>
+<ol start="8" type="1">
+<li></li>
+</ol>
+<pre><code>def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)</code></pre>
+<p>Is there any bug in the above code? A) The base case should be a == 0. B) The function should return b for the base case. C) The recursive call should be gcd(a, b) instead of gcd(b, a % b). D) There is no bug; the function is correct.</p>
+<p><br></p>
+<h5 id="function-writing">Function Writing</h5>
+<ol type="1">
+<li><p>Write a recursive function in Python that calculates the sum of the first <code>n</code> negative integers.</p></li>
+<li><p>Convert the following simple while loop to a recursive function:</p></li>
+</ol>
+<pre><code>def print_numbers_while(n):
+    i = 1
+    while i &lt;= n:
+        print(i)
+        i += 1</code></pre>
+<ol start="3" type="1">
+<li>Convert the following simple recursive function to a while loop</li>
+</ol>
+<pre><code>def factorial_recursive(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial_recursive(n - 1)</code></pre>
+<p><br></p>
+<h1 id="solutions">Solutions</h1>
+<h3 id="conceptual-1">Conceptual:</h3>
+<ol type="1">
+<li><p>The two essential components of a recursive function are the <code>base case</code> and the <code>recursive case</code>.</p></li>
+<li><p>The <code>base case</code> serves as the termination condition that stops the recursion from continuing indefinitely and eventually leads to stack overflow error. The <code>recursive case</code> is where the function calls itself with different arguments, moving towards the base case.</p></li>
+<li><p>Yes, there is a maximum recursion depth in Python by default, which is <code>typically set to 1000</code>. This limit is in place to prevent a stack overflow error.</p></li>
+<li><p>Theoretically, conversion between these two is possible. However, in a real-life scenario, due to the overhead associated with recursive calls and the call stack limit, it is not practical to do this kind of conversion effectively every time.</p></li>
+<li><p>We prefer <code>recursion</code> over loops when the problem can be naturally expressed as smaller instances of the same problem, such as with factorial calculation, or the Fibonacci sequence. <code>Loops</code>, on the other hand, are more straightforward and therefore can be more friendly to use when dealing with complicated questions.</p></li>
+<li><p>Since each recursive call adds a new layer to the call stack. Think of the <code>Memory Diagram</code>, you would create a new function call frame in the stack for each recursive step.</p></li>
+</ol>
+<h3 id="multiple-choices-1">Multiple Choices:</h3>
+<ol type="1">
+<li><ol start="2" type="A">
+<li>A programming technique where a function calls itself to solve a problem.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>Base case</li>
+</ol></li>
+<li><ol type="A">
+<li>It runs indefinitely and leads to runtime error.</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>Computes the product of integers from 1 to n.</li>
+</ol></li>
+<li><ol type="A">
+<li>n == 0</li>
+</ol></li>
+<li><p>For the sum of digits in 12345, the printed result would be 15.</p></li>
+<li><ol start="2" type="A">
+<li>The recursive call is incorrect. The function should call factorial(n - 1) in the recursive case, not factorial(n), to ensure it makes progress toward the base case and avoids infinite recursion.</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>There is no bug; the function is correct.</li>
+</ol></li>
+</ol>
+<h3 id="function-writing-1">Function Writing</h3>
+<ol type="1">
+<li></li>
+</ol>
+<pre><code>def sum_negative_integers(n):
+    if n == 0:
+        return 0
+    else:
+        return -n + sum_negative_integers(n - 1)</code></pre>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<pre><code>def print_numbers_recursive(n, i=1):
+    if i &lt;= n:
+        print(i)
+        print_numbers_recursive(n, i + 1)</code></pre>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<pre><code>def factorial_iterative(n):
+    result = 1
+    while n &gt; 0:
+        result *= n
+        n -= 1
+    return result</code></pre>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Vincent Li</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
