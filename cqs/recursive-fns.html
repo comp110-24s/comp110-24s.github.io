@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1712273823.3940392">
+  <link rel="stylesheet" href="/static/styles.css?v=1712329896.0747328">
 </head>
 
 <body>
@@ -79,7 +79,7 @@
 <p>This is exactly what we did in the <a href="https://comp110-24s.github.io/virtual-classes/VL08.html">virtual lesson</a>!</p>
 <h2 id="standard-function-definition">Standard Function Definition</h2>
 <p>The function we will be defining recursively is:</p>
-<p><br /><span class="math display"><em>f</em>(<em>n</em>, <em>k</em>) = <em>n</em> × <em>k</em></span><br />, with recursion on <br /><span class="math display"><em>n</em> ≥ 0</span><br />.</p>
+<p><span class="math inline"><em>f</em>(<em>n</em>, <em>k</em>) = <em>n</em> × <em>k</em></span>, with recursion on <span class="math inline"><em>n</em> ≥ 0</span>.</p>
 <p>This is how the <em>standard function</em> will look as a Python function:</p>
 <pre><code>    def f(n: int, k: int) -&gt; int:
         return n * k</code></pre>
@@ -94,7 +94,7 @@
 <p>Looking at the standard function definition, fill in the sequence:</p>
 <p><img class="img-fluid" src="/static/assets/sp24/fn-sequence.png" /></p>
 <p>You can find the recursive rule by observing how you get from one output to another.</p>
-<p>For example, if I want to know the pattern for getting <br /><span class="math display"><em>f</em>(<em>n</em>, <em>k</em>)</span><br /> from <br /><span class="math display"><em>f</em>(<em>n</em> − 1, <em>k</em>)</span><br />, I could ask “How do I get from <br /><span class="math display"><em>f</em>(2, <em>k</em>)</span><br /> to <br /><span class="math display"><em>f</em>(3, <em>k</em>)</span><br />? How do I get from <br /><span class="math display"><em>f</em>(3, <em>k</em>)</span><br /> to <br /><span class="math display"><em>f</em>(4, <em>k</em>)</span><br />?” and so on. These are just the values in the bottom row, so see if you can find the pattern!</p>
+<p>For example, if I want to know the pattern for getting from <span class="math inline"><em>f</em>(<em>n</em> − 1, <em>k</em>)</span> to <span class="math inline"><em>f</em>(<em>n</em>, <em>k</em>)</span>, I could ask “How do I get from <span class="math inline"><em>f</em>(2, <em>k</em>)</span> to <span class="math inline"><em>f</em>(3, <em>k</em>)</span>? How do I get from <span class="math inline"><em>f</em>(3, <em>k</em>)</span> to <span class="math inline"><em>f</em>(4, <em>k</em>)</span>?” and so on. These are just the values in the bottom row, so see if you can find the pattern!</p>
 <p>This will help you find out your <em>recursive definition</em> and you can use that to write your function!</p>
 <h2 id="writing-the-function">Writing the Function</h2>
 <p>Inside your <code>lessons</code> folder, create a file called <code>recursion.py</code>. Use that file to define <code>f</code>.</p>
