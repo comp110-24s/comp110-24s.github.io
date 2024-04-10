@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Week 12 Practice - COMP110 - 24S</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1712708818.4302886">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="resources-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Week 12 Practice</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#concepts-reviewed">Concepts Reviewed</a></li>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#object-oriented-programmingoop">Object Oriented Programming(OOP)</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. (Some of them are also designed for elaboration purposes as you can see from the tag. Don’t worry them if you just want to get prepared for the quizzes) <br></p>
+<h1 id="questions">Questions</h1>
+<h3 id="object-oriented-programmingoop">Object Oriented Programming(OOP)</h3>
+<h5 id="conceptual">Conceptual</h5>
+<ol type="1">
+<li><p>So far, we have learned the idea of <code>functions</code>. What do we call them in OOP? (Functions belong to a specific object)</p></li>
+<li><p>What do we call the variables that belong to each instantiation of the object?</p></li>
+<li><p>Which <code>method</code> that we need to define in order to create new instances of that object? Which terminology do we use to refer to this <code>method</code>?</p></li>
+<li><p>How do you create a <code>class/object</code> in Python? Demonstrate by showing a simple example.</p></li>
+<li><p>What is the purpose of <code>__init__</code> method?</p></li>
+</ol>
+<h5 id="multiple-choices">Multiple Choices</h5>
+<ol type="1">
+<li>What is the main feature of object-oriented programming?</li>
+</ol>
+<ol type="A">
+<li>Use of functions</li>
+<li>Use of loops and conditions</li>
+<li>Organization of code into reusable objects</li>
+<li>Execution of programs from top to bottom</li>
+</ol>
+<ol start="2" type="1">
+<li>In Python, what is a method?</li>
+</ol>
+<ol type="A">
+<li>A function that is defined outside a class</li>
+<li>A piece of code that runs automatically</li>
+<li>A function that is part of a class and can access its attributes</li>
+<li>A variable stored inside a class</li>
+</ol>
+<ol start="3" type="1">
+<li>Which of the following is the correct way to define a class in Python?</li>
+</ol>
+<ol type="A">
+<li>class MyClass(){}</li>
+<li>define MyClass:</li>
+<li>class MyClass:</li>
+<li>MyClass = class{}</li>
+</ol>
+<ol start="4" type="1">
+<li>How do you create an instance of a class named Vehicle?</li>
+</ol>
+<ol type="A">
+<li>Vehicle.new()</li>
+<li>new Vehicle()</li>
+<li>Vehicle()</li>
+<li>instance Vehicle:</li>
+</ol>
+<p><br></p>
+<h5 id="truefalse">True/False</h5>
+<ol type="1">
+<li>True or False: In Python, an object is an instance of a class.</li>
+<li>True or False: The <strong>init</strong> method is optional for a Python class.</li>
+<li>True or False: Every Python class must contain at least one method.</li>
+<li>(For Elaboration) True or False: Static methods in Python cannot access or modify the class state.</li>
+<li>True or False: A class in Python can only have one constructor method (<strong>init</strong>).</li>
+<li>True or False: Attributes defined in the <strong>init</strong> method are called local variables.</li>
+</ol>
+<p><br></p>
+<h5 id="debugging-questions">Debugging Questions</h5>
+<ol type="1">
+<li>Debug the following codes</li>
+</ol>
+<pre><code>class Car:
+def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+my_car = Car(&quot;Toyota&quot;, &quot;Corolla&quot;)
+print(my_car.brand, my_car.model)</code></pre>
+<ol start="2" type="1">
+<li>Debug the following codes</li>
+</ol>
+<pre><code>class Animal:
+    def __init__(self, name):
+        name = name
+
+my_pet = Animal(&quot;Rex&quot;)
+print(my_pet.name)</code></pre>
+<ol start="3" type="1">
+<li>Debug the following codes</li>
+</ol>
+<pre><code>class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return length * width
+
+my_rectangle = Rectangle(10, 5)
+print(my_rectangle.area())</code></pre>
+<p><br></p>
+<h1 id="solutions">Solutions</h1>
+<h5 id="conceptual-1">Conceptual:</h5>
+<ol type="1">
+<li><p>They are called <code>methods</code></p></li>
+<li><p>They are called <code>instance variables</code> or <code>attributes</code></p></li>
+<li><p>They are in general called <code>constructors</code>. Here in Python, we define a constructor by using a method named: <code>__init__</code>.</p></li>
+<li><p>Here is one example:</p></li>
+</ol>
+<pre><code>class Car:
+    # Constructor method with initialization
+    def __init__(self, brand, model):
+        self.brand = brand  # Instance variable
+        self.model = model  # Instance variable</code></pre>
+<ol start="5" type="1">
+<li>The purpose of the <strong>init</strong> method is to initialize the instance variables of a new object.</li>
+</ol>
+<h5 id="multiple-choices-1">Multiple Choices:</h5>
+<ol type="1">
+<li><p>Correct Answer: C) Organization of code into reusable objects</p></li>
+<li><p>Correct Answer: C) A function that is part of a class and can access its attributes</p></li>
+<li><p>Correct Answer: C) class MyClass:</p></li>
+<li><p>Correct Answer: C) Vehicle()</p></li>
+</ol>
+<h5 id="truefalse-1">True/False:</h5>
+<ol type="1">
+<li>True, objects are instances of classes.</li>
+<li>True, A class can be defined without an init method, although init is commonly used to initialize instance attributes.</li>
+<li>False, It’s entirely possible to define a class without any methods.</li>
+<li>True</li>
+<li>True, Python classes can have only one constructor.</li>
+<li>False, Attributes defined with self.attribute_name in the init method are instance attributes, not local variables.</li>
+</ol>
+<h5 id="debug">Debug:</h5>
+<ol type="1">
+<li>Issue: Indentation error in the <strong>init</strong> method definition.</li>
+<li>Issue: The attribute should be assigned to self.name = name to make it accessible as an instance attribute.</li>
+<li>Issue: The area method should use self.length and self.width instead of length and width.</li>
+</ol>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Vincent Li</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>

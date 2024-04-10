@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1712672601.0631516">
+  <link rel="stylesheet" href="/static/styles.css?v=1712708817.9149077">
 </head>
 
 <body>
@@ -71,6 +71,7 @@
 <li><a href="#conceptual-1">Conceptual:</a></li>
 <li><a href="#multiple-choices-1">Multiple Choices:</a></li>
 <li><a href="#function-writing-1">Function Writing</a></li>
+<li><a href="#convert">Convert</a></li>
 </ul></li>
 </ul>
 </</ul>
@@ -187,6 +188,41 @@
     else:
         return n * factorial_recursive(n - 1)</code></pre>
 <p><br></p>
+<h5 id="convert-standard-functions-to-recursive-functions">Convert Standard Functions to Recursive Functions</h5>
+<ol type="1">
+<li>Factorial <br> Standard Function Definition: The function calculates the factorial of a number n, defined as n! = n × (n-1) × … × 1. <br> Standard Function:</li>
+</ol>
+<pre><code>def factorial(n: int) -&gt; int:
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result</code></pre>
+<p>Convert it to recursive function: ~~~ def factorial(n: int) -&gt; int: if n == 0: # Base Case # Something here else: return # Something here ~~~</p>
+<ol start="2" type="1">
+<li>Power of a Number <br> Standard Function Definition: The function calculates a to the power of b (a^b). <br> Standard Function:</li>
+</ol>
+<pre><code>def power(a: int, b: int) -&gt; int:
+    return a ** b</code></pre>
+<p>Convert it to recursive function: ~~~ def power(a: int, b: int) -&gt; int: if b == 0: # Base Case # Something here else: return # Something here ~~~</p>
+<ol start="3" type="1">
+<li>Counting Backwards <br> Standard Function Definition: The function prints numbers from n down to 1. <br> Standar Function:</li>
+</ol>
+<pre><code>def count_down(n: int):
+    i: int = n
+    while i &gt; 0:
+        print(i)
+        i -= 1</code></pre>
+<p>Convert it to recursive function: ~~~ def count_down(n: int): if n == 0: # Base Case # Something here else: # Something here ~~~</p>
+<ol start="4" type="1">
+<li>Multiplication using Addition <br> Standard Function: The function multiplies two integers using the addition method. <br> Standard Function:</li>
+</ol>
+<pre><code>def multiply(a: int, b: int) -&gt; int:
+    result = 0
+    for _ in range(b):
+        result += a
+    return result</code></pre>
+<p>Convert it to recursive function ~~~ def multiply(a: int, b: int) -&gt; int: if b == 0: # Base Case # Something here else: # Something here ~~~</p>
+<p><br></p>
 <h1 id="solutions">Solutions</h1>
 <h3 id="conceptual-1">Conceptual:</h3>
 <ol type="1">
@@ -247,6 +283,40 @@
         result *= n
         n -= 1
     return result</code></pre>
+<h3 id="convert">Convert</h3>
+<ol type="1">
+<li></li>
+</ol>
+<pre><code>def factorial(n: int) -&gt; int:
+    if n == 0:
+        return 1  # Factorial of 0 is 1
+    else:
+        return n * factorial(n - 1)  # Factorial of n is n times factorial of n-1</code></pre>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<pre><code>def power(a: int, b: int) -&gt; int:
+    if b == 0:
+        return 1  # Any number to the power of 0 is 1
+    else:
+        return a * power(a, b - 1)  # a to the power b is a times a to the power (b-1)</code></pre>
+<ol start="3" type="1">
+<li></li>
+</ol>
+<pre><code>def count_down(n: int):
+    if n == 0:
+        return  # Base case to stop recursion
+    else:
+        print(n)
+        count_down(n - 1)  # Recursive step</code></pre>
+<ol start="4" type="1">
+<li></li>
+</ol>
+<pre><code>def multiply(a: int, b: int) -&gt; int:
+    if b == 0:
+        return 0  # Multiplying by 0 results in 0
+    else:
+        return a + multiply(a, b - 1)  # Add a to the result of multiplying a by (b-1)</code></pre>
 </div>
 
        
