@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1713484017.0035093">
+  <link rel="stylesheet" href="/static/styles.css?v=1713484576.4721863">
 </head>
 
 <body>
@@ -71,7 +71,7 @@
 <li><a href="#solutions">Solutions</a>
 <ul>
 <li><a href="#conceptual-questions-1">Conceptual Questions</a></li>
-<li><a href="#class-writing-1">Class Writing</a></li>
+<li><a href="#class-writing-solutions">Class Writing Solutions</a></li>
 <li><a href="#function-writing">Function Writing</a></li>
 </ul></li>
 </ul>
@@ -144,11 +144,12 @@ minor changes/additions
 <li>Include attributes <code>make: str</code>, <code>model: str</code>, <code>year: int</code>, <code>color: str</code>, and <code>mileage: float</code>.<br />
 </li>
 <li>Write a constructor to initialize all attributes.</li>
-<li>Implement a method for updating the mileage of the car, <code>update_mileage</code>, that takes an amount of <code>miles: int</code> as input and updated the mileage attribute.</li>
-<li>Implement a method displaying the car’s attribute information as a string called <code>display_info</code>. It should just print the information and not return anything.</li>
+<li>Implement a method for updating the mileage of the car, <code>update_mileage</code>, that takes an amount of <code>miles: float</code> as input and updated the mileage attribute.</li>
+<li>Implement a method displaying the car’s attribute information as a string called <code>display_info</code>. It should just print the information and not return anything. (You can take creative liberty, as long as it prints out all attributes!)</li>
 <li>Implement a <em>function</em> (NOT a method) called <code>calculate_depreciation</code> that calculates the depreciation of the car by taking a <code>Car</code> object as input and <code>depreciation_rate: float</code> and returns the mileage multiplied by the depreciation rate.</li>
 </ul>
 <p>Practice calling these methods by instantiating a new car object and calling them!</p>
+<p><a href="#class-writing-solutions">Solutions</a></p>
 <h2 id="function-writing-with-class-objects">Function Writing with Class Objects</h2>
 <ol type="1">
 <li>Write a function called <code>find_courses</code>. Given the following <code>Course</code> class definition, <code>find_courses</code> should take in a <code>list[Courses]</code> and a <code>str</code> prerequisite to search for. The function should return a list of the <code>names</code> of each Course whose <code>level</code> is 400+ and whose <code>prerequisites</code> list contains the given string.</li>
@@ -175,7 +176,7 @@ minor changes/additions
 <li>True</li>
 <li>True</li>
 </ol>
-<h2 id="class-writing-1">Class Writing</h2>
+<h2 id="class-writing-solutions">Class Writing Solutions</h2>
 <ol type="1">
 <li></li>
 </ol>
@@ -223,8 +224,39 @@ minor changes/additions
                 i += 1
             return total
 </code></pre>
-<p><!-- <img class="img-fluid" src="/static/practice_worksheets/fa21/qz04-solution13.png" width="600" /> 
-    <img class="img-fluid" src="/static/practice_worksheets/sp22/qz03-solution16-from-fa21-sol13.png" width="600"/> --></p>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<pre><code>    class Car:
+        
+        make: str
+        model: str
+        year: int
+        color: str
+        mileage: float
+        
+        def __init__(self, make: str, model: str, year: int, color: str, mileage: float):
+            self.make = make
+            self.model = model
+            self.year = year
+            self.color = color
+            self.mileage = mileage
+        
+        def update_mileage(self, miles: float) -&gt; None:
+            self.mileage += miles
+            
+        def display_info(self) -&gt; None:
+            info: str = f&quot;This car is a {self.color}, {self. year} {self.make} {self.model} with {self.mileage} miles.&quot;
+            print(info)
+        
+    def calculate_depreciation(vehicle: Car, depreciation_rate: float) -&gt; float:
+        return vehicle.mileage * depreciation_rate
+</code></pre>
+<p>to practice instantiating:</p>
+<pre><code>    my_ride: Car = Car(&quot;Honda&quot;, &quot;CRV&quot;, &quot;2015&quot;, &quot;blue&quot;, 75000.00)
+    my_ride.update_mileage(5000.25)
+    my_ride.display_info()
+    calculate_depreciation(my_ride, .01)</code></pre>
 <h2 id="function-writing">Function Writing</h2>
 <ol type="1">
 <li></li>
