@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> EX08 - Linked List Utils - COMP110 - 24S</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1713722209.878156">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="exercises-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>EX08 - Linked List Utils</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <div class="container">
+                <div class="content"><h2 id="overview">Overview</h2>
+<p>In these exercises you will implement a few algorithms to process a singly-linked list data structure. If you have not completed CQ20 yet, go ahead do that first.</p>
+<p>Recall in CQ20, we were modifying and writing methods for the <code>Node</code> class. In this exercise, you will not be creating new methods, but rather, functions that take in or return <code>Node</code> objects. To create functions in the same <code>linked_list.py</code> file, make sure you are outside of the body of the class definition. You must use <strong>recursive function calls</strong> to implement the functions below. If you use loops, your work for that function will be disqualified.</p>
+<h2 id="value_at"><code>value_at</code></h2>
+<p>Given a <code>head</code> <code>Optional[Node]</code> and an <code>index</code> <code>int</code> as inputs, return the <em>data</em> of the Node stored at the given index, or raise an <code>IndexError</code> if the <code>index</code> does not exist.</p>
+<p>Hint #0: In the recursive case, you will need to modify both arguments to bring your recursive call closer to the base case of hint #2. Start by diagramming on paper what this means for a call to <code>value_at</code> with a list of two or more nodes and an initial index of 1.</p>
+<p>Hint #1: An edge case occurs when the list is empty. Raise an <code>IndexError</code>, e.g.: <code>raise IndexError("Index is out of bounds on the list.")</code></p>
+<p>Hint #2: A second base case occurs when the index is 0. Here you should return the data of the current <code>Node</code> being processed on the list.</p>
+<p>Skeleton function implementation:</p>
+<pre><code>def value_at(head: Optional[Node], index: int) -&gt; int:
+    raise IndexError(&quot;Index is out of bounds on the list.&quot;)</code></pre>
+<p>Example usage:</p>
+<pre><code>&gt;&gt;&gt; from exercises.ex10.linked_list import Node, value_at
+&gt;&gt;&gt; value_at(Node(10, Node(20, Node(30, None))), 0)
+10
+&gt;&gt;&gt; value_at(Node(10, Node(20, Node(30, None))), 1)
+20
+&gt;&gt;&gt; value_at(Node(10, Node(20, Node(30, None))), 2)
+30
+&gt;&gt;&gt; value_at(Node(10, Node(20, Node(30, None))), 3)
+IndexError: Index is out of bounds on the list.</code></pre>
+<h2 id="max"><code>max</code></h2>
+<p>Given a <code>head</code> <code>Node</code>, return the maximum data value in the linked list. If the linked list is empty, raise a <code>ValueError</code>.</p>
+<p>Skeleton function implementation:</p>
+<pre><code>def max(head: Optional[Node]) -&gt; int:
+    raise ValueError(&quot;Cannot call max with None&quot;)</code></pre>
+<pre><code>&gt;&gt;&gt; from exercises.ex10.linked_list import Node, max
+&gt;&gt;&gt; max(Node(10, Node(20, Node(30, None))))
+30
+&gt;&gt;&gt; max(Node(10, Node(30, Node(20, None))))
+30
+&gt;&gt;&gt; max(Node(30, Node(20, Node(10, None))))
+30
+&gt;&gt;&gt; max(None)
+ValueError: Cannot call max with None.</code></pre>
+<h2 id="linkify"><code>linkify</code></h2>
+<p>Given a <code>list[int]</code>, your <code>linkify</code> function should return a Linked List of Nodes with the same values, in the same order, as the input <code>list</code>.</p>
+<p>A skeleton for <code>linkify</code> is:</p>
+<pre><code>def linkify(items: list[int]) -&gt; Optional[Node]:
+    return None</code></pre>
+<p>You will find it helpful to use Python’s slice subscription notation here, which we haven’t discussed in full but you should now be able to pickup quickly. Try the following in the REPL:</p>
+<pre><code>&gt;&gt;&gt; items = [10, 20, 30, 40]
+&gt;&gt;&gt; items[1]
+20
+&gt;&gt;&gt; items[1:3]
+[20, 30]
+&gt;&gt;&gt; items[:3]
+[10, 20, 30]
+&gt;&gt;&gt; items[1:]
+[20, 30, 40]</code></pre>
+<p>Notice when using slice notation a new <code>list</code> is returned to you whose values start with the first index number, inclusive, and end with the index number following the colon, exclusive. If you leave off the starting index, it defaults to <code>0</code>. If you leave off the ending index, it defaults to the <code>len</code> of the <code>list</code>.</p>
+<p>Example usage:</p>
+<pre><code>&gt;&gt;&gt; from exercises.ex10.linked_list import linkify
+&gt;&gt;&gt; linkify([1, 2, 3])
+1 -&gt; 2 -&gt; 3 -&gt; None</code></pre>
+<p>After you are certain of the correctness of your <code>linkify</code> function, you may find it valuable to use in writing test cases for the following functions.</p>
+<h2 id="scale"><code>scale</code></h2>
+<p>Given a head <code>Node</code> of a linked list and a <code>int</code> <code>factor</code> to scale by, return a new linked list of <code>Node</code>s where each value in the original list is scaled (multiplied) by the scaling <code>factor</code>.</p>
+<p>Skeleton function implementation:</p>
+<pre><code>def scale(head: Optional[Node], factor: int) -&gt; Optional[Node]:
+    return None</code></pre>
+<p>Example usage:</p>
+<pre><code>&gt;&gt;&gt; from exercises.ex10.linked_list import scale, linkify
+&gt;&gt;&gt; scale(linkify([1, 2, 3]), 2)
+2 -&gt; 4 -&gt; 6 -&gt; None</code></pre>
+<h2 id="linting-and-type-correctness">Linting and Type Correctness</h2>
+<p>Your code will need to pass the common stylistic and type checking guidelines used throughout the semester.</p>
+<h2 id="hand-in-will-open-soon">Hand-in Will Open Soon</h2>
+<p>You should utilize the REPL or write your own tests to be confident of your implementations. None of these functions require much code to complete, but will take some mental gymnastics to think about approaching recursively.</p>
+<p>Remember: Focus on what you need to do with only the head node and then leave the rest of the problem working through the rest of the list to the recursive function call.</p>
+<p>When you are ready to submit for grading, run the following command:</p>
+<p><code>python -m tools.submission exercises/ex10</code></p>
+</div>
+            </div>
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s):        Kris Jordan,        Kaki Ryan, Vrinda Desai</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
