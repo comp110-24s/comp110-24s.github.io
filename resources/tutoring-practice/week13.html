@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Week 13 Practice - COMP110 - 24S</title>
+  <link rel="icon" type="image/png" href="/static/tabbrand.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/styles.css?v=1713893489.6183019">
+</head>
+
+<body>
+  <script src="/static/scripts/nav-menu-esc.js"></script> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-1 fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">COMP 110</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" onclick="esc_key()" data-bs-target="#navmenu" aria-label="Main Menu" aria-controls="#navmenu" role="navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link " href="/">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources" class="nav-link">resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="/support" class="nav-link">support</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/syllabus" class="nav-link">syllabus</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources/team.html" class="nav-link">team110</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="resources-page" class="container">
+    <div class="row pt-4">
+      <div class="col-12">
+        <h1>Week 13 Practice</h1>
+        <hr class="title" />
+      </div>
+    </div>
+
+    <script src="/static/scripts/toggle-handler.js"></script>
+    
+    <div class="row px-4">
+        <div id="box" class="toc col-xl-3 col-lg-3 order-1 order-lg-2" role="doc-toc">
+            <div id="menu-overview" class="link-page horizon-box">
+                <button id="overview-button" class="btn btn-ov" onclick="hideshow()">Overview  <img id="button-img" class="filter-icon" src="/static/components/Itinerary/arrow-up.svg" style="height:15px; padding-left: 4px;"></button>
+                <div id="overview-links">
+                    <div id="TOC" role="doc-toc">
+                        <ul class="overview-item"><ul>
+<li><a href="#concepts-reviewed">Concepts Reviewed</a></li>
+<li><a href="#questions">Questions</a>
+<ul>
+<li><a href="#default-parameters">Default Parameters</a></li>
+<li><a href="#union-types">Union Types</a></li>
+<li><a href="#magic-methods">Magic Methods:</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#default-parameters-1">Default Parameters</a></li>
+<li><a href="#union-types-1">Union Types</a></li>
+<li><a href="#magic-methods-1">Magic Methods:</a></li>
+</ul></li>
+</ul>
+</</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="concepts-reviewed">Concepts Reviewed</h1>
+<p>These questions are optional supplements that ideally help you get prepared for the quizzes ahead of time. (Some of them are also designed for elaboration purposes as you can see from the tag. Don’t worry them if you just want to get prepared for the quizzes) <br></p>
+<h1 id="questions">Questions</h1>
+<h3 id="default-parameters">Default Parameters</h3>
+<h5 id="conceptual-questions">Conceptual Questions:</h5>
+<ol type="1">
+<li><p>What is a default parameter in Python functions? Explain with a simple example.</p></li>
+<li><p>Write a function with a default parameter. Demonstrate both the default behavior and overridden behavior by calling the function twice.</p></li>
+<li><p>Consider the function definition below. What will be the output when calling this function without arguments, and why?</p></li>
+</ol>
+<pre><code>def print_values(x, y=10, z=20):
+    print(&quot;X:&quot;, x, &quot;Y:&quot;, y, &quot;Z:&quot;, z)</code></pre>
+<ol start="4" type="1">
+<li>Explain the order of parameters when using default and non-default parameters in a function. Why must non-default parameters precede default parameters?</li>
+</ol>
+<h5 id="multiple-choices">Multiple Choices</h5>
+<ol type="1">
+<li>What is the output of the following function call?</li>
+</ol>
+<pre><code>def display(a, b=4, c=6):
+    return a + b + c
+print(display(1))</code></pre>
+<ol type="A">
+<li>1 <br></li>
+<li>11 <br></li>
+<li>Error <br></li>
+<li>None of the above <br></li>
+</ol>
+<ol start="2" type="1">
+<li>Which of the following is true about default parameters in Python?</li>
+</ol>
+<ol type="A">
+<li>A non-default parameter cannot follow a default parameter. <br></li>
+<li>Default parameters can be placed in any order. <br></li>
+<li>Only one default parameter is allowed per function. <br></li>
+<li>Default parameters are evaluated at compile time. <br></li>
+</ol>
+<ol start="3" type="1">
+<li>What will be the output of the following code?</li>
+</ol>
+<pre><code>def append_number(lst=[], number=1):
+    lst.append(number)
+    return lst
+print(append_number())
+print(append_number())</code></pre>
+<ol type="A">
+<li>[1], [1] <br></li>
+<li>[1], [1, 1] <br></li>
+<li>[1, 1], [1, 1] <br></li>
+<li>[1], [2] <br></li>
+</ol>
+<ol start="4" type="1">
+<li>Consider the following function definition:</li>
+</ol>
+<pre><code>def make_sentence(noun=&quot;dog&quot;, verb=&quot;barks&quot;):
+    return f&quot;The {noun} {verb}.&quot;</code></pre>
+<p>Which function call correctly changes the verb while keeping the default noun? A) make_sentence(“runs”) <br> B) make_sentence(verb=“runs”) <br> C) make_sentence(“dog”, “runs”) <br> D) make_sentence(noun=“runs”) <br></p>
+<h5 id="true-or-false">True or False</h5>
+<ol type="1">
+<li><p>(For elaboration)True or False: Default parameters are re-evaluated every time a function is called.</p></li>
+<li><p>True or False: In Python, you can have default parameters followed by non-default parameters in a function definition.</p></li>
+<li><p>True or False: It is considered good practice to use mutable objects like lists or dictionaries as default parameter values.</p></li>
+</ol>
+<h3 id="union-types">Union Types</h3>
+<h5 id="conceptual-questions-1">Conceptual Questions:</h5>
+<ol type="1">
+<li><p>What is a Union type in Python and why is it used?</p></li>
+<li><p>How do you specify that a function parameter can be either an integer or a string using type hints?</p></li>
+<li><p>Explain the difference between using Union and using Optional in type hints.</p></li>
+</ol>
+<h5 id="multiple-choices-questions">Multiple Choices Questions:</h5>
+<ol type="1">
+<li>How can you define a variable age that can either be an integer or a string using Python 3.10 or later?</li>
+</ol>
+<ol type="A">
+<li>age: int | str <br></li>
+<li>age: int or str <br></li>
+<li>age: Union[int, str] <br></li>
+<li>Both A and C are correct <br></li>
+</ol>
+<ol start="2" type="1">
+<li>What does the Optional[int] type hint imply about the variable’s possible values?</li>
+</ol>
+<ol type="A">
+<li>The variable can be any number <br></li>
+<li>The variable can only be an integer <br></li>
+<li>The variable can be an integer or None <br></li>
+<li>The variable can be optional in function calls <br></li>
+</ol>
+<ol start="3" type="1">
+<li>If a function parameter is annotated as Union[int, str], what does it mean?</li>
+</ol>
+<ol type="A">
+<li>The parameter can only accept integers <br></li>
+<li>The parameter can only accept strings <br></li>
+<li>The parameter can accept either an integer or a string <br></li>
+<li>The parameter can accept any type as Python is dynamically typed <br></li>
+</ol>
+<ol start="4" type="1">
+<li>Consider the following function definition:</li>
+</ol>
+<pre><code>def process_data(data: Union[int, str]) -&gt; str:
+    return str(data)</code></pre>
+<p>What is the return type of the function? A) int <br> B) str <br> C) Union[int, str] <br> D) None <br></p>
+<ol start="5" type="1">
+<li>What is the purpose of using Union types in the context of Python’s type hinting system?</li>
+</ol>
+<ol type="A">
+<li>To restrict function parameters to a single specified type</li>
+<li>To specify that variables or parameters can be one of several types</li>
+<li>To enhance the performance of Python applications</li>
+<li>To convert values between different types automatically</li>
+</ol>
+<h3 id="magic-methods">Magic Methods:</h3>
+<ol type="1">
+<li><p>What is the purpose of magic methods in Python?</p></li>
+<li><p>Explain the usage of <strong>str</strong> magic methods.</p></li>
+<li><p>If you want to implement operator overloading for the “+” operator in a custom class, which magic method would you use?</p></li>
+</ol>
+<ol type="A">
+<li><strong>add</strong> <br></li>
+<li><strong>sum</strong> <br></li>
+<li><strong>plus</strong> <br></li>
+<li><strong>concat</strong> <br></li>
+</ol>
+<ol start="4" type="1">
+<li>What magic method would you implement to customize the behavior of the built-in function print() when it is called with an object of your class?</li>
+</ol>
+<ol type="A">
+<li><strong>print</strong></li>
+<li><strong>str</strong></li>
+</ol>
+<ol start="5" type="1">
+<li>Which magic method is called when you use the del statement on an object?</li>
+</ol>
+<ol type="A">
+<li><strong>delete</strong></li>
+<li><strong>del</strong></li>
+<li><strong>remove</strong></li>
+<li><strong>destruct</strong></li>
+</ol>
+<p><br></p>
+<h1 id="solutions">Solutions</h1>
+<h3 id="default-parameters-1">Default Parameters</h3>
+<h5 id="conceptual-questions-2">Conceptual Questions:</h5>
+<ol type="1">
+<li><p>A default parameter in Python functions is a parameter that assumes a default value if no value is provided for it during the function call.</p></li>
+<li></li>
+</ol>
+<pre><code>def power(base, exponent=2):
+    return base ** exponent
+
+print(power(3))  # By default
+print(power(3, 3))  # Now you have overriden the default value</code></pre>
+<ol start="3" type="1">
+<li><p>Since <code>x</code> does not have a default value, directly calling the function without parameters will raise an Error.</p></li>
+<li><p>In Python function definitions, non-default parameters must precede default parameters. As otherwise will create errors for 1. positional argument assignment; 2. letting Python identify which parameter(s) are optional.</p></li>
+</ol>
+<h5 id="multiple-choices-1">Multiple Choices</h5>
+<ol type="1">
+<li><p>B</p></li>
+<li><p>A</p></li>
+<li><p>B</p></li>
+<li><p>B</p></li>
+</ol>
+<h5 id="true-or-false-1">True or False</h5>
+<ol type="1">
+<li><p>False</p></li>
+<li><p>False</p></li>
+<li><p>False</p></li>
+</ol>
+<h3 id="union-types-1">Union Types</h3>
+<h5 id="conceptual-questions-3">Conceptual Questions:</h5>
+<ol type="1">
+<li><p>A Union type in Python allows a variable or function parameter to accept multiple types rather than just one single type.</p></li>
+<li><p><code>value: Union[int, str]</code> or <code>value: int | str</code></p></li>
+<li><p>Union refers that this variable can be with multiple types but still required, whereas the Optional refers that this variable is not required.</p></li>
+</ol>
+<h5 id="multiple-choices-questions-1">Multiple Choices Questions:</h5>
+<ol type="1">
+<li><p>D</p></li>
+<li><p>C</p></li>
+<li><p>C</p></li>
+<li><p>B</p></li>
+<li><p>B</p></li>
+</ol>
+<h3 id="magic-methods-1">Magic Methods:</h3>
+<ol type="1">
+<li><p>Magic methods in Python are special methods that allow you to redefine or modify the default behaviors of Python objects. Often recognized by their double underscores at the beginning and end (e.g., <strong>init</strong>, <strong>str</strong>).</p></li>
+<li><p>A</p></li>
+<li><p>B</p></li>
+<li><p>B</p></li>
+</ol>
+</div>
+
+       
+
+    </div> 
+
+    <div class="authors-box bg-dark mt-4 py-3 ps-4">
+      <span> Contributor(s): Vincent Li</span>
+    </div>
+  </div>
+  <div class='link-page mt-3 container'>
+    <footer>
+      <h3 class="text-center align-middle footer-text">&copy; 2023 <a href="https://krisjordan.com">Kris Jordan</a>
+        - <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSenaJ2uZ_n2FfAb2PWL6YPG4AUT-G2-xVJP6HIwMr6cd6nSYA/viewform?usp=sf_link">Feedback
+          Form</a>
+        - Made with 💛 in <a href="https://cs.unc.edu/">Chapel Hill</a></h3>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- Code Block Formatting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+  <script>hljs.initLineNumbersOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+  
+</body>
+
+</html>
