@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> PlaneTicket Practice Problem from Class - COMP110 - 24S</title>
+  <title> PlaneTicket Practice Problem - COMP110 - 24S</title>
   <link rel="icon" type="image/png" href="/static/tabbrand.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1714182385.5326428">
+  <link rel="stylesheet" href="/static/styles.css?v=1714182386.0989213">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
   <div id="lessons-page" class="container">
     <div class="row pt-4">
       <div class="col-12">
-        <h1>PlaneTicket Practice Problem from Class</h1>
+        <h1>PlaneTicket Practice Problem</h1>
         <hr class="title" />
       </div>
     </div>
@@ -66,15 +66,14 @@
 <li><a href="#writing-class-methods-and-functions">Writing class, methods, and functions</a></li>
 <li><a href="#writing-code-to-instantiate-class-and-test-methods-and-functions">Writing code to instantiate class and test methods and functions</a></li>
 </ul></li>
-<li><a href="#solution">Solution</a></li>
-<li><a href="#memory-diagram">Memory Diagram</a></li>
 </ul>
 </</ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><h1 id="instructions">Instructions</h1>
+        <div id="content" class="content box col-xl-9 col-lg-9 order-2 order-lg-1 pt-3"><p>Practice Problem</p>
+<h1 id="instructions">Instructions</h1>
 <h2 id="writing-class-methods-and-functions">Writing class, methods, and functions</h2>
 <ol type="1">
 <li>Write a <code>PlaneTicket</code> class with attributes: <code>departure_city: str</code>, <code>arrival_city: str</code>, <code>departure_time: int</code>, <code>ticket_cost: float</code>.</li>
@@ -82,7 +81,7 @@
 <li>Write a <code>__str__</code> magic method to print out ticket info. (Format however you want.)</li>
 <li>Write a <code>delay</code> method that takes <code>delay_hours: int</code> as an argument and increases the <code>departure_time</code> by that much. (Think of time like military time… 1 am is <code>0100</code>, 1 pm is <code>1300</code>, etc.)</li>
 <li>Write a <code>discount</code> method that takes a <code>discount: float</code> as an argument and discounts <code>ticket_cost</code> by that percent. (E.g. if <code>discount = .15</code>, then discount <code>ticket_cost</code> by 15%)</li>
-<li>Write a <code>compare_prices</code> function that compares the cost of two tickets (takes <code>ticket1: PlaneTicket</code> and <code>ticket2: PlaneTicket</code> as arguments) and returns the cheaper ticket.</li>
+<li>Write a <code>find_cheapest_ticket</code> <em>function</em> that takes as input a list of <code>PlaneTicket</code>s and returns the <code>PlaneTicket</code> with the lowest cost.</li>
 </ol>
 <h2 id="writing-code-to-instantiate-class-and-test-methods-and-functions">Writing code to instantiate class and test methods and functions</h2>
 <ol type="1">
@@ -91,64 +90,65 @@
 <li>Delay the flight by 2 hours.</li>
 <li>Discount it by 10%.</li>
 <li>Create another <code>PlaneTicket</code> object that starts in “Orlando” and ends in “San Fransisco”. It departs at 11 am (1100) and costs $100.50.</li>
-<li>Print out the which ticket is cheaper using the <code>compare_prices</code> function.</li>
+<li>Print out the which ticket is cheaper using the <code>find_cheapest_ticket</code> function.</li>
 </ol>
-<h1 id="solution">Solution</h1>
-<pre><code>from __future__ import annotations
+<!-- # Solution
 
-class PlaneTicket:
-    
-    departure_city: str
-    arrival_city: str
-    departure_time: int
-    ticket_cost: float
-    
-    def __init__(self, city_a: str, city_b: str, depart: int, cost: float):
-        &quot;&quot;&quot;Initialize PlaneTicket Class&quot;&quot;&quot;
-        self.departure_city = city_a
-        self.arrival_city = city_b
-        self.departure_time = depart
-        self.ticket_cost = cost
+
+    from __future__ import annotations
+
+    class PlaneTicket:
         
-    def __str__(self) -&gt; str:
-        &quot;&quot;&quot;Visualize my ticket&quot;&quot;&quot;
-        my_ticket_str: str = f&quot;Depart from {self.departure_city} at {self.departure_time}. &quot;
-        my_ticket_str += f&quot;Arrive at {self.arrival_city}. It costs ${round(self.ticket_cost, 2)}.&quot;
-        return my_ticket_str 
-    
-    def delay(self, delay_hours: int) -&gt; None:
-        &quot;&quot;&quot;Delay departure_time by delay_hours&quot;&quot;&quot;
-        self.departure_time += (delay_hours * 100)
-        self.departure_time %= 2400
-    
-    def discount(self, discount: float) -&gt; None:
-        &quot;&quot;&quot;Discount ticket_cost by &#39;discount&#39;&quot;&quot;&quot;
-        #If discounting by .15, then multiply by (1-.15) 
-        self.ticket_cost = self.ticket_cost * (1 - discount)
+        departure_city: str
+        arrival_city: str
+        departure_time: int
+        ticket_cost: float
         
-def compare_prices(ticket1: PlaneTicket, ticket2: PlaneTicket) -&gt; PlaneTicket:
-    &quot;&quot;&quot;Return the cheaper ticket&quot;&quot;&quot;
-    if ticket1.ticket_cost &lt; ticket2.ticket_cost: 
-        return ticket1
-    else: #ticket1 cost &gt;= ticket2
-        return ticket2
+        def __init__(self, city_a: str, city_b: str, depart: int, cost: float):
+            """Initialize PlaneTicket Class"""
+            self.departure_city = city_a
+            self.arrival_city = city_b
+            self.departure_time = depart
+            self.ticket_cost = cost
+            
+        def __str__(self) -> str:
+            """Visualize my ticket"""
+            my_ticket_str: str = f"Depart from {self.departure_city} at {self.departure_time}. "
+            my_ticket_str += f"Arrive at {self.arrival_city}. It costs ${round(self.ticket_cost, 2)}."
+            return my_ticket_str 
         
+        def delay(self, delay_hours: int) -> None:
+            """Delay departure_time by delay_hours"""
+            self.departure_time += (delay_hours * 100)
+            self.departure_time %= 2400
+        
+        def discount(self, discount: float) -> None:
+            """Discount ticket_cost by 'discount'"""
+            #If discounting by .15, then multiply by (1-.15) 
+            self.ticket_cost = self.ticket_cost * (1 - discount)
+            
+    def compare_prices(ticket1: PlaneTicket, ticket2: PlaneTicket) -> PlaneTicket:
+        """Return the cheaper ticket"""
+        if ticket1.ticket_cost < ticket2.ticket_cost: 
+            return ticket1
+        else: #ticket1 cost >= ticket2
+            return ticket2
+            
 
-my_ticket: PlaneTicket = PlaneTicket(&quot;Raleigh&quot;, &quot;New Orleans&quot;, 1000, 85.25)
+    my_ticket: PlaneTicket = PlaneTicket("Raleigh", "New Orleans", 1000, 85.25)
 
-print(my_ticket)
+    print(my_ticket)
 
-my_ticket.delay(2)
-my_ticket.discount(.10)
+    my_ticket.delay(2)
+    my_ticket.discount(.10)
 
-other_ticket: PlaneTicket = PlaneTicket(&quot;Orlando&quot;, &quot;San Fransisco&quot;, 1100, 100.50)
+    other_ticket: PlaneTicket = PlaneTicket("Orlando", "San Fransisco", 1100, 100.50)
 
-print(compare_prices(my_ticket, other_ticket))</code></pre>
-<h1 id="memory-diagram">Memory Diagram</h1>
-<p>Per request, I made a memory diagram of this code (skipping the second calls to <code>__init__</code> and <code>__str__</code>).</p>
-<ol type="1">
-<li><a href="/static/practice-mem-diagrams/planess1.png">Code Snippet 1</a> | <a href="/static/practice-mem-diagrams/planess2.png">Code Snippet 2</a> | <a href="/static/practice-mem-diagrams/planemd.pdf">Solution</a></li>
-</ol>
+    print(compare_prices(my_ticket, other_ticket)) -->
+<!-- # Memory Diagram
+Per request, I made a memory diagram of this code (skipping the second calls to `__init__` and `__str__`).
+
+1. [Code Snippet 1](/static/practice-mem-diagrams/planess1.png) | [Code Snippet 2](/static/practice-mem-diagrams/planess2.png) | [Solution](/static/practice-mem-diagrams/planemd.pdf)  -->
 </div>
 
        
@@ -156,7 +156,7 @@ print(compare_prices(my_ticket, other_ticket))</code></pre>
     </div> 
 
     <div class="authors-box bg-dark mt-4 py-3 ps-4">
-      <span> Contributor(s): Alyssa Byrnes</span>
+      <span> Contributor(s): Alyssa Lytle</span>
     </div>
   </div>
   <div class='link-page mt-3 container'>
