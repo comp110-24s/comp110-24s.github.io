@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1714252973.9750946">
+  <link rel="stylesheet" href="/static/styles.css?v=1714253070.2771244">
 </head>
 
 <body>
@@ -94,54 +94,54 @@
 <li>Print out the which ticket is cheaper using the <code>find_cheapest_ticket</code> function.</li>
 </ol>
 <h1 id="solution">Solution</h1>
-<pre><code>class PlaneTicket:
-    
-    departure_city: str
-    arrival_city: str
-    departure_time: int
-    ticket_cost: float
-    
-    def __init__(self, city_a: str, city_b: str, depart: int, cost: float):
-        &quot;&quot;&quot;Initialize PlaneTicket Class&quot;&quot;&quot;
-        self.departure_city = city_a
-        self.arrival_city = city_b
-        self.departure_time = depart
-        self.ticket_cost = cost
+<pre><code>    class PlaneTicket:
         
-    def __str__(self) -&gt; str:
-        &quot;&quot;&quot;Visualize my ticket&quot;&quot;&quot;
-        my_ticket_str: str = f&quot;Depart from {self.departure_city} at {self.departure_time}. &quot;
-        my_ticket_str += f&quot;Arrive at {self.arrival_city}. It costs ${round(self.ticket_cost, 2)}.&quot;
-        return my_ticket_str 
-    
-    def delay(self, delay_hours: int) -&gt; None:
-        &quot;&quot;&quot;Delay departure_time by delay_hours&quot;&quot;&quot;
-        self.departure_time += (delay_hours * 100)
-        self.departure_time %= 2400
-    
-    def discount(self, discount: float) -&gt; None:
-        &quot;&quot;&quot;Discount ticket_cost by &#39;discount&#39;&quot;&quot;&quot;
-        #If discounting by .15, then multiply by (1-.15) 
-        self.ticket_cost = self.ticket_cost * (1 - discount)
+        departure_city: str
+        arrival_city: str
+        departure_time: int
+        ticket_cost: float
         
-def compare_prices(ticket1: PlaneTicket, ticket2: PlaneTicket) -&gt; PlaneTicket:
-    &quot;&quot;&quot;Return the cheaper ticket&quot;&quot;&quot;
-    if ticket1.ticket_cost &lt; ticket2.ticket_cost: 
-        return ticket1
-    else: #ticket1 cost &gt;= ticket2
-        return ticket2
+        def __init__(self, city_a: str, city_b: str, depart: int, cost: float):
+            &quot;&quot;&quot;Initialize PlaneTicket Class&quot;&quot;&quot;
+            self.departure_city = city_a
+            self.arrival_city = city_b
+            self.departure_time = depart
+            self.ticket_cost = cost
+            
+        def __str__(self) -&gt; str:
+            &quot;&quot;&quot;Visualize my ticket&quot;&quot;&quot;
+            my_ticket_str: str = f&quot;Depart from {self.departure_city} at {self.departure_time}. &quot;
+            my_ticket_str += f&quot;Arrive at {self.arrival_city}. It costs ${round(self.ticket_cost, 2)}.&quot;
+            return my_ticket_str 
         
+        def delay(self, delay_hours: int) -&gt; None:
+            &quot;&quot;&quot;Delay departure_time by delay_hours&quot;&quot;&quot;
+            self.departure_time += (delay_hours * 100)
+            self.departure_time %= 2400
+        
+        def discount(self, discount: float) -&gt; None:
+            &quot;&quot;&quot;Discount ticket_cost by &#39;discount&#39;&quot;&quot;&quot;
+            #If discounting by .15, then multiply by (1-.15) 
+            self.ticket_cost = self.ticket_cost * (1 - discount)
+            
+    def find_cheapest_ticket(tickets: list[PlaneTicket]) -&gt; PlaneTicket:
+        min_ticket: PlaneTicket = tickets[0]
+        for t in tickets:
+            if t.ticket_cost &lt; min_ticket.ticket_cost:
+                min_ticket = t
+        return min_ticket
+            
 
-my_ticket: PlaneTicket = PlaneTicket(&quot;Raleigh&quot;, &quot;New Orleans&quot;, 1000, 85.25)
+    my_ticket: PlaneTicket = PlaneTicket(&quot;Raleigh&quot;, &quot;New Orleans&quot;, 1000, 85.25)
 
-print(my_ticket)
+    print(my_ticket)
 
-my_ticket.delay(2)
-my_ticket.discount(.10)
+    my_ticket.delay(2)
+    my_ticket.discount(.10)
 
-other_ticket: PlaneTicket = PlaneTicket(&quot;Orlando&quot;, &quot;San Fransisco&quot;, 1100, 100.50)
+    other_ticket: PlaneTicket = PlaneTicket(&quot;Orlando&quot;, &quot;San Fransisco&quot;, 1100, 100.50)
 
-print(find_cheapest_ticket([my_ticket, other_ticket]))</code></pre>
+    print(find_cheapest_ticket([my_ticket, other_ticket]))</code></pre>
 <!-- # Memory Diagram
 Per request, I made a memory diagram of this code (skipping the second calls to `__init__` and `__str__`).
 
