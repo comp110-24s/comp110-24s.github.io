@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1714253070.413219">
+  <link rel="stylesheet" href="/static/styles.css?v=1714254292.2004309">
 </head>
 
 <body>
@@ -62,7 +62,16 @@
                     <div id="TOC" role="doc-toc">
                         <ul class="overview-item"><ul>
 <li><a href="#reviewing-for-the-final">Reviewing for the Final</a></li>
-<li><a href="#class-and-function-writing">Class and Function Writing</a></li>
+<li><a href="#class-and-function-writing">Class and Function Writing</a>
+<ul>
+<li><a href="#function-writing">Function Writing</a></li>
+<li><a href="#class-writing">Class Writing</a></li>
+</ul></li>
+<li><a href="#solutions">Solutions</a>
+<ul>
+<li><a href="#function-writing-solutions">Function Writing Solutions</a></li>
+<li><a href="#class-writing-solutions">Class Writing Solutions</a></li>
+</ul></li>
 </ul>
 </</ul>
                     </div>
@@ -89,67 +98,110 @@ Note: this is a modified copy of the final worksheet from resources/practice/fa2
 </ul></li>
 </ul>
 <h1 id="class-and-function-writing">Class and Function Writing</h1>
-<!-- ## Function Writing
-
-
-
-1. Write a function called `free_biscuits`. Given a dictionary with `str` keys (representing basketball games) and `list[int]` values (representing points scored by players), `free_biscuits` should return a new dictionary of type `dict[str, bool]` that maps each game to a boolean value for free biscuits. (`True` if the points add up to 100+, `False` if otherwise)  
-Example: `free_biscuits({ “UNCvsDuke”: [38, 20, 42] , “UNCvsState”: [9, 51, 16, 23] })` should return `{ “UNCvsDuke”: True, “UNCvsState”: False }`.
-
-2. Write a function called `max_key`. Given a dictionary with `str` keys  and `list[int]` values, return a `str` with the name of the key whose list has the highest *sum* of values.
-Example: `max_key({"a": [1,2,3], "b": [4,5,6]})` should return `"b"` because the sum of `a`'s elements is 1 + 2 + 3 = 6 and the sum of `b`'s elements is 4 + 5 + 6 = 15, and 15 > 6.
-
-3. Write a function called `multiples`. Given a `list[int]`, `multiples` should return a `list[bool]` that tells whether each `int` value is a multiple of the previous value.  For the first number in the list, you should wrap around the list and compare this `int` to the last number in the list.  
+<h2 id="function-writing">Function Writing</h2>
+<ol type="1">
+<li><p>Write a function called <code>free_biscuits</code>. Given a dictionary with <code>str</code> keys (representing basketball games) and <code>list[int]</code> values (representing points scored by players), <code>free_biscuits</code> should return a new dictionary of type <code>dict[str, bool]</code> that maps each game to a boolean value for free biscuits. (<code>True</code> if the points add up to 100+, <code>False</code> if otherwise)<br />
+Example: <code>free_biscuits({ “UNCvsDuke”: [38, 20, 42] , “UNCvsState”: [9, 51, 16, 23] })</code> should return <code>{ “UNCvsDuke”: True, “UNCvsState”: False }</code>.</p></li>
+<li><p>Write a function called <code>max_key</code>. Given a dictionary with <code>str</code> keys and <code>list[int]</code> values, return a <code>str</code> with the name of the key whose list has the highest <em>sum</em> of values. Example: <code>max_key({"a": [1,2,3], "b": [4,5,6]})</code> should return <code>"b"</code> because the sum of <code>a</code>’s elements is 1 + 2 + 3 = 6 and the sum of <code>b</code>’s elements is 4 + 5 + 6 = 15, and 15 &gt; 6.</p></li>
+</ol>
+<!-- 3. Write a function called `multiples`. Given a `list[int]`, `multiples` should return a `list[bool]` that tells whether each `int` value is a multiple of the previous value.  For the first number in the list, you should wrap around the list and compare this `int` to the last number in the list.  
 Example: `multiples([2, 3, 4, 8, 16, 2, 4, 2])` should return `[True, False, False, True, True, False, True, False]`.
 
 4. Write a function called `merge_lists`. Given a `list[str]` and a `list[int]`, `merge_lists` should return a `dict[str, int]` that maps each item in the first list to its corresponding item in the second (based on index).  If the lists are not the same size, the function should return an empty dictionary.  
-Example: `merge_lists([“blue”, “yellow”, “red”], [5, 2, 4])` should return `{"blue": 5, "yellow": 2, "red": 4}`. 
-
-5. Write a function called `reverse_multiply`. Given a `list[int]`, `reverse_multiply` should return a `list[int]` with the values from the original list doubled and in reverse order.  
-Example: `reverse_multiply([1, 2, 3])` should return `[6, 4, 2]`.
-
-## Class Writing
-
-6. Create a class called `HotCocoa` with the following specifications:
-    a. Each `HotCocoa` object has a `bool` attribute called `has_whip`, a `str` attribute called `flavor`, and two `int` attributes called `marshmallow_count` and `sweetness`.
-    b. The class should have a constructor that takes in and sets up each of its attribute’s values.
-    c. Write a method called `mallow_adder` that takes in an `int` called `mallows`, increases the `marshmallow_count` by that amount, and increases the `sweetness` by that amount times 2.
-    d. Write a method called `calorie_count` that returns a `float`. If the `flavor` of the `HotCocoa` is “vanilla” or “peppermint”, increase the calorie count by 30, otherwise increase it by 20. If the `HotCocoa` has whipped cream (`has_whip` is `True`), increase the calorie count by 100. Finally, increase the calorie count by half the number of marshmallows. The calorie count should be calculated and returned when this method is called.  
-
-
-7. Create a class called `TimeSpent` with the following specifications:
-    a. Each `TimeSpent` object has a `str` attribute called `name`, a `str` attribute called `purpose`, and an `int` attribute called `minutes`.
-    b. The class should have a constructor that takes in and sets up each of its attribute’s values.
-    c. Write a method called `add_time` that takes in an `int` and increases the `minutes` attribute by this amount. The method should return `None`.
-    d. Write a method called `reset` that resets the amount of time that is stored in the `minutes` attribute.  The method should return the amount that was stored in `minutes`. 
-    e. Write a method called `report` that prints a line reporting information about the current `TimeSpent` object.  Suppose a `TimeSpent` object has `name` = `“Ariana”`, `purpose` = `“screen time”`, and `minutes` = `130`.  The report method should print: `“Ariana has spent 2 hours and 10 minutes on screen time.”`
-
-
-
-# Solutions
-
-## Function Writing
-
-
-
-1. ![](/static/practice_worksheets/fa21/final-solution2.png)
-
-2. ![](/static/practice_worksheets/sp23/final-practice-2.png)
-
-3. ![](/static/practice_worksheets/fa21/final-solution3.png)
-
-4. ![](/static/practice_worksheets/fa21/final-solution4.png)
-
-5. ![](/static/practice_worksheets/fa21/final-solution1.png)
-
-
-
-## Class Writing
-
-6. ![](/static/practice_worksheets/fa21/final-solution5.png)
+Example: `merge_lists([“blue”, “yellow”, “red”], [5, 2, 4])` should return `{"blue": 5, "yellow": 2, "red": 4}`.  -->
+<ol start="3" type="1">
+<li>Write a function called <code>reverse_multiply</code>. Given a <code>list[int]</code>, <code>reverse_multiply</code> should return a <code>list[int]</code> with the values from the original list doubled and in reverse order.<br />
+Example: <code>reverse_multiply([1, 2, 3])</code> should return <code>[6, 4, 2]</code>.</li>
+</ol>
+<p><a href="#function-writing-solutions">Solutions</a></p>
+<h2 id="class-writing">Class Writing</h2>
+<ol type="1">
+<li>Create a class called <code>HotCocoa</code> with the following specifications:
+<ol type="a">
+<li>Each <code>HotCocoa</code> object has a <code>bool</code> attribute called <code>has_whip</code>, a <code>str</code> attribute called <code>flavor</code>, and two <code>int</code> attributes called <code>marshmallow_count</code> and <code>sweetness</code>.</li>
+<li>The class should have a constructor that takes in and sets up each of its attribute’s values.</li>
+<li>Write a method called <code>mallow_adder</code> that takes in an <code>int</code> called <code>mallows</code>, increases the <code>marshmallow_count</code> by that amount, and increases the <code>sweetness</code> by that amount times 2.</li>
+<li>Write a <code>__str__</code> magic method that displays the details of the hot cocoa order mimicing the following:
+<ul>
+<li>If it has whipped cream: <code>"A &lt;flavor&gt; cocoa with whip, &lt;marshmallow_count&gt; marshmallows, and level &lt;sweetness&gt; sweetness.</code></li>
+<li>If it doesn’t have whipped cream: <code>"A &lt;flavor&gt; cocoa without whip, &lt;marshmallow_count&gt; marshmallows, and level &lt;sweetness&gt; sweetness.</code></li>
+</ul></li>
+<li>Write an <code>order_cost</code> <em>function</em> that takes as input a <code>list</code> of <code>HotCocoa</code> objects to represent an order and returns the total cost of the order. A <code>HotCocoa</code> with whip is $2.50 and without whip is $2.00.</li>
+</ol></li>
+<li>Create a class called <code>TimeSpent</code> with the following specifications:
+<ol type="a">
+<li>Each <code>TimeSpent</code> object has a <code>str</code> attribute called <code>name</code>, a <code>str</code> attribute called <code>purpose</code>, and an <code>int</code> attribute called <code>minutes</code>.</li>
+<li>The class should have a constructor that takes in and sets up each of its attribute’s values.</li>
+<li>Write a method called <code>add_time</code> that takes in an <code>int</code> and increases the <code>minutes</code> attribute by this amount. The method should return <code>None</code>.</li>
+<li>Write an <code>__add__</code> magic method that takes in an <code>int</code> called <code>added_minutes</code> and returns a new <code>TimeSpent</code> object with the same attribute values except that <code>minutes</code> is increased by <code>added_minutes</code>.</li>
+<li>Write a method called <code>reset</code> that resets the amount of time that is stored in the <code>minutes</code> attribute. The method should also return the amount that was stored in <code>minutes</code>.</li>
+<li>Write a <code>__str__</code> magic method returns a line reporting information about the current <code>TimeSpent</code> object. Suppose a <code>TimeSpent</code> object has <code>name</code> = <code>“Ariana”</code>, <code>purpose</code> = <code>“screen time”</code>, and <code>minutes</code> = <code>130</code>. The method should return: <code>“Ariana has spent 2 hours and 10 minutes on screen time.”</code></li>
+<li>Write a <em>function</em> called <code>most_by_purpose</code> that takes as input a <code>list</code> of <code>TimeSpent</code> objects and a <code>str</code> to represent a purpose, and returns the name of the person who spent the most time doing that specific activity.</li>
+</ol>
+<ul>
+<li>Example usage:
+<pre>
+ <div class="terminal">
+ >>> a: TimeSpent = TimeSpent("Alyssa", "studying", 5)
+ >>> b: TimeSpent = TimeSpent("Alyssa", "doom scrolling", 100)
+ >>> c: TimeSpent = TimeSpent("Vrinda", "studying", 200)
+ >>> most_by_purpose([a, b, c], "studying")
+ 'Vrinda'
+ </div>
+ </pre></li>
+</ul></li>
+</ol>
+<p><a href="#class-writing-solutions">Solutions</a></p>
+<h1 id="solutions">Solutions</h1>
+<h2 id="function-writing-solutions">Function Writing Solutions</h2>
+<ol type="1">
+<li></li>
+</ol>
+<pre><code>    def free_biscuits(input: dict[str, list[int]]) -&gt; dict[str, bool]:
+        &quot;&quot;&quot;Check each game to see if we get free biscuits.&quot;&quot;&quot;
+        result: dict[str, bool] = {}
+        # loop over each key in my input dictionary
+        for key in input:
+            # for each element of the dictionary, sum up its values
+            list_to_sum: list[int] = input[key]
+            sum: int = 0
+            # loop through list and add each value to sum
+            for element in list_to_sum:
+                sum += element
+            # if sum &gt;= 100, store in result under key &quot;key&quot; with value True
+            if sum &gt;= 100:
+                result[key] = True
+            else: # if not, store as False
+                result[key] = False
+        return result</code></pre>
+<ol start="2" type="1">
+<li></li>
+</ol>
+<pre><code>    def max_key(input: dict[str, int]) -&gt; str:
+        # Create variables to store max key and max val sum
+        max_key: str = &quot;&quot;
+        max_val_sum: int = 0
+        # Loop through each key of the dictionary
+        for key in input:
+            # Sum up the values of that key&#39;s corresponding list
+            val_sum: int = 0
+            for value in input[key]:
+                val_sum += value
+            # If the sum is the max so far, update the max_key and max_val_sum
+            if val_sum &gt; max_val_sum:
+                max_val_sum = val_sum
+                max_key = key 
+        return max_key</code></pre>
+<ol start="3" type="1">
+<li>Coming Soon</li>
+</ol>
+<h2 id="class-writing-solutions">Class Writing Solutions</h2>
+<p>Coming Soon</p>
+<!-- 6. ![](/static/practice_worksheets/fa21/final-solution5.png)
 
 7. ![](/static/practice_worksheets/fa21/final-solution6.png)
  -->
+<p>–&gt;</p>
 </div>
 
        
