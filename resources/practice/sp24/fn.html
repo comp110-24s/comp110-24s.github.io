@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="/static/styles.css?v=1714254434.5299492">
+  <link rel="stylesheet" href="/static/styles.css?v=1714256299.1131399">
 </head>
 
 <body>
@@ -193,15 +193,65 @@ Example: <code>reverse_multiply([1, 2, 3])</code> should return <code>[6, 4, 2]<
                 max_key = key 
         return max_key</code></pre>
 <ol start="3" type="1">
-<li>Coming Soon</li>
+<li></li>
 </ol>
+<pre><code>    def reverse_multiply(vals: list[int]) -&gt; list[int]:
+        &quot;&quot;&quot;Reverse the list and double all elements.&quot;&quot;&quot;
+        # iterate through the list backwards
+        idx: int = len(vals) - 1 # index of last element
+        new_vals: list[int] = []
+        while idx &gt;= 0:
+            new_vals.append(vals[idx] * 2)
+            idx -= 1
+        return new_vals</code></pre>
+<pre><code>    def reverse_multiply(vals: list[int]) -&gt; list[int]:
+        &quot;&quot;&quot;Reverse the list and double all elements.&quot;&quot;&quot;
+        # iterate through the list forwards, but get index of the &quot;opposite&quot; element 
+        idx: int = 0 # index of last element
+        new_vals: list[int] = []
+        while idx &lt; len(vals):
+            idx_of_opposite: int = len(vals) - 1 - idx
+            new_vals.append(vals[idx_of_opposite] * 2)
+            idx += 1
+        return new_vals</code></pre>
 <h2 id="class-writing-solutions">Class Writing Solutions</h2>
-<p>Coming Soon</p>
-<!-- 6. ![](/static/practice_worksheets/fa21/final-solution5.png)
-
-7. ![](/static/practice_worksheets/fa21/final-solution6.png)
- -->
-<p>–&gt;</p>
+<ol type="1">
+<li></li>
+</ol>
+<pre><code>    class HotCocoa:
+        
+        has_whip: bool
+        flavor: str
+        marshmallow_count: int
+        sweetness: int
+        
+        def __init__(self, whip: bool, flavor: str, marshmallows: int, sweetness: int):
+            self.has_whip = whip
+            self.flavor = flavor
+            self.marshmallow_count = marshmallows
+            self.sweetness = sweetness
+        
+        def mallow_adder(self, mallows: int) -&gt; None:
+            self.marshmallow_count += mallows
+            self.sweetness += (mallows * 2)
+            
+        def __str__(self) -&gt; str:
+            if self.has_whip:
+                return f&quot;A {self.flavor} cocoa with whip, {self.marshmallow_count} marshmallows, and level {self.sweetness} sweetness.&quot;
+            else:
+                return f&quot;A {self.flavor} cocoa without whip, {self.marshmallow_count} marshmallows, and level {self.sweetness} sweetness.&quot;
+            
+    def order_cost(order: list[HotCocoa]) -&gt; float:
+        cost: float = 0.0
+        for cocoa in order:
+            if cocoa.has_whip:
+                cost += 2.50
+            else:
+                cost += 2.00
+        return cost</code></pre>
+<ol start="2" type="1">
+<li>Coming soon</li>
+</ol>
 </div>
 
        
